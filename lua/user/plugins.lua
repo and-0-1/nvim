@@ -31,6 +31,7 @@ end
 
 -- Have packer use a popup window
 packer.init {
+  max_jobs = 10,
   display = {
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
@@ -66,24 +67,20 @@ return packer.startup(function(use)
   use "monaqa/dial.nvim"
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
-  use "folke/zen-mode.nvim"
+  -- use "folke/zen-mode.nvim"
   use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
   use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
-  -- use "lunarvim/vim-solidity"
-  use "Mephistophiles/surround.nvim"
+  use "tpope/vim-surround"
   use "tpope/vim-repeat"
-  -- use "Shatur/neovim-session-manager"
+  use "tpope/vim-abolish"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
-  -- use "metakirby5/codi.vim"
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
   use { "christianchiarulli/nvim-gps", branch = "text_hl" }
-  use { "michaelb/sniprun", run = "bash ./install.sh" }
   use {
-
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     ft = "markdown",
@@ -105,7 +102,7 @@ return packer.startup(function(use)
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
-  -- use "rebelot/kanagawa.nvim"
+  use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
   -- use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -121,26 +118,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
   use "rcarriga/cmp-dap"
-  use {
-    "tzachar/cmp-tabnine",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = "..",
-        ignored_file_types = { -- default is not to ignore
-          -- uncomment to ignore in lua:
-          -- lua = true
-        },
-      }
-    end,
-
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  }
+  use "lukas-reineke/cmp-rg"
 
   -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
 
@@ -161,7 +139,6 @@ return packer.startup(function(use)
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   }
-  use "github/copilot.vim"
   use "RRethy/vim-illuminate"
 
   -- Java
@@ -171,8 +148,8 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
-  use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
+  -- use "nvim-telescope/telescope-ui-select.nvim"
 
   -- Treesitter
   use {
@@ -190,7 +167,7 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
   use "f-person/git-blame.nvim"
-  use "ruifm/gitlinker.nvim"
+  -- use "ruifm/gitlinker.nvim"
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
   use "https://github.com/rhysd/conflict-marker.vim"
@@ -200,6 +177,9 @@ return packer.startup(function(use)
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
   use "Pocco81/DAPInstall.nvim"
+
+  -- TMUX
+  use "christoomey/vim-tmux-navigator"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

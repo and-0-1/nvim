@@ -127,7 +127,7 @@ local mappings = {
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   -- ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
-  ["gy"] = "Link",
+  -- ["gy"] = "Link",
 
   p = {
     name = "Packer",
@@ -253,7 +253,7 @@ local mappings = {
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     o = { "<cmd>SymbolsOutline<cr>", "Outline" },
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    r = { "<cmd>lua require('renamer').rename({empty = true})<cr>", "Rename" },
     R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
@@ -272,22 +272,6 @@ local mappings = {
   --   q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
   --   b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
   -- },
-
-  S = {
-    -- name = "Session",
-    -- s = { "<cmd>SaveSession<cr>", "Save" },
-    -- l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
-    -- d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
-    -- f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
-    name = "SnipRun",
-    c = { "<cmd>SnipClose<cr>", "Close" },
-    f = { "<cmd>%SnipRun<cr>", "Run File" },
-    i = { "<cmd>SnipInfo<cr>", "Info" },
-    m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
-    r = { "<cmd>SnipReset<cr>", "Reset" },
-    t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
-    x = { "<cmd>SnipTerminate<cr>", "Terminate" },
-  },
 
   t = {
     name = "Terminal",
@@ -321,7 +305,6 @@ local vopts = {
 }
 local vmappings = {
   ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
-  s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run range" },
 }
 
 which_key.setup(setup)

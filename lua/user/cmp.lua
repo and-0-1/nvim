@@ -84,12 +84,6 @@ cmp.setup {
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 
-      if entry.source.name == "cmp_tabnine" then
-        -- if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-        -- menu = entry.completion_item.data.detail .. " " .. menu
-        -- end
-        vim_item.kind = icons.misc.Robot
-      end
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       -- NOTE: order matters
       vim_item.menu = ({
@@ -107,6 +101,7 @@ cmp.setup {
         path = "",
         emoji = "",
         dap = "",
+        rg = "",
       })[entry.source.name]
       return vim_item
     end,
@@ -116,10 +111,10 @@ cmp.setup {
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
-    { name = "cmp_tabnine" },
     { name = "path" },
     { name = "emoji" },
     { name = "dap" },
+    { name = "rg" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -142,3 +137,20 @@ cmp.setup {
     -- native_menu = false,
   },
 }
+
+cmp.setup.cmdline("/", {
+  sources = cmp.config.sources {
+    { name = "buffer" },
+  },
+  mapping = cmp.mapping.preset.cmdline {},
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(":", {
+  sources = cmp.config.sources({
+    { name = "path" },
+  }, {
+    { name = "cmdline" },
+  }),
+  mapping = cmp.mapping.preset.cmdline {},
+})

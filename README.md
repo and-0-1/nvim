@@ -1,19 +1,16 @@
-# Neovim from scratch
+# Neovim personal config
 
 ## Try out this config
 
 Make sure to remove or move your current `nvim` directory
 
 ```
-git clone git@github.com:ChristianChiarulli/nvim.git ~/.config/nvim
+git clone git@github.com:andoni0305/nvim.git ~/.config/nvim
 ```
 
-Run `nvim` and wait for the plugins to be installed 
+Run `nvim` and wait for the plugins to be installed
 
-**NOTE:** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
-
-
-each video will be associated with a branch so checkout the one you are interested in
+**NOTE:** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
 ## Get healthy
 
