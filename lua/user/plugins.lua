@@ -168,7 +168,7 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "f-person/git-blame.nvim"
   -- use "ruifm/gitlinker.nvim"
-  use "mattn/vim-gist"
+  -- use "mattn/vim-gist"
   use "mattn/webapi-vim"
   use "https://github.com/rhysd/conflict-marker.vim"
 
