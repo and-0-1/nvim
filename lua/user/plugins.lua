@@ -125,6 +125,10 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use {
+    "dsznajder/vscode-es7-javascript-react-snippets",
+    run = "yarn install --frozen-lockfile && yarn compile",
+  }
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -180,6 +184,9 @@ return packer.startup(function(use)
 
   -- TMUX
   use "christoomey/vim-tmux-navigator"
+
+  -- File types
+  use "jxnblk/vim-mdx-js"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
