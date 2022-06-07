@@ -8,7 +8,7 @@ local servers = {
   "cssmodules_ls",
   "emmet_ls",
   "html",
-  -- "jdtls",
+  "jdtls",
   "jsonls",
   "solc",
   "sumneko_lua",
@@ -18,6 +18,8 @@ local servers = {
   "yamlls",
   "bashls",
   "clangd",
+  "intelephense",
+  "prosemd_lsp",
 }
 
 local settings = {
