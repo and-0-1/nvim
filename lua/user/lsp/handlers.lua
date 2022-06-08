@@ -72,7 +72,7 @@ local function lsp_keymaps(bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
+  vim.cmd [[ command! Format execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
 end
 
 -- local notify_status_ok, notify = pcall(require, "notify")
@@ -109,7 +109,7 @@ function M.enable_format_on_save()
   vim.cmd [[
     augroup format_on_save
       autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.formatting()
+      autocmd BufWritePre * lua require("user.lsp.handlers").null_ls_format()
     augroup end
   ]]
   vim.notify "Enabled format on save"
@@ -132,6 +132,10 @@ function M.remove_augroup(name)
   if vim.fn.exists("#" .. name) == 1 then
     vim.cmd("au! " .. name)
   end
+end
+
+function M.null_ls_format()
+  vim.cmd 'lua vim.lsp.buf.format({ async = true, filter = function (client) return client.name == "null-ls" end })'
 end
 
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
