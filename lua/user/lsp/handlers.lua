@@ -135,7 +135,12 @@ function M.remove_augroup(name)
 end
 
 function M.null_ls_format()
-  vim.cmd 'lua vim.lsp.buf.format({ async = true, filter = function (client) return client.name == "null-ls" end })'
+  vim.lsp.buf.format {
+    async = true,
+    filter = function(client)
+      return client.name == "null-ls"
+    end,
+  }
 end
 
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
