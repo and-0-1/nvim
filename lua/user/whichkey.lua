@@ -283,6 +283,11 @@ local mappings = {
     h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
     p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
   },
+
+  N = {
+    ":e ~/Notes/<cr>",
+    "Notebook",
+  },
 }
 
 local vopts = {
