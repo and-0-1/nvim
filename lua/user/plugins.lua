@@ -79,16 +79,21 @@ return packer.startup(function(use)
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
   use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
-  use { "christianchiarulli/nvim-gps", branch = "text_hl" }
+  -- use { "christianchiarulli/nvim-gps", branch = "text_hl" }
+  use "SmiteshP/nvim-gps"
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     ft = "markdown",
   }
   use {
-    "christianchiarulli/JABS.nvim",
+    "matbme/JABS.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
   }
+  -- use {
+  --   "christianchiarulli/JABS.nvim",
+  --   requires = { "kyazdani42/nvim-web-devicons" }, --optional
+  -- }
 
   use {
     "ghillb/cybu.nvim",
