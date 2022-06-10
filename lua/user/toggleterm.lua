@@ -22,8 +22,8 @@ toggleterm.setup {
       border = "Normal",
       background = "Normal",
     },
-  height = 25,
-  -- width = 25,
+    height = 25,
+    -- width = 25,
   },
 }
 
