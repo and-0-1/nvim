@@ -95,9 +95,9 @@ local m_mappings = {
     name = "Harpoon",
     a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Add" },
     h = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', "File 1" },
-    j = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', "File 1" },
-    k = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', "File 1" },
-    l = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', "File 1" },
+    j = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', "File 2" },
+    k = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', "File 3" },
+    l = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', "File 4" },
     u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Show UI" },
   },
   j = { "<cmd>BookmarkNext<cr>", "Next" },
@@ -112,7 +112,7 @@ local m_mappings = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  b = { "<cmd>lua require('user.bfs').open()<cr>", "Buffers" },
+  -- b = { "<cmd>lua require('user.bfs').open()<cr>", "Buffers" },
   -- ["b"] = {
   --   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   --   "Buffers",
