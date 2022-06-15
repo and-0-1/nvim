@@ -3,6 +3,12 @@ if not status_ok then
   return
 end
 
+--keymaps
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
+
 local actions = require "lir.actions"
 local mark_actions = require "lir.mark.actions"
 local clipboard_actions = require "lir.clipboard.actions"
