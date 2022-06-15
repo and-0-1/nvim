@@ -3,6 +3,9 @@ if not status_ok then
   return
 end
 
+-- Keymaps
+vim.api.nvim_set_keymap("n", "=", "<cmd>JABSOpen<cr>", { noremap = true, silent = true, nowait = true })
+
 -- (Optional) easy way to get Neovim current size.
 -- local ui = vim.api.nvim_list_uis()[1]
 
