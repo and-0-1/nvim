@@ -125,7 +125,6 @@ local mappings = {
   -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 
-  -- :lua require'lir.float'.toggle()
   -- ["f"] = {
   --   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   --   "Find files",
@@ -217,15 +216,6 @@ local mappings = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
     },
-    -- G = {
-    --   name = "Gist",
-    --   a = { "<cmd>Gist -b -a<cr>", "Create Anon" },
-    --   d = { "<cmd>Gist -d<cr>", "Delete" },
-    --   f = { "<cmd>Gist -f<cr>", "Fork" },
-    --   g = { "<cmd>Gist -b<cr>", "Create" },
-    --   l = { "<cmd>Gist -l<cr>", "List" },
-    --   p = { "<cmd>Gist -b -p<cr>", "Create Private" },
-    -- },
   },
 
   l = {
