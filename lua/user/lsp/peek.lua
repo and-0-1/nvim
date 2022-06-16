@@ -5,8 +5,8 @@ local M = {
 }
 
 local defaults = {
-  height = 15,
-  width = 30,
+  height = 30,
+  width = 50,
   context = 10,
 }
 
