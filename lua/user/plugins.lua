@@ -122,7 +122,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  use "rcarriga/cmp-dap"
   use "lukas-reineke/cmp-rg"
 
   -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
@@ -140,7 +139,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use "filipdutescu/renamer.nvim"
+  use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
   use {"ray-x/lsp_signature.nvim",
     commit = "4852d99f9511d090745d3cc1f09a75772b9e07e9"
@@ -182,12 +181,6 @@ return packer.startup(function(use)
   -- use "mattn/vim-gist"
   use "mattn/webapi-vim"
   use "https://github.com/rhysd/conflict-marker.vim"
-
-  -- DAP
-  use "mfussenegger/nvim-dap"
-  use "theHamsta/nvim-dap-virtual-text"
-  use "rcarriga/nvim-dap-ui"
-  use "Pocco81/DAPInstall.nvim"
 
   -- TMUX
   use "christoomey/vim-tmux-navigator"

@@ -3,11 +3,6 @@ if not cmp_status_ok then
   return
 end
 
-local cmp_dap_status_ok, cmp_dap = pcall(require, "cmp_dap")
-if not cmp_dap_status_ok then
-  return
-end
-
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
   return
@@ -32,7 +27,7 @@ cmp.setup {
   },
 
   enabled = function()
-    return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or cmp_dap.is_dap_buffer()
+    return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
   end,
 
   mapping = cmp.mapping.preset.insert {
@@ -101,7 +96,6 @@ cmp.setup {
         rg = "",
         path = "",
         emoji = "",
-        dap = "",
       })[entry.source.name]
       return vim_item
     end,
@@ -114,7 +108,6 @@ cmp.setup {
     { name = "rg" },
     { name = "path" },
     { name = "emoji" },
-    { name = "dap" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
