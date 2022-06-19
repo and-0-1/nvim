@@ -58,7 +58,6 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   -- use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
-  -- use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "unblevable/quick-scope"
   use "phaazon/hop.nvim"
@@ -68,7 +67,7 @@ return packer.startup(function(use)
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   -- use "folke/zen-mode.nvim"
-  use "karb94/neoscroll.nvim"
+  -- use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
   use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
@@ -89,10 +88,6 @@ return packer.startup(function(use)
     "matbme/JABS.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
   }
-  -- use {
-  --   "christianchiarulli/JABS.nvim",
-  --   requires = { "kyazdani42/nvim-web-devicons" }, --optional
-  -- }
 
   use {
     "ghillb/cybu.nvim",
@@ -109,7 +104,6 @@ return packer.startup(function(use)
   use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
-  -- use "hrsh7th/nvim-cmp" -- The completion plugin
   use {
     "hrsh7th/nvim-cmp",
     -- commit = "dbc72290295cfc63075dab9ea635260d2b72f2e5",
@@ -122,7 +116,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
   use "lukas-reineke/cmp-rg"
-
   -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
 
   -- snippets
@@ -140,9 +133,8 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
-  use {"ray-x/lsp_signature.nvim",
-    commit = "4852d99f9511d090745d3cc1f09a75772b9e07e9"
-  }
+  use "ray-x/lsp_signature.nvim"
+
   use "b0o/SchemaStore.nvim"
   use {
     "folke/trouble.nvim",
@@ -156,7 +148,6 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
-  use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
   -- use "nvim-telescope/telescope-ui-select.nvim"
 
@@ -166,8 +157,7 @@ return packer.startup(function(use)
     -- run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use { "p00f/nvim-ts-rainbow" }
-  -- use {'christianchiarulli/nvim-ts-rainbow'}
+  use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
   use "romgrk/nvim-treesitter-context"
@@ -178,7 +168,7 @@ return packer.startup(function(use)
   use "f-person/git-blame.nvim"
   -- use "ruifm/gitlinker.nvim"
   -- use "mattn/vim-gist"
-  use "mattn/webapi-vim"
+  -- use "mattn/webapi-vim"
   use "https://github.com/rhysd/conflict-marker.vim"
 
   -- TMUX
