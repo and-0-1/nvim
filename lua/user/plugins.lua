@@ -59,7 +59,7 @@ return packer.startup(function(use)
   -- use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
   use "folke/which-key.nvim"
-  use "unblevable/quick-scope"
+  -- use "unblevable/quick-scope"
   use "phaazon/hop.nvim"
   use "andymass/vim-matchup"
   use "nacro90/numb.nvim"
@@ -148,7 +148,7 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
-  use "nvim-telescope/telescope-file-browser.nvim"
+  -- use "nvim-telescope/telescope-file-browser.nvim"
   -- use "nvim-telescope/telescope-ui-select.nvim"
 
   -- Treesitter
@@ -160,8 +160,8 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
-  use "romgrk/nvim-treesitter-context"
-  use "mizlan/iswap.nvim"
+  -- use "romgrk/nvim-treesitter-context"
+  -- use "mizlan/iswap.nvim"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
