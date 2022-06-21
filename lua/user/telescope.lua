@@ -88,30 +88,5 @@ telescope.setup {
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
   },
-  extensions = {
-    file_browser = {
-      -- theme = "ivy",
-      -- require("telescope.themes").get_dropdown {
-      --   previewer = false,
-      --   -- even more opts
-      -- },
-      mappings = {
-        ["i"] = {
-          -- your custom insert mode mappings
-        },
-        ["n"] = {
-          -- your custom normal mode mappings
-        },
-      },
-    },
-    -- ["ui-select"] = {
-    --   require("telescope.themes").get_dropdown {
-    --     previewer = false,
-    --     -- even more opts
-    --   },
-    -- },
-  },
+  extensions = {},
 }
-
--- telescope.load_extension "ui-select"
-telescope.load_extension "file_browser"
