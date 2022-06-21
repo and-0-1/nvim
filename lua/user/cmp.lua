@@ -26,10 +26,6 @@ cmp.setup {
     end,
   },
 
-  enabled = function()
-    return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
-  end,
-
   mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -77,18 +73,9 @@ cmp.setup {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      vim_item.kind = kind_icons[vim_item.kind]
       -- NOTE: order matters
       vim_item.menu = ({
-        -- nvim_lsp = "[LSP]",
-        -- nvim_lua = "[Nvim]",
-        -- luasnip = "[Snippet]",
-        -- buffer = "[Buffer]",
-        -- path = "[Path]",
-        -- emoji = "[Emoji]",
-
         nvim_lsp = "",
         nvim_lua = "",
         luasnip = "",
@@ -113,21 +100,18 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  -- documentation = true,
   window = {
-    -- documentation = "native",
     documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      border = "rounded",
       winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
     },
     completion = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      border = "rounded",
       winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
     },
   },
   experimental = {
     ghost_text = true,
-    -- native_menu = false,
   },
 }
 
