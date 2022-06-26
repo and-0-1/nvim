@@ -21,5 +21,6 @@ null_ls.setup {
     formatting.rustfmt,
 
     diagnostics.eslint_d,
+    diagnostics.stylelint.with { extra_filetypes = { "javascriptreact" } },
   },
 }
