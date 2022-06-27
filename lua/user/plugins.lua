@@ -60,6 +60,7 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "folke/which-key.nvim"
   -- use "phaazon/hop.nvim"
+  use "ggandor/lightspeed.nvim"
   use "andymass/vim-matchup"
   use "nacro90/numb.nvim"
   use "monaqa/dial.nvim"
