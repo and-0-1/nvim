@@ -59,7 +59,7 @@ return packer.startup(function(use)
   -- use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
   use "folke/which-key.nvim"
-  use "phaazon/hop.nvim"
+  -- use "phaazon/hop.nvim"
   use "andymass/vim-matchup"
   use "nacro90/numb.nvim"
   use "monaqa/dial.nvim"
