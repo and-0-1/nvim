@@ -27,14 +27,7 @@ local settings = {
   ensure_installed = servers,
   -- automatic_installation = false,
   ui = {
-    icons = {
-      -- server_installed = "◍",
-      -- server_pending = "◍",
-      -- server_uninstalled = "◍",
-      -- server_installed = "✓",
-      -- server_pending = "➜",
-      -- server_uninstalled = "✗",
-    },
+    icons = {},
     keymaps = {
       toggle_server_expand = "<CR>",
       install_server = "i",
@@ -47,7 +40,7 @@ local settings = {
   },
 
   log_level = vim.log.levels.INFO,
-  -- max_concurrent_installers = 4,
+  max_concurrent_installers = 4,
   -- install_root_dir = path.concat { vim.fn.stdpath "data", "lsp_servers" },
 }
 
@@ -65,6 +58,11 @@ for _, server in pairs(servers) do
     on_attach = require("user.lsp.handlers").on_attach,
     capabilities = require("user.lsp.handlers").capabilities,
   }
+
+  if server == "yamlls" then
+    local yamlls_opts = require "user.lsp.settings.yamlls"
+    opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
+  end
 
   if server == "jsonls" then
     local jsonls_opts = require "user.lsp.settings.jsonls"
