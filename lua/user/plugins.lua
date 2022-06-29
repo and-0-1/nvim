@@ -77,7 +77,6 @@ return packer.startup(function(use)
   use "tpope/vim-abolish"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
-  -- use "nyngwang/NeoZoom.lua"
   use "SmiteshP/nvim-gps"
   use {
     "iamcco/markdown-preview.nvim",
