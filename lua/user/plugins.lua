@@ -90,8 +90,6 @@ return packer.startup(function(use)
 
   use {
     "ghillb/cybu.nvim",
-    -- branch = "v1.x", -- won't receive breaking changes
-    -- branch = "main", -- timely updates
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
   }
 
@@ -128,7 +126,6 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
@@ -147,8 +144,6 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
-  -- use "nvim-telescope/telescope-file-browser.nvim"
-  -- use "nvim-telescope/telescope-ui-select.nvim"
 
   -- Treesitter
   use {
@@ -159,15 +154,10 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
-  -- use "romgrk/nvim-treesitter-context"
-  -- use "mizlan/iswap.nvim"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
   use "f-person/git-blame.nvim"
-  -- use "ruifm/gitlinker.nvim"
-  -- use "mattn/vim-gist"
-  -- use "mattn/webapi-vim"
   use "https://github.com/rhysd/conflict-marker.vim"
 
   -- TMUX
