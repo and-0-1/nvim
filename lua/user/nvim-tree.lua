@@ -39,11 +39,6 @@ nvim_tree.setup {
   --   enable = true,
   --   auto_open = true,
   -- },
-  -- --   error
-  -- --   info
-  -- --   question
-  -- --   warning
-  -- --   lightbulb
   renderer = {
     add_trailing = false,
     group_empty = false,
@@ -97,10 +92,10 @@ nvim_tree.setup {
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = icons.diagnostics.Hint,
+      info = icons.diagnostics.Information,
+      warning = icons.diagnostics.Warning,
+      error = icons.diagnostics.Error,
     },
   },
   update_focused_file = {
