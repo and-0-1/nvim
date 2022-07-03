@@ -91,10 +91,6 @@ return packer.startup(function(use)
   -- Buffer management
   use "ThePrimeagen/harpoon"
   use {
-    "matbme/JABS.nvim",
-    requires = { "kyazdani42/nvim-web-devicons" }, --optional
-  }
-  use {
     "ghillb/cybu.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
   }
