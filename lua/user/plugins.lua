@@ -83,6 +83,10 @@ return packer.startup(function(use)
     run = "cd app && npm install",
     ft = "markdown",
   }
+
+  -- UI
+  use "stevearc/dressing.nvim"
+
   use {
     "matbme/JABS.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
