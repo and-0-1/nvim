@@ -55,7 +55,6 @@ return packer.startup(function(use)
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   use "folke/todo-comments.nvim"
-  use "MattesGroeger/vim-bookmarks"
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
@@ -73,6 +72,9 @@ return packer.startup(function(use)
   use "andymass/vim-matchup"
   use "nvim-lualine/lualine.nvim"
   use "kevinhwang91/nvim-bqf"
+
+  -- Bookmarks
+  use "MattesGroeger/vim-bookmarks"
 
   -- Buffer/Text navigation
   use "ggandor/lightspeed.nvim"
@@ -104,10 +106,8 @@ return packer.startup(function(use)
   use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
-  use {
-    "hrsh7th/nvim-cmp",
-    -- commit = "dbc72290295cfc63075dab9ea635260d2b72f2e5",
-  }
+  use "hrsh7th/nvim-cmp"
+
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -134,10 +134,7 @@ return packer.startup(function(use)
   use "ray-x/lsp_signature.nvim"
   use "rmagatti/goto-preview"
   use "b0o/SchemaStore.nvim"
-  use {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  }
+  use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
 
   -- Java
@@ -148,10 +145,7 @@ return packer.startup(function(use)
   use "tom-anders/telescope-vim-bookmarks.nvim"
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    -- run = ":TSUpdate",
-  }
+  use "nvim-treesitter/nvim-treesitter"
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
