@@ -6,6 +6,8 @@ end
 local actions = require "telescope.actions"
 local icons = require "user.icons"
 
+vim.api.nvim_set_keymap("n", "=", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true, nowait = true })
+
 telescope.setup {
   defaults = {
 
@@ -32,7 +34,7 @@ telescope.setup {
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<c-d>"] = require("telescope.actions").delete_buffer,
+        ["<C-x>"] = require("telescope.actions").delete_buffer,
 
         -- ["<C-u>"] = actions.preview_scrolling_up,
         -- ["<C-d>"] = actions.preview_scrolling_down,
@@ -75,6 +77,8 @@ telescope.setup {
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
+
+        ["D"] = require("telescope.actions").delete_buffer,
 
         ["?"] = actions.which_key,
       },
