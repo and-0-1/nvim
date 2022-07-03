@@ -131,7 +131,6 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
 
