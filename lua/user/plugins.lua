@@ -41,43 +41,21 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
+  -- Plugin management
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  -- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "lewis6991/impatient.nvim"
+
+  -- General
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim"
-  use "kyazdani42/nvim-web-devicons"
-  use { "kyazdani42/nvim-tree.lua" }
-  use "tamago324/lir.nvim"
-  -- use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
+  use "numToStr/Comment.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  -- use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
-  use "folke/which-key.nvim"
-  -- use "phaazon/hop.nvim"
-  use "ggandor/lightspeed.nvim"
-  use "andymass/vim-matchup"
-  use "nacro90/numb.nvim"
-  use "monaqa/dial.nvim"
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
-  -- use "folke/zen-mode.nvim"
-  -- use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
-  use "kevinhwang91/nvim-bqf"
-  use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
-  use "tpope/vim-surround"
-  use "tpope/vim-repeat"
-  use "tpope/vim-abolish"
-  use "rcarriga/nvim-notify"
-  use "tversteeg/registers.nvim"
-  use "SmiteshP/nvim-gps"
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
@@ -86,16 +64,41 @@ return packer.startup(function(use)
 
   -- UI
   use "stevearc/dressing.nvim"
+  use "goolord/alpha-nvim"
+  use "folke/which-key.nvim"
+  use "rcarriga/nvim-notify"
+  use "tversteeg/registers.nvim"
+  use "SmiteshP/nvim-gps"
+  use "kyazdani42/nvim-web-devicons"
+  use "andymass/vim-matchup"
+  use "nvim-lualine/lualine.nvim"
+  use "kevinhwang91/nvim-bqf"
 
+  -- Buffer/Text navigation
+  use "ggandor/lightspeed.nvim"
+  use "nacro90/numb.nvim"
+
+  -- Word manipulation enhacements
+  use "tpope/vim-surround"
+  use "tpope/vim-repeat"
+  use "tpope/vim-abolish"
+  use "monaqa/dial.nvim"
+
+  -- File navigation
+  use "kyazdani42/nvim-tree.lua"
+  use "tamago324/lir.nvim"
+
+  -- Buffer management
+  use "ThePrimeagen/harpoon"
   use {
     "matbme/JABS.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
   }
-
   use {
     "ghillb/cybu.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
   }
+  -- use "akinsho/bufferline.nvim"
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
