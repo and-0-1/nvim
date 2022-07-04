@@ -96,7 +96,7 @@ return packer.startup(function(use)
     "ghillb/cybu.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
   }
-  -- use "akinsho/bufferline.nvim"
+  use "akinsho/bufferline.nvim"
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
