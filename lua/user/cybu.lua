@@ -2,10 +2,17 @@ local ok, cybu = pcall(require, "cybu")
 if not ok then
   return
 end
+
+local keymap = vim.api.nvim_set_keymap
+local keymap_opts = { noremap = true, silent = true, nowait = true }
+
+keymap("n", "H", "<Plug>(CybuPrev)", keymap_opts)
+keymap("n", "L", "<Plug>(CybuNext)", keymap_opts)
+
 cybu.setup {
   position = {
     relative_to = "win", -- win, editor, cursor
-    anchor = "topright", -- topleft, topcenter, topright,
+    anchor = "topcenter", -- topleft, topcenter, topright,
     -- centerleft, center, centerright,
     -- bottomleft, bottomcenter, bottomright
     -- vertical_offset = 10, -- vertical offset from anchor in lines
@@ -28,5 +35,3 @@ cybu.setup {
     },
   },
 }
-vim.keymap.set("n", "H", "<Plug>(CybuPrev)")
-vim.keymap.set("n", "L", "<Plug>(CybuNext)")
