@@ -10,7 +10,6 @@ local servers = {
   "html",
   "jdtls",
   "jsonls",
-  "solc",
   "sumneko_lua",
   "tflint",
   "tsserver",
