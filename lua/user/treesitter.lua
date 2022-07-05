@@ -31,14 +31,14 @@ configs.setup {
   },
   rainbow = {
     enable = true,
-    colors = {
-      "Gold",
-      "Orchid",
-      "DodgerBlue",
-      -- "Cornsilk",
-      -- "Salmon",
-      -- "LawnGreen",
-    },
+    -- colors = {
+    --   "Gold",
+    --   "Orchid",
+    --   "DodgerBlue",
+    --   -- "Cornsilk",
+    --   -- "Salmon",
+    --   -- "LawnGreen",
+    -- },
     disable = { "html" },
   },
   playground = {
