@@ -22,11 +22,10 @@ gpreview.setup {
   resizing_mappings = false, -- Binds arrow keys to resizing the floating window.
   post_open_hook = function(buffer)
     vim.api.nvim_buf_set_keymap(buffer, "n", "q", ":q<CR>", { noremap = true })
+    -- vim.api.nvim_buf_set_keymap(buffer, "n", "<leader>o", ":e %<CR>", { noremap = true })
     -- TODO: find how to open buffer of preview in current window
+    -- keymap("n", "<leader>o", ":e %<CR>", { noremap = true })
   end, -- A function taking two arguments, a buffer and a window to be ran as a hook.
-  -- references = { -- Configure the telescope UI for slowing the references cycling window.
-  --   telescope = telescope.themes.get_dropdown { hide_preview = false },
-  -- },
   -- These two configs can also be passed down to the goto-preview definition and implementation calls for one off "peak" functionality.
   focus_on_open = true, -- Focus the floating window when opening it.
   dismiss_on_move = false, -- Dismiss the floating window when moving the cursor.
