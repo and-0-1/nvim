@@ -9,7 +9,7 @@ local mode = {
 }
 
 local hide_in_width = function()
-  return vim.fn.winwidth(0) > 80
+  return vim.o.columns > 80
 end
 
 local icons = require "user.icons"
@@ -50,21 +50,25 @@ local progress = {
   color = "SLProgress",
 }
 
-local current_signature = function()
-  if not pcall(require, "lsp_signature") then
-    return
-  end
-  local sig = require("lsp_signature").status_line(30)
-  -- return sig.label .. "🐼" .. sig.hint
-  return sig.hint
-end
+local current_signature = {
+  function()
+    if not pcall(require, "lsp_signature") then
+      return
+    end
+    local sig = require("lsp_signature").status_line(30)
+    -- return sig.label .. "🐼" .. sig.hint
+    return sig.hint
+  end,
+  cond = hide_in_width,
+}
 
 local spaces = {
   function()
-    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+    return " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
   end,
   separator = "|",
   padding = 1,
+  cond = hide_in_width,
 }
 
 local location = {
@@ -84,8 +88,7 @@ lualine.setup {
   sections = {
     lualine_a = { mode, branch },
     lualine_b = { diagnostics },
-    lualine_c = { { current_signature, cond = hide_in_width } },
-    -- lualine_x = { diff, spaces, "encoding", filetype },
+    lualine_c = { current_signature },
     lualine_x = { diff, spaces, filetype },
     lualine_y = { progress },
     lualine_z = { location },
