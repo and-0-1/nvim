@@ -151,11 +151,8 @@ local mappings = {
     t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
   },
 
-  s = {
-    name = "Split",
-    s = { "<cmd>split<cr>", "HSplit" },
-    v = { "<cmd>vsplit<cr>", "VSplit" },
-  },
+  ["-"] = { "<cmd>split<cr>", "HSplit" },
+  ["|"] = { "<cmd>vsplit<cr>", "VSplit" },
 
   r = {
     name = "Replace",
