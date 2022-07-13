@@ -73,3 +73,6 @@ keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
 
 keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
 keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+
+-- Quickfix toggle
+keymap("n", "<C-q>", ":lua require'user.functions'.qf_toggle()<cr>", opts)
