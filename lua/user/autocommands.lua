@@ -42,6 +42,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "term://*" },
+  callback = function()
+    vim.cmd "startinsert!"
+    vim.cmd "set cmdheight=1"
+  end,
+})
+
 vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
 -- vim.api.nvim_create_autocmd({ "BufEnter" }, {
 --   callback = function()
