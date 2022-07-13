@@ -56,8 +56,13 @@ local current_signature = {
       return
     end
     local sig = require("lsp_signature").status_line(30)
-    -- return sig.label .. "🐼" .. sig.hint
-    return sig.hint
+    local hint = sig.hint
+
+    if not require("user.functions").isempty(hint) then
+      return "%#SLSeparator# " .. icons.misc.Squirrel .. " " .. hint .. "%*"
+    end
+
+    return ""
   end,
   cond = hide_in_width,
 }
