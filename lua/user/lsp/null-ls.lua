@@ -28,6 +28,9 @@ null_ls.setup {
     diagnostics.zsh,
     diagnostics.shellcheck.with { extra_filetypes = { "bash, zsh" } },
 
+    code_actions.eslint_d,
     code_actions.shellcheck,
+    code_actions.proselint,
+    code_actions.refactoring,
   },
 }
