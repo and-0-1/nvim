@@ -52,7 +52,8 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
-  use "norcalli/nvim-colorizer.lua"
+  -- use "norcalli/nvim-colorizer.lua"
+  use "NvChad/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   use "folke/todo-comments.nvim"
   use {
