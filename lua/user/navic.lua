@@ -5,37 +5,25 @@ end
 
 local icons = require "user.icons"
 
+local space = ""
+
+if vim.fn.has "mac" == 1 then
+  space = " "
+end
 
 navic.setup {
-  -- icons = {
-  --   File = ' ',
-  --   Module = ' ',
-  --   Namespace = ' ',
-  --   Package = ' ',
-  --   Class = ' ',
-  --   Method = ' ',
-  --   Property = ' ',
-  --   Field = ' ',
-  --   Constructor = ' ',
-  --   Enum = ' ',
-  --   Interface = ' ',
-  --   Function = ' ',
-  --   Variable = ' ',
-  --   Constant = ' ',
-  --   String = ' ',
-  --   Number = ' ',
-  --   Boolean = ' ',
-  --   Array = ' ',
-  --   Object = ' ',
-  --   Key = ' ',
-  --   Null = ' ',
-  --   EnumMember = ' ',
-  --   Struct = ' ',
-  --   Event = ' ',
-  --   Operator = ' ',
-  --   TypeParameter = ' '
-  --
-  -- },
+  icons = {
+    Class = "%#CmpItemKindClass#" .. icons.kind.Class .. "%*" .. space, -- Classes and class-like objects
+    Function = "%#CmpItemKindFunction#" .. icons.kind.Function .. "%*" .. space, -- Functions
+    Method = "%#CmpItemKindMethod#" .. icons.kind.Method .. "%*" .. space, -- Methods (functions inside class-like objects)
+    Object = "%#CmpItemKindProperty#" .. icons.type.Object .. "%*" .. space, -- Containers (example: lua tables)
+    Array = "%#CmpItemKindProperty#" .. icons.type.Array .. "%*" .. space,
+    Null = "%#CmpItemKindField#" .. icons.kind.Field .. "%*" .. space,
+    Boolean = "%#CmpItemKindValue#" .. icons.type.Boolean .. "%*" .. space,
+    Number = "%#CmpItemKindValue#" .. icons.type.Number .. "%*" .. space,
+    String = "%#CmpItemKindValue#" .. icons.type.String .. "%*" .. space,
+    Module = "%#CmpItemKindModule#" .. icons.kind.Module .. "%*" .. space,
+  },
   highlight = true,
   separator = " " .. icons.ui.ChevronRight .. " ",
   depth_limit = 0,
