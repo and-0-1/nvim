@@ -88,26 +88,27 @@ local m_opts = {
 }
 
 local m_mappings = {
-  a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
-  c = { "<cmd>BookmarkClear<cr>", "Clear" },
-  m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
-  h = {
-    name = "Harpoon",
-    a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Add" },
-    h = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', "File 1" },
-    j = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', "File 2" },
-    k = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', "File 3" },
-    l = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', "File 4" },
-    u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Show UI" },
-  },
-  j = { "<cmd>BookmarkNext<cr>", "Next" },
-  k = { "<cmd>BookmarkPrev<cr>", "Prev" },
-  s = { "<cmd>BookmarkShowAll<cr>", "Show all" },
+  name = "Harpoon",
+  a = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Add" },
+  h = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Next mark" },
+  l = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Previous mark" },
+  u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Quick menu" },
+  f = { "<cmd>Telescope harpoon marks<cr>", "Search" },
+  -- h = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', "File 1" },
+  -- j = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', "File 2" },
+  -- k = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', "File 3" },
+  -- l = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', "File 4" },
+  -- a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
+  -- c = { "<cmd>BookmarkClear<cr>", "Clear" },
+  -- m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
+  -- j = { "<cmd>BookmarkNext<cr>", "Next" },
+  -- k = { "<cmd>BookmarkPrev<cr>", "Prev" },
+  -- s = { "<cmd>BookmarkShowAll<cr>", "Show all" },
   -- s = {
   --   "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
   --   "Show",
   -- },
-  x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
+  -- x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
 }
 
 local mappings = {

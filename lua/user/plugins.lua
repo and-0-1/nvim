@@ -70,16 +70,17 @@ return packer.startup(function(use)
   use "tversteeg/registers.nvim"
   -- use "SmiteshP/nvim-gps"
   use {
-     "SmiteshP/nvim-navic",
-     requires = "neovim/nvim-lspconfig",
-   }
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
+  }
   use "kyazdani42/nvim-web-devicons"
   use "andymass/vim-matchup"
   use "nvim-lualine/lualine.nvim"
   use "kevinhwang91/nvim-bqf"
 
   -- Bookmarks
-  use "MattesGroeger/vim-bookmarks"
+  -- use "MattesGroeger/vim-bookmarks"
+  use "ThePrimeagen/harpoon"
 
   -- Buffer/Text navigation
   use "ggandor/lightspeed.nvim"
@@ -96,7 +97,6 @@ return packer.startup(function(use)
   use "tamago324/lir.nvim"
 
   -- Buffer management
-  use "ThePrimeagen/harpoon"
   use {
     "ghillb/cybu.nvim",
     requires = { "kyazdani42/nvim-web-devicons" }, --optional
