@@ -10,7 +10,6 @@ vim.api.nvim_set_keymap("n", "=", "<cmd>Telescope buffers<cr>", { noremap = true
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -30,17 +29,9 @@ telescope.setup {
         ["<Up>"] = actions.move_selection_previous,
 
         ["<CR>"] = actions.select_default,
-        ["<C-s>"] = actions.select_horizontal,
+        ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
-
-        ["<C-x>"] = require("telescope.actions").delete_buffer,
-
-        -- ["<C-u>"] = actions.preview_scrolling_up,
-        -- ["<C-d>"] = actions.preview_scrolling_down,
-
-        -- ["<PageUp>"] = actions.results_scrolling_up,
-        -- ["<PageDown>"] = actions.results_scrolling_down,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -85,6 +76,12 @@ telescope.setup {
     },
   },
   pickers = {
+    find_files = {
+      theme = "ivy",
+    },
+    live_grep = {
+      theme = "ivy",
+    },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
