@@ -67,7 +67,11 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
-  use "SmiteshP/nvim-gps"
+  -- use "SmiteshP/nvim-gps"
+  use {
+     "SmiteshP/nvim-navic",
+     requires = "neovim/nvim-lspconfig",
+   }
   use "kyazdani42/nvim-web-devicons"
   use "andymass/vim-matchup"
   use "nvim-lualine/lualine.nvim"
