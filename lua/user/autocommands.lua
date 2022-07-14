@@ -72,7 +72,7 @@ vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
 })
 
 if vim.fn.has "nvim-0.8" == 1 then
-  vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" }, {
+  vim.api.nvim_create_autocmd({ "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" }, {
     callback = function()
       require("user.winbar").get_winbar()
     end,
@@ -101,5 +101,12 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
   callback = function()
     vim.cmd "hi link illuminatedWord LspReferenceText"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  pattern = { "*" },
+  callback = function()
+    vim.cmd "checktime"
   end,
 })
