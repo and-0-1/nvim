@@ -31,6 +31,6 @@ null_ls.setup {
     code_actions.eslint_d,
     code_actions.shellcheck,
     code_actions.proselint,
-    code_actions.refactoring,
+    -- code_actions.refactoring,
   },
 }
