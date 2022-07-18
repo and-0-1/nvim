@@ -29,6 +29,7 @@ local setup = {
   key_labels = {
     -- override the label used to display some keys. It doesn't effect WK in any other way.
     -- For example:
+    ["<leader>"] = "SPC",
     -- ["<space>"] = "SPC",
     -- ["<cr>"] = "RET",
     -- ["<tab>"] = "TAB",
@@ -171,15 +172,15 @@ local mappings = {
   g = {
     name = "Git",
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>GitBlameToggle<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+    j = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
+    k = { "<cmd>Gitsigns prev_hunk<cr>", "Prev Hunk" },
+    l = { "<cmd>Gitsigns blame_line<cr>", "Blame" },
+    p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Hunk" },
+    r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Hunk" },
+    R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer" },
+    s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Hunk" },
     u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
+      "<cmd>Gitsigns undo_stage_hunk<cr>",
       "Undo Stage Hunk",
     },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
