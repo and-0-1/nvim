@@ -41,6 +41,6 @@ dressing.setup {
     enabled = true,
 
     -- Priority list of preferred vim.select implementations
-    backend = { "telescope", "builtin", "nui" },
+    backend = { "builtin", "telescope" },
   },
 }
