@@ -147,7 +147,8 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use "tom-anders/telescope-vim-bookmarks.nvim"
+  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+  -- use "tom-anders/telescope-vim-bookmarks.nvim"
 
   -- Treesitter
   use "nvim-treesitter/nvim-treesitter"
