@@ -15,7 +15,21 @@ local code_actions = null_ls.builtins.code_actions
 null_ls.setup {
   debug = false,
   sources = {
-    formatting.prettierd,
+    formatting.prettierd.with {
+      condition = function(utils)
+        return utils.root_has_file {
+          ".prettierrc",
+          "prettier.config.js",
+          "prettier.config.cjs",
+          ".prettierrc.json",
+          ".prettierrc.yaml",
+          ".prettierrc.yml",
+          ".prettierrc.js",
+          ".prettierrc.cjs",
+          ".prettierrc.toml",
+        }
+      end,
+    },
     formatting.eslint_d,
     -- formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
@@ -24,7 +38,20 @@ null_ls.setup {
     formatting.shfmt.with { extra_filetypes = { "zsh", "sh" } },
 
     diagnostics.eslint_d,
-    diagnostics.stylelint.with { extra_filetypes = { "javascriptreact" } },
+    diagnostics.stylelint.with {
+      extra_filetypes = { "javascriptreact" },
+      condition = function(utils)
+        return utils.root_has_file {
+          ".stylelintrc",
+          "stylelint.config.js",
+          "stylelint.config.cjs",
+          ".stylelintrc.json",
+          ".stylelintrc.yaml",
+          ".stylelintrc.yml",
+          ".stylelintrc.js",
+        }
+      end,
+    },
     diagnostics.zsh,
     diagnostics.shellcheck.with { extra_filetypes = { "bash, zsh" } },
 
