@@ -13,16 +13,32 @@ end
 
 navic.setup {
   icons = {
-    Class = "%#CmpItemKindClass#" .. icons.kind.Class .. "%*" .. space, -- Classes and class-like objects
-    Function = "%#CmpItemKindFunction#" .. icons.kind.Function .. "%*" .. space, -- Functions
-    Method = "%#CmpItemKindMethod#" .. icons.kind.Method .. "%*" .. space, -- Methods (functions inside class-like objects)
-    Object = "%#CmpItemKindProperty#" .. icons.type.Object .. "%*" .. space, -- Containers (example: lua tables)
-    Array = "%#CmpItemKindProperty#" .. icons.type.Array .. "%*" .. space,
-    Null = "%#CmpItemKindField#" .. icons.kind.Field .. "%*" .. space,
-    Boolean = "%#CmpItemKindValue#" .. icons.type.Boolean .. "%*" .. space,
-    Number = "%#CmpItemKindValue#" .. icons.type.Number .. "%*" .. space,
-    String = "%#CmpItemKindValue#" .. icons.type.String .. "%*" .. space,
+    File = " ",
     Module = "%#CmpItemKindModule#" .. icons.kind.Module .. "%*" .. space,
+    Namespace = " ",
+    Package = " ",
+    Class = " ",
+    Method = "%#CmpItemKindModule#" .. icons.kind.Method .. "%*" .. space,
+    Property = "%#CmpItemKindModule#" .. icons.kind.Property .. "%*" .. space,
+    Field = " ",
+    Constructor = " ",
+    Enum = "練",
+    Interface = "練",
+    Function = " ",
+    Variable = " ",
+    Constant = " ",
+    String = " ",
+    Number = " ",
+    Boolean = "◩ ",
+    Array = " ",
+    Object = " ",
+    Key = " ",
+    Null = "ﳠ ",
+    EnumMember = " ",
+    Struct = "%#CmpItemKindModule#" .. icons.kind.Struct .. "%*" .. space,
+    Event = " ",
+    Operator = " ",
+    TypeParameter = " ",
   },
   highlight = true,
   separator = " " .. icons.ui.ChevronRight .. " ",
