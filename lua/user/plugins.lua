@@ -31,7 +31,7 @@ end
 
 -- Have packer use a popup window
 packer.init {
-  max_jobs = 10,
+  -- max_jobs = 25,
   display = {
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
@@ -52,7 +52,6 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
-  -- use "norcalli/nvim-colorizer.lua"
   use "NvChad/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   use "folke/todo-comments.nvim"
@@ -148,7 +147,6 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-  -- use "tom-anders/telescope-vim-bookmarks.nvim"
 
   -- Treesitter
   use "nvim-treesitter/nvim-treesitter"
