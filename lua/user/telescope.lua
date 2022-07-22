@@ -83,6 +83,10 @@ telescope.setup {
     live_grep = {
       theme = "ivy",
     },
+    buffers = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
