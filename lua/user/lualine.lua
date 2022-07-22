@@ -41,7 +41,7 @@ local filetype = {
 local branch = {
   "branch",
   icons_enabled = true,
-  icon = "%#SLGitIcon#" .. "" .. "%*" .. "%#SLBranchName#",
+  icon = "",
   -- colored = false,
 }
 
@@ -91,8 +91,8 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = { mode, branch },
-    lualine_b = { diagnostics },
+    lualine_a = { mode },
+    lualine_b = { branch, diagnostics },
     lualine_c = { current_signature },
     lualine_x = { diff, spaces, filetype },
     lualine_y = { progress },
