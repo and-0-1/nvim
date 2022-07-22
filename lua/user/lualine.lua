@@ -3,9 +3,15 @@ if not status_ok then
   return
 end
 
+local halfcircle_right = ""
+local halfcircle_left = ""
+
 local mode = {
   "mode",
   padding = { left = 1, right = 1 },
+  separator = {
+    right = halfcircle_right,
+  },
 }
 
 local hide_in_width = function()
@@ -19,9 +25,11 @@ local diagnostics = {
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
   symbols = { error = icons.diagnostics.Error .. " ", warn = icons.diagnostics.Warning .. " " },
-  -- colored = false,
   update_in_insert = false,
   always_visible = true,
+  separator = {
+    right = halfcircle_right,
+  },
 }
 
 local diff = {
@@ -78,6 +86,9 @@ local spaces = {
 
 local location = {
   "location",
+  separator = {
+    left = halfcircle_left,
+  },
 }
 
 lualine.setup {
