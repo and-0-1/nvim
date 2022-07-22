@@ -141,6 +141,8 @@ return packer.startup(function(use)
   use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
 
+  -- Lua
+  use "folke/lua-dev.nvim"
   -- Java
   use "mfussenegger/nvim-jdtls"
 
