@@ -227,6 +227,7 @@ local mappings = {
       "Workspace Symbols",
     },
     t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
+    v = { '<cmd>lua require("lsp_lines").toggle()<cr>', "Toggle virtual text" },
   },
 
   t = {

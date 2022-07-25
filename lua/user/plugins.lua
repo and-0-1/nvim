@@ -51,7 +51,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "numToStr/Comment.nvim"
   use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
+  -- use "ahmedkhalf/project.nvim"
   use "NvChad/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   use "folke/todo-comments.nvim"
@@ -140,6 +140,7 @@ return packer.startup(function(use)
   use "b0o/SchemaStore.nvim"
   use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
   -- Lua
   use "folke/lua-dev.nvim"

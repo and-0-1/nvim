@@ -26,7 +26,19 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    virtual_text = true,
+    virtual_lines = false,
+    virtual_text = false,
+    -- virtual_text = {
+    --   -- spacing = 7,
+    --   -- update_in_insert = false,
+    --   -- severity_sort = true,
+    --   -- prefix = "<-",
+    --   prefix = " ●",
+    --   source = "if_many", -- Or "always"
+    --   -- format = function(diag)
+    --   --   return diag.message .. "blah"
+    --   -- end,
+    -- },
     -- show signs
     signs = {
       active = signs,
@@ -38,7 +50,7 @@ M.setup = function()
       focusable = true,
       style = "minimal",
       border = "rounded",
-      source = "always",
+      source = "if_many",
       header = "",
       prefix = "",
     },
@@ -101,7 +113,6 @@ M.on_attach = function(client, bufnr)
     M.capabilities.textDocument.completion.completionItem.snippetSupport = false
     vim.lsp.codelens.refresh()
   end
-
 end
 
 function M.enable_format_on_save()
