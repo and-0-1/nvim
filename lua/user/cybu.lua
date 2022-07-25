@@ -12,7 +12,7 @@ keymap("n", "L", "<Plug>(CybuNext)", keymap_opts)
 cybu.setup {
   position = {
     relative_to = "win", -- win, editor, cursor
-    anchor = "topcenter", -- topleft, topcenter, topright,
+    anchor = "topright", -- topleft, topcenter, topright,
     -- centerleft, center, centerright,
     -- bottomleft, bottomcenter, bottomright
     -- vertical_offset = 10, -- vertical offset from anchor in lines
