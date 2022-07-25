@@ -6,7 +6,7 @@ end
 local servers = {
   "cssls",
   "cssmodules_ls",
-  "emmet_ls",
+  -- "emmet_ls",
   "html",
   "jdtls",
   "jsonls",
@@ -27,6 +27,7 @@ local settings = {
   -- automatic_installation = false,
   ui = {
     icons = {},
+    border = "rounded",
     keymaps = {
       toggle_server_expand = "<CR>",
       install_server = "i",
