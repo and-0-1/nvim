@@ -81,7 +81,7 @@ return packer.startup(function(use)
   -- use "MattesGroeger/vim-bookmarks"
   use "ThePrimeagen/harpoon"
 
-  -- Buffer/Text navigation
+  -- Text navigation
   use "ggandor/lightspeed.nvim"
   use "nacro90/numb.nvim"
 
@@ -97,6 +97,10 @@ return packer.startup(function(use)
 
   -- Buffer management
   use "akinsho/bufferline.nvim"
+  use {
+    "noib3/nvim-cokeline",
+    requires = "kyazdani42/nvim-web-devicons", -- If you want devicons
+  }
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
