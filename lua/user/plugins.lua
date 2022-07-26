@@ -31,7 +31,7 @@ end
 
 -- Have packer use a popup window
 packer.init {
-  -- max_jobs = 25,
+  max_jobs = 20,
   display = {
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
