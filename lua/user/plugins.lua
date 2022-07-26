@@ -96,10 +96,6 @@ return packer.startup(function(use)
   use "tamago324/lir.nvim"
 
   -- Buffer management
-  use {
-    "ghillb/cybu.nvim",
-    requires = { "kyazdani42/nvim-web-devicons" }, --optional
-  }
   use "akinsho/bufferline.nvim"
 
   -- Colorschemes
