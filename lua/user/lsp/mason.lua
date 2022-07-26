@@ -1,5 +1,6 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not status_ok then
+local mason_status_ok, mason = pcall(require, "mason")
+local mason_lsp_status_ok, mason_lsp = pcall(require, "mason-lspconfig")
+if not (mason_status_ok or mason_lsp_status_ok) then
   return
 end
 
@@ -20,13 +21,12 @@ local servers = {
   "intelephense",
   "prosemd_lsp",
   "rust_analyzer",
+  "gitlint",
 }
 
 local settings = {
   ensure_installed = servers,
-  -- automatic_installation = false,
   ui = {
-    icons = {},
     border = "rounded",
     keymaps = {
       toggle_server_expand = "<CR>",
@@ -38,13 +38,15 @@ local settings = {
       uninstall_server = "X",
     },
   },
-
   log_level = vim.log.levels.INFO,
   max_concurrent_installers = 4,
-  -- install_root_dir = path.concat { vim.fn.stdpath "data", "lsp_servers" },
 }
 
-lsp_installer.setup(settings)
+mason.setup(settings)
+mason_lsp.setup {
+  ensure_installed = servers,
+  automatic_installation = true,
+}
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -58,6 +60,13 @@ for _, server in pairs(servers) do
     on_attach = require("user.lsp.handlers").on_attach,
     capabilities = require("user.lsp.handlers").capabilities,
   }
+
+  server = vim.split(server, "@")[1]
+
+  if server == "tsserver" then
+    local tsserver_opts = require "user.lsp.settings.tsserver"
+    opts = vim.tbl_deep_extend("force", tsserver_opts, opts) or opts
+  end
 
   if server == "yamlls" then
     local yamlls_opts = require "user.lsp.settings.yamlls"
@@ -74,8 +83,8 @@ for _, server in pairs(servers) do
     if not l_status_ok then
       return
     end
-    local sumneko_opts = require "user.lsp.settings.sumneko_lua"
-    opts = vim.tbl_deep_extend("force", sumneko_opts, opts) or opts
+    -- local sumneko_opts = require "user.lsp.settings.sumneko_lua"
+    -- opts = vim.tbl_deep_extend("force", sumneko_opts, opts) or opts
     -- opts = vim.tbl_deep_extend("force", require("lua-dev").setup(), opts)
     local luadev = lua_dev.setup {
       --   -- add any options here, or leave empty to use the default settings
