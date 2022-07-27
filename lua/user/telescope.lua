@@ -6,8 +6,6 @@ end
 local actions = require "telescope.actions"
 local icons = require "user.icons"
 
-vim.api.nvim_set_keymap("n", "=", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true, nowait = true })
-
 telescope.setup {
   defaults = {
     prompt_prefix = icons.ui.Telescope .. " ",
@@ -41,7 +39,6 @@ telescope.setup {
       },
 
       n = {
-        ["<esc>"] = actions.close,
         ["q"] = actions.close,
         ["<C-c>"] = actions.close,
         ["<CR>"] = actions.select_default,
