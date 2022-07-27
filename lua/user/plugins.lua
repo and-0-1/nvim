@@ -142,6 +142,7 @@ return packer.startup(function(use)
   use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+  use "j-hui/fidget.nvim"
 
   -- Lua
   use "folke/lua-dev.nvim"
