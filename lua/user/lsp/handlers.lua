@@ -104,7 +104,11 @@ end
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
-  attach_navic(client, bufnr)
+  -- attach_navic(client, bufnr)
+
+  -- if client.name == "tsserver" then
+  --   require("lsp-inlayhints").on_attach(bufnr, client)
+  -- end
 
   if client.name == "jdt.ls" then
     M.capabilities.textDocument.completion.completionItem.snippetSupport = false
