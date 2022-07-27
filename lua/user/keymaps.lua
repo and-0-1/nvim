@@ -76,3 +76,7 @@ keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>')
 
 -- Quickfix toggle
 keymap("n", "<C-q>", ":lua require'user.functions'.qf_toggle()<cr>", opts)
+
+-- Buffer navigation
+keymap("n", "H", ":bprevious<cr>", opts)
+keymap("n", "L", ":bnext<cr>", opts)
