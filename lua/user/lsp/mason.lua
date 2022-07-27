@@ -21,7 +21,7 @@ local servers = {
   "intelephense",
   "prosemd_lsp",
   "rust_analyzer",
-  "gitlint",
+  -- "gitlint",
 }
 
 local settings = {
