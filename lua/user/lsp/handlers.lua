@@ -26,7 +26,7 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    virtual_lines = false,
+    virtual_lines = true,
     virtual_text = false,
     -- virtual_text = {
     --   -- spacing = 7,
