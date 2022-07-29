@@ -27,7 +27,7 @@ local icons = require "user.icons"
 local kind_icons = icons.kind
 
 -- TODO: where to handle highlight groups
-vim.highlight.link("Pmenu", "Normal", true)
+-- vim.highlight.link("Pmenu", "Normal", true)
 vim.highlight.link("NormalFloat", "Normal", true)
 
 cmp.setup {
@@ -132,11 +132,11 @@ cmp.setup {
   window = {
     documentation = {
       border = "rounded",
-      winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+      winhighlight = "NormalFloat:Normal,CursorLine:PmenuSel,Search:None",
     },
     completion = {
       border = "rounded",
-      winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+      winhighlight = "NormalFloat:Normal,CursorLine:PmenuSel,Search:None",
     },
   },
   experimental = {
