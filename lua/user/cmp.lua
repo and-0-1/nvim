@@ -27,8 +27,8 @@ local icons = require "user.icons"
 local kind_icons = icons.kind
 
 -- TODO: where to handle highlight groups
-vim.api.nvim_set_hl(0, "Pmenu", { bg = "#191724" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#191724" })
+vim.highlight.link("Pmenu", "Normal", true)
+vim.highlight.link("NormalFloat", "Normal", true)
 
 cmp.setup {
   snippet = {
