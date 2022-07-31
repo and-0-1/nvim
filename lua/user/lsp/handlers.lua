@@ -117,17 +117,18 @@ M.on_attach = function(client, bufnr)
 end
 
 function M.enable_format_on_save()
-  vim.cmd [[
-    augroup format_on_save
-      autocmd! 
-      autocmd BufWritePre * lua require("user.lsp.handlers").null_ls_format()
-    augroup end
-  ]]
+  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
+    pattern = { "*" },
+    callback = function()
+      M.null_ls_format()
+    end,
+  })
   vim.notify "Enabled format on save"
 end
 
 function M.disable_format_on_save()
-  M.remove_augroup "format_on_save"
+  vim.api.nvim_del_augroup_by_name "format_on_save"
   vim.notify "Disabled format on save"
 end
 
@@ -136,12 +137,6 @@ function M.toggle_format_on_save()
     M.enable_format_on_save()
   else
     M.disable_format_on_save()
-  end
-end
-
-function M.remove_augroup(name)
-  if vim.fn.exists("#" .. name) == 1 then
-    vim.cmd("au! " .. name)
   end
 end
 
@@ -155,5 +150,7 @@ function M.null_ls_format()
 end
 
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
+
+M.enable_format_on_save()
 
 return M
