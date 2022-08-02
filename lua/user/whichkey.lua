@@ -214,6 +214,7 @@ local mappings = {
     },
     t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
     v = { '<cmd>lua require("lsp_lines").toggle()<cr>', "Toggle virtual text" },
+    h = { '<cmd>lua require("lsp-inlayhints").toggle()<cr>', "Toggle hints" },
   },
 
   t = {

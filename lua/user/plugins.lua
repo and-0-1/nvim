@@ -142,6 +142,8 @@ return packer.startup(function(use)
   use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+  use "lvimuser/lsp-inlayhints.nvim"
+  -- use "simrat39/inlay-hints.nvim"
   use "j-hui/fidget.nvim"
 
   -- Lua
