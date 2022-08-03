@@ -76,6 +76,7 @@ return packer.startup(function(use)
   use "andymass/vim-matchup"
   use "nvim-lualine/lualine.nvim"
   use "kevinhwang91/nvim-bqf"
+  use { "Pocco81/true-zen.nvim", branch = "dev" }
 
   -- Bookmarks
   -- use "MattesGroeger/vim-bookmarks"
