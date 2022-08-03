@@ -19,7 +19,7 @@ toggleterm.setup {
   start_in_insert = true,
   insert_mappings = true,
   persist_size = true,
-  persist_mode = false,
+  persist_mode = true,
   direction = "vertical",
   close_on_exit = true,
   shell = vim.o.shell,
