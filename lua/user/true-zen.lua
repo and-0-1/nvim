@@ -32,18 +32,26 @@ zen.setup {
         bottom = 0,
       },
       open_callback = function()
-        lualine.hide()
+        if lualine_ok then
+          lualine.hide()
+        end
       end,
       close_callback = function()
-        lualine.hide { unhide = true }
+        if lualine_ok then
+          lualine.hide { unhide = true }
+        end
       end,
     },
     minimalist = {
       open_callback = function()
-        lualine.hide()
+        if lualine_ok then
+          lualine.hide()
+        end
       end,
       close_callback = function()
-        lualine.hide { unhide = true }
+        if lualine_ok then
+          lualine.hide { unhide = true }
+        end
       end,
     },
   },
