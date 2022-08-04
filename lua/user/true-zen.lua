@@ -9,11 +9,40 @@ local api = vim.api
 
 local opts = { noremap = true, silent = true, nowait = true }
 
+-- TODO: fix issues when applying modes on top of each other (e.g. ataraxis when in minimalist)
 -- api.nvim_set_keymap("n", "<leader>n", ":TZNarrow<CR>", opts)
 api.nvim_set_keymap("v", "<leader>n", ":'<,'>TZNarrow<CR>", opts)
 api.nvim_set_keymap("n", "<leader>nn", ":TZFocus<CR>", opts)
 api.nvim_set_keymap("n", "<leader>nm", ":TZMinimalist<CR>", opts)
 api.nvim_set_keymap("n", "<leader>nz", ":TZAtaraxis<CR>", opts)
+
+local function tmux_off()
+  if vim.fn.exists "$TMUX" == 0 then
+    return
+  end
+  vim.cmd [[silent !tmux set status off]]
+end
+
+local function tmux_on()
+  if vim.fn.exists "$TMUX" == 0 then
+    return
+  end
+  vim.cmd [[silent !tmux set status on]]
+end
+
+local function open_cb()
+  if lualine_ok then
+    lualine.hide()
+  end
+  tmux_off()
+end
+
+local function close_cb()
+  if lualine_ok then
+    lualine.hide { unhide = true }
+  end
+  tmux_on()
+end
 
 zen.setup {
   modes = {
@@ -31,34 +60,31 @@ zen.setup {
         top = 0,
         bottom = 0,
       },
-      open_callback = function()
-        if lualine_ok then
-          lualine.hide()
-        end
-      end,
-      close_callback = function()
-        if lualine_ok then
-          lualine.hide { unhide = true }
-        end
-      end,
+      open_callback = open_cb,
+      close_callback = close_cb,
     },
     minimalist = {
-      open_callback = function()
-        if lualine_ok then
-          lualine.hide()
-        end
-      end,
-      close_callback = function()
-        if lualine_ok then
-          lualine.hide { unhide = true }
-        end
-      end,
+      options = { -- options to be disabled when entering Minimalist mode
+        number = false,
+        relativenumber = false,
+        showtabline = 0,
+        signcolumn = "yes",
+        -- statusline = "",
+        cmdheight = 1,
+        -- laststatus = 0,
+        showcmd = true,
+        showmode = false,
+        ruler = false,
+        numberwidth = 1,
+      },
+      open_callback = open_cb,
+      close_callback = close_cb,
     },
   },
   integrations = {
     tmux = true,
     kitty = {
-      enabled = false,
+      enabled = true,
       font = "+1",
     },
   },
