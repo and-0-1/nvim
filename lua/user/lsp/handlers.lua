@@ -26,19 +26,19 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    virtual_lines = true,
-    virtual_text = false,
-    -- virtual_text = {
-    --   -- spacing = 7,
-    --   -- update_in_insert = false,
-    --   -- severity_sort = true,
-    --   -- prefix = "<-",
-    --   prefix = " ●",
-    --   source = "if_many", -- Or "always"
-    --   -- format = function(diag)
-    --   --   return diag.message .. "blah"
-    --   -- end,
-    -- },
+    virtual_lines = false,
+    -- virtual_text = true,
+    virtual_text = {
+      -- spacing = 7,
+      -- update_in_insert = false,
+      -- severity_sort = true,
+      -- prefix = "<-",
+      prefix = "●",
+      source = "if_many", -- Or "always"
+      -- format = function(diag)
+      --   return diag.message .. "blah"
+      -- end,
+    },
     -- show signs
     signs = {
       active = signs,
@@ -101,13 +101,18 @@ end
 --   return
 -- end
 
+-- local ih_ok, ih = pcall(require, "inlay-hints")
+
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
+  -- lsp_highlight_document(client)
   -- attach_navic(client, bufnr)
 
-  -- if client.name == "tsserver" then
-  --   require("lsp-inlayhints").on_attach(bufnr, client)
+  -- if ih_ok then
+  --   -- ih.on_attach(client, bufnr)
+  -- end
+  -- if client.name == "tsserver" or client.name == "sumneko_lua" then
+  --   ih.on_attach(client, bufnr)
   -- end
 
   if client.name == "jdt.ls" then
