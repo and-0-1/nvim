@@ -37,5 +37,14 @@ notify.setup {
     TRACE = icons.ui.Pencil,
   },
 }
+local notify_filter = vim.notify
+vim.notify = function(msg, ...)
+  if msg:match "character_offset must be called" then
+    return
+  end
+  if msg:match "method textDocument" then
+    return
+  end
 
-vim.notify = notify
+  notify_filter(msg, ...)
+end
