@@ -37,7 +37,7 @@ local icons = require "user.icons"
 
 local kind_icons = icons.kind
 
--- TODO: where to handle highlight groups
+-- NOTE: for some reason we have to link the highlight here
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
 cmp.setup {
