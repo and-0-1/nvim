@@ -8,14 +8,25 @@ if not snip_status_ok then
   return
 end
 
+local buffer_fts = {
+  "markdown",
+  "toml",
+  "yaml",
+  "json",
+}
+
+local function contains(t, value)
+  for _, v in pairs(t) do
+    if v == value then
+      return true
+    end
+  end
+  return false
+end
+
 local compare = require "cmp.config.compare"
 
 require("luasnip/loaders/from_vscode").lazy_load()
-
--- local check_backspace = function()
---   local col = vim.fn.col "." - 1
---   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
--- end
 
 local check_backspace = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -35,7 +46,7 @@ cmp.setup {
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
-
+  preselect = cmp.PreselectMode.None,
   mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
@@ -101,13 +112,19 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "nvim_lsp" },
-    { name = "nvim_lua" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "rg" },
-    { name = "path" },
-    { name = "emoji" },
+    {
+      name = "nvim_lsp",
+      group_index = 1,
+    },
+    { name = "luasnip", group_index = 1 },
+    {
+      name = "buffer",
+      group_index = 1,
+    },
+    { name = "nvim_lua", group_index = 2 },
+    { name = "path", group_index = 2 },
+    { name = "rg", group_index = 3, max_item_count = 3 },
+    { name = "emoji", group_index = 3 },
   },
   sorting = {
     priority_weight = 2,
@@ -115,10 +132,10 @@ cmp.setup {
       compare.offset,
       compare.exact,
       compare.scopes,
-      compare.score,
-      compare.recently_used,
       compare.locality,
       compare.kind,
+      compare.recently_used,
+      compare.score,
       compare.sort_text,
       compare.length,
       compare.order,
