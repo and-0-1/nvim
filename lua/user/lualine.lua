@@ -49,7 +49,8 @@ local filetype = {
 local branch = {
   "branch",
   icons_enabled = true,
-  icon = "",
+  -- icon = "",
+  -- icon = "",
   -- colored = false,
 }
 
