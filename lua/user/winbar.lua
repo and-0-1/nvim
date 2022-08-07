@@ -17,7 +17,8 @@ M.winbar_filetype_exclude = {
 }
 
 M.get_filename = function()
-  local filename = vim.fn.expand "%:t"
+  -- local filename = vim.fn.expand "%:t"
+  local filename = vim.fn.expand "%:p:h:t" .. "/" .. "%t"
   local extension = vim.fn.expand "%:e"
   local f = require "user.functions"
 
@@ -36,28 +37,6 @@ M.get_filename = function()
     return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
   end
 end
-
--- local get_gps = function()
---   local status_gps_ok, gps = pcall(require, "nvim-gps")
---   if not status_gps_ok then
---     return ""
---   end
---
---   local status_ok, gps_location = pcall(gps.get_location, {})
---   if not status_ok then
---     return ""
---   end
---
---   if not gps.is_available() or gps_location == "error" then
---     return ""
---   end
---
---   if not require("user.functions").isempty(gps_location) then
---     return require("user.icons").ui.ChevronRight .. " " .. gps_location
---   else
---     return ""
---   end
--- end
 
 local get_gps = function()
   local status_gps_ok, gps = pcall(require, "nvim-navic")
@@ -115,5 +94,25 @@ M.get_winbar = function()
     return
   end
 end
+
+M.create_winbar = function()
+  vim.api.nvim_create_augroup("_winbar", {})
+  if vim.fn.has "nvim-0.8" == 1 then
+    vim.api.nvim_create_autocmd(
+      { "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
+      {
+        group = "_winbar",
+        callback = function()
+          local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
+          if not status_ok then
+            require("user.winbar").get_winbar()
+          end
+        end,
+      }
+    )
+  end
+end
+
+M.create_winbar()
 
 return M

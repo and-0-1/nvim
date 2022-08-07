@@ -78,18 +78,6 @@ vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
   end,
 })
 
-if vim.fn.has "nvim-0.8" == 1 then
-  vim.api.nvim_create_autocmd(
-    { "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" },
-    {
-      group = vim.api.nvim_create_augroup("AndoWinbar", { clear = true }),
-      callback = function()
-        require("user.winbar").get_winbar()
-      end,
-    }
-  )
-end
-
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   group = vim.api.nvim_create_augroup("AndoCRO", { clear = true }),
   callback = function()
