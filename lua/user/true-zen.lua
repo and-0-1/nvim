@@ -28,13 +28,10 @@ local function tmux_on()
   vim.cmd [[silent !tmux set status on]]
 end
 
-local function open_cb()
-  tmux_off()
-end
-
-local function close_cb()
-  tmux_on()
-end
+local callbacks = {
+  open_pre = tmux_off,
+  close_pre = tmux_on,
+}
 
 zen.setup {
   modes = {
@@ -52,8 +49,7 @@ zen.setup {
         top = 0,
         bottom = 0,
       },
-      open_callback = open_cb,
-      close_callback = close_cb,
+      callbacks = callbacks,
     },
     minimalist = {
       options = { -- options to be disabled when entering Minimalist mode
@@ -69,14 +65,13 @@ zen.setup {
         ruler = false,
         numberwidth = 1,
       },
-      open_callback = open_cb,
-      close_callback = close_cb,
+      callbacks = callbacks,
     },
   },
   integrations = {
-    tmux = true,
+    tmux = false,
     kitty = {
-      enabled = true,
+      enabled = false,
       font = "+0",
     },
     lualine = true,
