@@ -3,7 +3,7 @@ local M = {}
 local function configure()
   local dap_breakpoint = {
     error = {
-      text = "🟥",
+      text = "",
       texthl = "LspDiagnosticsSignError",
       linehl = "",
       numhl = "",
@@ -15,7 +15,7 @@ local function configure()
       numhl = "",
     },
     stopped = {
-      text = "⭐️",
+      text = "=>",
       texthl = "LspDiagnosticsSignInformation",
       linehl = "DiagnosticUnderlineInfo",
       numhl = "LspDiagnosticsSignInformation",
@@ -33,7 +33,52 @@ local function configure_exts()
   }
 
   local dap, dapui = require "dap", require "dapui"
-  dapui.setup {} -- use default
+  dapui.setup {
+    icons = { expanded = "▾", collapsed = "▸" },
+    mappings = {
+      -- Use a table to apply multiple mappings
+      expand = { "<CR>", "<2-LeftMouse>" },
+      open = "o",
+      remove = "d",
+      edit = "e",
+      repl = "r",
+      toggle = "t",
+    },
+    layouts = {
+      {
+        elements = {
+          -- Elements can be strings or table with id and size keys.
+          { id = "breakpoints", size = 0.2 },
+          { id = "scopes", size = 0.4 },
+          { id = "stacks", size = 0.4 },
+          -- "watches",
+        },
+        size = 70, -- # columns
+        position = "right",
+      },
+      {
+        elements = {
+          "repl",
+          -- "console",
+        },
+        size = 0.25, -- % of total lines
+        position = "bottom",
+      },
+    },
+    floating = {
+      max_height = nil, -- These can be integers or a float between 0 and 1.
+      max_width = nil, -- Floats will be treated as percentage of your screen.
+      border = "single", -- Border style. Can be "single", "double" or "rounded"
+      mappings = {
+        close = { "q", "<Esc>" },
+      },
+    },
+    windows = { indent = 1 },
+    render = {
+      max_type_length = nil, -- Can be integer or nil.
+    },
+  } -- use default
+
   dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
   end
@@ -48,6 +93,7 @@ end
 local function configure_debuggers()
   require("user.dap.lua").setup()
   require("user.dap.node").setup()
+  require("user.dap.php").setup()
 end
 
 function M.setup()
