@@ -97,11 +97,11 @@ return packer.startup(function(use)
   use "tamago324/lir.nvim"
 
   -- Buffer management
-  use "akinsho/bufferline.nvim"
-  use {
-    "noib3/nvim-cokeline",
-    requires = "kyazdani42/nvim-web-devicons", -- If you want devicons
-  }
+  -- use "akinsho/bufferline.nvim"
+  -- use {
+  --   "noib3/nvim-cokeline",
+  --   requires = "kyazdani42/nvim-web-devicons", -- If you want devicons
+  -- }
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
