@@ -9,3 +9,5 @@ if not h_status_ok then
 end
 
 telescope.load_extension "harpoon"
+
+require "user.harpoon.keymaps"
