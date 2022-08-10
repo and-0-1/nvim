@@ -140,7 +140,7 @@ return packer.startup(function(use)
   use "ray-x/lsp_signature.nvim"
   use "rmagatti/goto-preview"
   use "b0o/SchemaStore.nvim"
-  use "folke/trouble.nvim"
+  -- use "folke/trouble.nvim"
   use "RRethy/vim-illuminate"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
   use "lvimuser/lsp-inlayhints.nvim"
@@ -189,9 +189,6 @@ return packer.startup(function(use)
       "nvim-telescope/telescope-dap.nvim",
       { "jbyuki/one-small-step-for-vimkind", module = "osv" },
     },
-    config = function()
-      require("user.dap").setup()
-    end,
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
