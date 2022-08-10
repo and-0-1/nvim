@@ -1,17 +1,9 @@
 return {
   settings = {
-    javascriptreact = {
-      inlayHints = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
-      },
-    },
     javascript = {
+      suggest = {
+        autoImports = true,
+      },
       inlayHints = {
         includeInlayEnumMemberValueHints = true,
         includeInlayFunctionLikeReturnTypeHints = true,
@@ -23,6 +15,9 @@ return {
       },
     },
     typescript = {
+      suggest = {
+        autoImports = true,
+      },
       inlayHints = {
         includeInlayEnumMemberValueHints = true,
         includeInlayFunctionLikeReturnTypeHints = true,

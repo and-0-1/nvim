@@ -54,6 +54,7 @@ null_ls.setup {
     },
     diagnostics.zsh,
     diagnostics.shellcheck.with { extra_filetypes = { "bash, zsh" } },
+    diagnostics.gitlint,
 
     code_actions.eslint_d,
     code_actions.shellcheck,
