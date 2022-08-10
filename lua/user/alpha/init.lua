@@ -29,3 +29,5 @@ dashboard.section.buttons.opts.hl = "Macro"
 dashboard.opts.opts.noautocmd = true
 -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
 alpha.setup(dashboard.opts)
+
+require "user.alpha.keymaps"

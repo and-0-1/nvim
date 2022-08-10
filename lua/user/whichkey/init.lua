@@ -6,7 +6,6 @@ end
 local wk_settings = require "user.whichkey.settings"
 
 local mappings = {
-  a = { "<cmd>Alpha<cr>", "Alpha" },
   e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   w = { "<cmd>w<CR>", "Write" },
   h = { "<cmd>nohlsearch<CR>", "No HL" },
