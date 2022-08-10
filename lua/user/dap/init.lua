@@ -90,10 +90,11 @@ local function configure_exts()
   end
 end
 
+-- TODO: should we split configs and adapters?
 local function configure_debuggers()
-  require("user.dap.lua").setup()
-  require("user.dap.node").setup()
-  require("user.dap.php").setup()
+  require("user.dap.settings.lua").setup()
+  require("user.dap.settings.javascript").setup()
+  require("user.dap.settings.php").setup()
 end
 
 function M.setup()
@@ -103,6 +104,6 @@ function M.setup()
   require("user.dap.keymaps").setup() -- Keymaps
 end
 
-configure_debuggers()
+M.setup()
 
 return M
