@@ -1,5 +1,4 @@
-local M = {}
-
+-- TODO: move configure and configure_exts to separate files
 local function configure()
   local dap_breakpoint = {
     error = {
@@ -27,12 +26,18 @@ local function configure()
   vim.fn.sign_define("DapBreakpointRejected", dap_breakpoint.rejected)
 end
 
+local dap_ok, dap = pcall(require, "dap")
+local dapui_ok, dapui = pcall(require, "dapui")
+local dapvt_ok, dapvt = pcall(require, "nvim-dap-virtual-text")
+
+if not dap_ok or not dapui_ok or not dapvt_ok then
+  return
+end
+
 local function configure_exts()
-  require("nvim-dap-virtual-text").setup {
+  dapvt.setup {
     commented = true,
   }
-
-  local dap, dapui = require "dap", require "dapui"
   dapui.setup {
     icons = { expanded = "▾", collapsed = "▸" },
     mappings = {
@@ -53,7 +58,7 @@ local function configure_exts()
           { id = "stacks", size = 0.4 },
           -- "watches",
         },
-        size = 70, -- # columns
+        size = 0.25, -- # columns
         position = "right",
       },
       {
@@ -90,20 +95,8 @@ local function configure_exts()
   end
 end
 
--- TODO: should we split configs and adapters?
-local function configure_debuggers()
-  require("user.dap.settings.lua").setup()
-  require("user.dap.settings.javascript").setup()
-  require("user.dap.settings.php").setup()
-end
-
-function M.setup()
-  configure() -- Configuration
-  configure_exts() -- Extensions
-  configure_debuggers() -- Debugger
-  require("user.dap.keymaps").setup() -- Keymaps
-end
-
-M.setup()
-
-return M
+require "user.dap.adapters"
+require "user.dap.settings"
+configure() -- Configuration
+configure_exts() -- Extensions
+require "user.dap.keymaps"
