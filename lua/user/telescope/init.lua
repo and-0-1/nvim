@@ -14,7 +14,7 @@ telescope.setup {
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },
-    file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/", "yarn-offline-cache/" },
+    file_ignore_patterns = { ".git/", "node_modules/", "yarn-offline-cache/" },
 
     mappings = {
       i = {
