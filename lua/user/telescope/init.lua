@@ -89,6 +89,22 @@ telescope.setup {
       initial_mode = "normal",
       previewer = preview,
     },
+    lsp_references = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
+    lsp_definitions = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
+    lsp_declarations = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
+    lsp_implementations = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -109,3 +125,5 @@ telescope.setup {
 }
 
 require("telescope").load_extension "fzf"
+
+require "user.telescope.keymaps"
