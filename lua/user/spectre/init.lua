@@ -2,6 +2,7 @@ local status_ok, spectre = pcall(require, "spectre")
 if not status_ok then
   return
 end
+
 spectre.setup {
 
   color_devicons = true,
@@ -133,3 +134,5 @@ spectre.setup {
   is_open_target_win = true, --open file on opener window
   is_insert_mode = false, -- start open panel on is_insert_mode
 }
+
+require "user.spectre.keymaps"
