@@ -129,3 +129,5 @@ configs.setup {
     },
   },
 }
+
+require "user.treesitter.keymaps"

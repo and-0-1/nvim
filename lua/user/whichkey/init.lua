@@ -55,12 +55,6 @@ local mappings = {
     h = { '<cmd>lua require("lsp-inlayhints").toggle()<cr>', "Toggle hints" },
   },
 
-  T = {
-    name = "Treesitter",
-    h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
-    p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
-  },
-
   N = {
     ":e ~/Notes/<cr>",
     "Notebook",
