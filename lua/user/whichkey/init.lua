@@ -10,7 +10,6 @@ local mappings = {
   h = { "<cmd>nohlsearch<CR>", "No HL" },
   q = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
   zz = { '<cmd>lua require("user.functions").save_and_exit()<CR>', "Save and exit" },
-  ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 
   o = {
@@ -59,10 +58,6 @@ local mappings = {
     ":e ~/Notes/<cr>",
     "Notebook",
   },
-}
-
-local vmappings = {
-  ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
 }
 
 which_key.setup(wk_settings.setup)

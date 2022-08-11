@@ -20,3 +20,5 @@ comment.setup {
     }
   end,
 }
+
+require "user.comment.keymaps"
