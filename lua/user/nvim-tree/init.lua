@@ -133,3 +133,4 @@ nvim_tree.setup {
     relativenumber = false,
   },
 }
+require "user.nvim-tree.keymaps"

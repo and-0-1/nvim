@@ -6,7 +6,6 @@ end
 local wk_settings = require "user.whichkey.settings"
 
 local mappings = {
-  e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   w = { "<cmd>w<CR>", "Write" },
   h = { "<cmd>nohlsearch<CR>", "No HL" },
   q = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
