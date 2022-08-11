@@ -53,6 +53,7 @@ dial_config.augends:register_group {
 
 local map = require "dial.map"
 
+-- TODO: move these to own file
 -- change augends in VISUAL mode
 vim.api.nvim_set_keymap("n", "<C-a>", map.inc_normal "mygroup", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-x>", map.dec_normal "mygroup", { noremap = true })
