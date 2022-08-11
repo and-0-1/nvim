@@ -16,12 +16,14 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins/init.lua source <afile> | PackerSync
-  augroup end
-]]
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  group = vim.api.nvim_create_augroup("_packer_sync_on_save", { clear = true }),
+  pattern = { "*/plugins/init.lua" },
+  callback = function()
+    vim.cmd [[ source %]]
+    require("packer").sync()
+  end,
+})
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -53,7 +55,6 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "numToStr/Comment.nvim"
   use "akinsho/toggleterm.nvim"
-  -- use "ahmedkhalf/project.nvim"
   use "NvChad/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
   use "folke/todo-comments.nvim"
@@ -69,13 +70,12 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
-  -- use "SmiteshP/nvim-gps"
   use {
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig",
   }
   use "kyazdani42/nvim-web-devicons"
-  use "andymass/vim-matchup"
+  -- use "andymass/vim-matchup"
   use "nvim-lualine/lualine.nvim"
   use "kevinhwang91/nvim-bqf"
   use { "Pocco81/true-zen.nvim", branch = "dev" }
@@ -168,7 +168,6 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-  -- use "f-person/git-blame.nvim"
   use "https://github.com/rhysd/conflict-marker.vim"
 
   -- TMUX
