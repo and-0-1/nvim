@@ -152,7 +152,7 @@ return packer.startup(function(use)
   -- Lua
   use "folke/lua-dev.nvim"
   -- Java
-  use "mfussenegger/nvim-jdtls"
+  -- use "mfussenegger/nvim-jdtls"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
