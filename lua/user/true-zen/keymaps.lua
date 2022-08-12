@@ -1,10 +1,25 @@
-local api = vim.api
+local status_ok, which_key = pcall(require, "which-key")
+if not status_ok then
+  return
+end
 
-local opts = { noremap = true, silent = true, nowait = true }
+local wk_setting = require "user.whichkey.settings"
 
--- TODO: fix issues when applying modes on top of each other (e.g. ataraxis when in minimalist)
--- api.nvim_set_keymap("n", "<leader>n", ":TZNarrow<CR>", opts)
-api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", opts)
-api.nvim_set_keymap("n", "<leader>zf", ":TZFocus<CR>", opts)
-api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", opts)
-api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", opts)
+local mappings = {
+  m = { "<cmd>TZMinimalist<CR>", "Minimalist mode" },
+  z = {
+    name = "Zen mode",
+    f = { "<cmd>TZFocus<CR>", "Focus current file" },
+    m = { "<cmd>TZMinimalist<CR>", "Minimalist mode" },
+    a = { "<cmd>TZAtaraxis<CR>", "Narrow mode current file" },
+  },
+}
+local vmappings = {
+  z = {
+    name = "Zen mode",
+    n = { ":'<,'>TZNarrow<CR>", "Narrow mode selection" },
+  },
+}
+
+which_key.register(mappings, wk_setting.opts)
+which_key.register(vmappings, wk_setting.vopts)
