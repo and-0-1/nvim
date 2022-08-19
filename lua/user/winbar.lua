@@ -34,7 +34,7 @@ M.get_filename = function()
       file_icon_color = ""
     end
 
-    return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
+    return " " .. "%#" .. hl_group .. "#" .. file_icon .. " " .. "%#Normal#" .. filename
   end
 end
 
@@ -113,6 +113,6 @@ M.create_winbar = function()
   end
 end
 
-M.create_winbar()
+-- M.create_winbar()
 
 return M
