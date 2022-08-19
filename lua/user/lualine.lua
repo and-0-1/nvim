@@ -36,9 +36,11 @@ local diff = {
   "diff",
   -- colored = false,
   symbols = { added = icons.git.Add .. " ", modified = icons.git.Mod .. " ", removed = icons.git.Remove .. " " }, -- changes diff symbols
-  cond = hide_in_width,
+  -- cond = hide_in_width,
   separator = "|",
-  padding = 1,
+  padding = {
+    right = 1,
+  },
 }
 
 local filetype = {
@@ -92,6 +94,12 @@ local location = {
   },
 }
 
+local current_file = {
+  function()
+    return require("user.winbar").get_filename()
+  end,
+}
+
 lualine.setup {
   options = {
     globalstatus = true,
@@ -114,7 +122,7 @@ lualine.setup {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {},
-    lualine_x = { "location" },
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {},
   },
