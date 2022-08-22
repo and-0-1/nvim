@@ -19,4 +19,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-hints.setup {}
+hints.setup {
+  inlay_hints = {
+    only_current_line = true,
+  },
+}
