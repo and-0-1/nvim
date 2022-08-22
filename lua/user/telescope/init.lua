@@ -84,6 +84,10 @@ telescope.setup {
     live_grep = {
       theme = "ivy",
     },
+    grep_string = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
     buffers = {
       theme = theme,
       initial_mode = "normal",

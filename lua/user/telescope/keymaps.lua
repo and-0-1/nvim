@@ -16,6 +16,7 @@ local mappings = {
       "Find files",
     },
     t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+    w = { "<cmd>Telescope grep_string<cr>", "Find Word on Cursor" },
     h = { "<cmd>Telescope help_tags<cr>", "Help" },
     l = { "<cmd>Telescope resume<cr>", "Last Search" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
