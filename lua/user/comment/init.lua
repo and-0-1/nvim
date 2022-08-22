@@ -10,6 +10,8 @@ comment.setup {
     local line_end = ctx.erow or ctx.range.erow
     require("lsp-inlayhints.core").clear(0, line_start, line_end)
 
+    require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+
     if
       vim.bo.filetype == "typescriptreact"
       or vim.bo.filetype == "javascriptreact"
