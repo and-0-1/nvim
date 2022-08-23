@@ -16,14 +16,14 @@ notify.setup {
   on_close = nil,
 
   -- Render function for notifications. See notify-render()
-  render = "default",
+  render = "minimal",
 
   -- Default timeout for notifications
   timeout = 175,
 
   -- For stages that change opacity this is treated as the highlight behind the window
   -- Set this to either a highlight group or an RGB hex value e.g. "#000000"
-  background_colour = "Normal",
+  background_colour = "#191724",
 
   -- Minimum width for notification windows
   minimum_width = 10,
@@ -37,7 +37,7 @@ notify.setup {
     TRACE = icons.ui.Pencil,
   },
 }
-local notify_filter = vim.notify
+
 vim.notify = function(msg, ...)
   if msg:match "character_offset must be called" then
     return
@@ -46,5 +46,5 @@ vim.notify = function(msg, ...)
     return
   end
 
-  notify_filter(msg, ...)
+  notify(msg, ...)
 end
