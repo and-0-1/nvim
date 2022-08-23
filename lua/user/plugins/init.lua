@@ -53,16 +53,19 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "moll/vim-bbye"
-  use "numToStr/Comment.nvim"
   use "akinsho/toggleterm.nvim"
   use "NvChad/nvim-colorizer.lua"
   use "windwp/nvim-spectre"
-  use "folke/todo-comments.nvim"
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     ft = "markdown",
   }
+
+  -- Comment
+  use "numToStr/Comment.nvim"
+  -- use "folke/todo-comments.nvim"
+  use "B4mbus/todo-comments.nvim"
 
   -- UI
   use "stevearc/dressing.nvim"
