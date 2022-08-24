@@ -95,7 +95,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-  vim.cmd [[ command! Format execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
+  -- vim.api.nvim_create_user_command("Format", require("user.lsp.handlers").null_ls_format, {})
 end
 
 -- local notify_status_ok, notify = pcall(require, "notify")
