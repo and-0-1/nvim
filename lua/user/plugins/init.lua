@@ -194,6 +194,7 @@ return packer.startup(function(use)
       { "jbyuki/one-small-step-for-vimkind", module = "osv" },
     },
   }
+  use "phaazon/mind.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

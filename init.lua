@@ -37,4 +37,5 @@ require "user.goto-preview"
 require "user.fidget"
 require "user.true-zen"
 require "user.dap"
+require "user.mind"
 require("user.winbar").create_winbar()

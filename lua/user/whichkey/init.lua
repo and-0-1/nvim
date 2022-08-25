@@ -61,10 +61,10 @@ local mappings = {
     h = { '<cmd>lua require("lsp-inlayhints").toggle()<cr>', "Toggle hints" },
   },
 
-  N = {
-    ":e ~/Notes/<cr>",
-    "Notebook",
-  },
+  -- N = {
+  --   ":e ~/Notes/<cr>",
+  --   "Notebook",
+  -- },
 }
 
 which_key.register(mappings, wk_settings.opts)
