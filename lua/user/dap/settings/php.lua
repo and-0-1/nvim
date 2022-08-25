@@ -16,6 +16,7 @@ dap.configurations.php = {
     pathMappings = {
       ["/sailthru/commons"] = "${workspaceFolder}/commons",
       ["/sailthru/api-php"] = "${workspaceFolder}/api",
+      ["/sailthru/ui"] = "${workspaceFolder}/ui",
     },
   },
 }
