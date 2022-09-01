@@ -180,7 +180,6 @@ return packer.startup(function(use)
   use "jxnblk/vim-mdx-js"
 
   -- Debugging
-  -- TODO: i like this approach; apply to other plugins
   use {
     "mfussenegger/nvim-dap",
     opt = true,
