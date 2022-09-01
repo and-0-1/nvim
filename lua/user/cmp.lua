@@ -8,22 +8,6 @@ if not snip_status_ok then
   return
 end
 
-local buffer_fts = {
-  "markdown",
-  "toml",
-  "yaml",
-  "json",
-}
-
-local function contains(t, value)
-  for _, v in pairs(t) do
-    if v == value then
-      return true
-    end
-  end
-  return false
-end
-
 local compare = require "cmp.config.compare"
 
 require("luasnip/loaders/from_vscode").lazy_load()
