@@ -3,7 +3,8 @@ if not status_ok then
   return
 end
 
-colorizer.setup({ "*" }, {
+colorizer.setup {
+  filetypes = { "*" },
   RGB = true, -- #RGB hex codes
   RRGGBB = true, -- #RRGGBB hex codes
   names = false, -- "Name" codes like Blue oe blue
@@ -14,4 +15,4 @@ colorizer.setup({ "*" }, {
   css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
   -- Available modes: foreground, background, virtualtext
   mode = "background", -- Set the display mode.)
-})
+}
