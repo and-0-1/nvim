@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "akinsho/toggleterm.nvim"
   use "NvChad/nvim-colorizer.lua"
+  -- use "nvim-colortils/colortils.nvim"
   use "windwp/nvim-spectre"
   use {
     "iamcco/markdown-preview.nvim",
