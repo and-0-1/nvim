@@ -6,9 +6,6 @@ end
 local actions = require "telescope.actions"
 local icons = require "user.icons"
 
-local theme = "dropdown" -- dropdown, ivy, float
-local preview = false
-
 telescope.setup {
   defaults = {
     prompt_prefix = icons.ui.Telescope .. " ",
@@ -78,36 +75,29 @@ telescope.setup {
   },
   pickers = {
     find_files = {
-      theme = theme,
-      previewer = preview,
+      theme = "dropdown",
     },
     live_grep = {
       theme = "ivy",
     },
     grep_string = {
       theme = "ivy",
-      initial_mode = "normal",
     },
     buffers = {
-      theme = theme,
-      initial_mode = "normal",
-      previewer = preview,
+      theme = "dropdown",
+      previewer = false,
     },
     lsp_references = {
       theme = "ivy",
-      initial_mode = "normal",
     },
     lsp_definitions = {
       theme = "ivy",
-      initial_mode = "normal",
     },
     lsp_declarations = {
       theme = "ivy",
-      initial_mode = "normal",
     },
     lsp_implementations = {
       theme = "ivy",
-      initial_mode = "normal",
     },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
