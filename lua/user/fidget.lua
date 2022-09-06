@@ -7,4 +7,10 @@ fidget.setup {
   text = {
     spinner = "circle",
   },
+  fmt = {
+    task = function() end,
+  },
+  window = {
+    relative = "editor",
+  },
 }
