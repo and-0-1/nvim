@@ -25,7 +25,6 @@ local servers = {
 }
 
 local settings = {
-  ensure_installed = servers,
   ui = {
     border = "rounded",
     keymaps = {

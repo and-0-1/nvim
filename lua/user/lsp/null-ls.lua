@@ -60,6 +60,7 @@ null_ls.setup {
     diagnostics.gitlint,
     diagnostics.markdownlint,
     diagnostics.yamllint,
+    diagnostics.luacheck,
 
     code_actions.eslint_d,
     code_actions.shellcheck,
