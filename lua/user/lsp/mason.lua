@@ -82,23 +82,17 @@ for _, server in pairs(servers) do
     if not l_status_ok then
       return
     end
-    local luadev = lua_dev.setup {
-      lspconfig = {
-        on_attach = opts.on_attach,
-        capabilities = opts.capabilities,
-        settings = {
-          Lua = { hint = { enable = true } },
-        },
-      },
-    }
-    lspconfig.sumneko_lua.setup(luadev)
-    goto continue
+
+    lua_dev.setup {}
+
+    local lua_opts = require "user.lsp.settings.sumneko_lua"
+    opts = vim.tbl_deep_extend("force", lua_opts, opts)
   end
 
-  if server == "jdtls" then
-    goto continue
-  end
+  -- if server == "jdtls" then
+  --   goto continue
+  -- end
 
   lspconfig[server].setup(opts)
-  ::continue::
+  -- ::continue::
 end
