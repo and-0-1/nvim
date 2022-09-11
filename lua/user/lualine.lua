@@ -113,7 +113,9 @@ lualine.setup {
   sections = {
     lualine_a = { mode },
     lualine_b = { branch, diagnostics },
-    lualine_c = { current_signature },
+    lualine_c = {
+      --[[ current_signature ]]
+    },
     lualine_x = { diff, spaces, filetype },
     lualine_y = { progress },
     lualine_z = { location },
