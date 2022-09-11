@@ -14,7 +14,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     local client = vim.lsp.get_client_by_id(args.data.client_id)
-    -- vim.notify(client)
     require("lsp-inlayhints").on_attach(client, args.buf)
   end,
 })
