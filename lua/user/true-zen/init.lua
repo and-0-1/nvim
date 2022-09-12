@@ -42,8 +42,8 @@ zen.setup {
     },
     minimalist = {
       options = { -- options to be disabled when entering Minimalist mode
-        number = false,
-        relativenumber = false,
+        number = true,
+        relativenumber = true,
         showtabline = 0,
         signcolumn = "yes",
         -- statusline = "",
