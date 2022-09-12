@@ -65,8 +65,8 @@ return packer.startup(function(use)
 
   -- Comment
   use "numToStr/Comment.nvim"
-  -- use "folke/todo-comments.nvim"
-  use "B4mbus/todo-comments.nvim"
+  use "folke/todo-comments.nvim"
+  -- use "B4mbus/todo-comments.nvim"
 
   -- UI
   use "stevearc/dressing.nvim"
