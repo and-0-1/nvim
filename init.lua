@@ -1,5 +1,5 @@
 require "user.keymaps"
-require "user.plugins"
+require "user.packer"
 require "user.autocommands"
 require "user.colorscheme"
 require "user.notify"

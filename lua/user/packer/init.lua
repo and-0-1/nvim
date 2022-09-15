@@ -18,7 +18,7 @@ end
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   group = vim.api.nvim_create_augroup("_packer_sync_on_save", { clear = true }),
-  pattern = { "*/plugins/init.lua" },
+  pattern = { "*/packer/init.lua" },
   callback = function()
     vim.cmd [[ source %]]
     require("packer").sync()
@@ -41,7 +41,7 @@ packer.init {
   },
 }
 
-require "user.plugins.keymaps"
+-- require "user.plugins.keymaps"
 
 -- Install your plugins here
 return packer.startup(function(use)
@@ -73,7 +73,6 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "folke/which-key.nvim"
   use "rcarriga/nvim-notify"
-  use "tversteeg/registers.nvim"
   use {
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig",
@@ -83,6 +82,17 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "kevinhwang91/nvim-bqf"
   use { "Pocco81/true-zen.nvim", branch = "dev" }
+
+  -- Registers
+  use "tversteeg/registers.nvim"
+  use "kkharji/sqlite.lua"
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      { "kkharji/sqlite.lua", module = "sqlite" },
+      { "nvim-telescope/telescope.nvim" },
+    },
+  }
 
   -- Bookmarks
   -- use "MattesGroeger/vim-bookmarks"

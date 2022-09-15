@@ -6,7 +6,7 @@ end
 local wk_settings = require "user.whichkey.settings"
 
 local mappings = {
-  p = {
+  P = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
     i = { "<cmd>PackerInstall<cr>", "Install" },
