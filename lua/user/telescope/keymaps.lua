@@ -12,7 +12,7 @@ local mappings = {
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     f = {
-      "<cmd>Telescope find_files<cr>",
+      "<cmd>lua require('user.telescope.finders').project_files()<cr>",
       "Find files",
     },
     t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
