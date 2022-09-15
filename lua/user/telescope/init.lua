@@ -13,6 +13,43 @@ telescope.setup {
     path_display = { "smart" },
     file_ignore_patterns = { ".git/", "node_modules/", "yarn-offline-cache/" },
 
+    winblend = 0,
+
+    layout_strategy = "horizontal",
+    layout_config = {
+      width = 0.95,
+      height = 0.85,
+      -- preview_cutoff = 120,
+      prompt_position = "top",
+
+      horizontal = {
+        preview_width = function(_, cols, _)
+          if cols > 200 then
+            return math.floor(cols * 0.4)
+          else
+            return math.floor(cols * 0.6)
+          end
+        end,
+      },
+
+      vertical = {
+        width = 0.9,
+        height = 0.95,
+        preview_height = 0.5,
+      },
+
+      flex = {
+        horizontal = {
+          preview_width = 0.9,
+        },
+      },
+    },
+
+    selection_strategy = "reset",
+    sorting_strategy = "ascending",
+    scroll_strategy = "cycle",
+    color_devicons = true,
+
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -74,30 +111,35 @@ telescope.setup {
     },
   },
   pickers = {
+    git_files = {
+      -- theme = "dropdown",
+      -- previewer = false,
+    },
     find_files = {
-      theme = "ivy",
+      -- theme = "dropdown",
+      -- previewer = false,
     },
     live_grep = {
-      theme = "ivy",
+      -- theme = "ivy",
     },
     grep_string = {
-      theme = "ivy",
+      -- theme = "ivy",
     },
     buffers = {
-      theme = "dropdown",
-      previewer = false,
+      -- theme = "dropdown",
+      -- previewer = false,
     },
     lsp_references = {
-      theme = "ivy",
+      -- theme = "ivy",
     },
     lsp_definitions = {
-      theme = "ivy",
+      -- theme = "ivy",
     },
     lsp_declarations = {
-      theme = "ivy",
+      -- theme = "ivy",
     },
     lsp_implementations = {
-      theme = "ivy",
+      -- theme = "ivy",
     },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
@@ -118,6 +160,10 @@ telescope.setup {
   },
 }
 
+-- Load extension configs and bindings
+require "user.telescope.extensions"
+
 require("telescope").load_extension "fzf"
+require("telescope").load_extension "neoclip"
 
 require "user.telescope.keymaps"
