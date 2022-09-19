@@ -82,6 +82,9 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "kevinhwang91/nvim-bqf"
   use { "Pocco81/true-zen.nvim", branch = "dev" }
+  use {
+    "gen740/SmoothCursor.nvim",
+  }
 
   -- Registers
   use "tversteeg/registers.nvim"
