@@ -85,6 +85,13 @@ return packer.startup(function(use)
   use {
     "gen740/SmoothCursor.nvim",
   }
+  use {
+    "anuvyklack/windows.nvim",
+    requires = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim",
+    },
+  }
 
   -- Registers
   use "tversteeg/registers.nvim"
@@ -131,7 +138,7 @@ return packer.startup(function(use)
   use {
     "levouh/tint.nvim",
     config = function()
-      require("tint").setup()
+      require("tint").setup {}
     end,
   }
 
