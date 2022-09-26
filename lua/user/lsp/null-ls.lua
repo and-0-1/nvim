@@ -37,7 +37,7 @@ null_ls.setup {
     formatting.rustfmt,
     formatting.shfmt.with { extra_filetypes = { "zsh", "sh" } },
     formatting.fixjson,
-    formatting.markdownlint,
+    -- formatting.markdownlint,
     formatting.yamlfmt,
 
     diagnostics.eslint_d,
@@ -58,7 +58,7 @@ null_ls.setup {
     diagnostics.zsh,
     diagnostics.shellcheck.with { extra_filetypes = { "bash, zsh" } },
     diagnostics.gitlint,
-    diagnostics.markdownlint,
+    -- diagnostics.markdownlint,
     diagnostics.yamllint,
     diagnostics.luacheck,
 
