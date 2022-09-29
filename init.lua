@@ -42,4 +42,4 @@ require("user.winbar").create_winbar()
 -- TODO: create utility for toggleterm to disable windows before opening
 -- doesn't work currently 😐
 -- require "user.windows"
--- require "user.smooth-cursor"
+require "user.smooth-cursor"

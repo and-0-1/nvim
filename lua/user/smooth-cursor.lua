@@ -23,7 +23,7 @@ smooth_cursor.setup {
     },
     tail = { cursor = nil, texthl = "SmoothCursor" },
   },
-  priority = 100, -- set marker priority
+  priority = 10, -- set marker priority
   speed = 25, -- max is 100 to stick to your current position
   texthl = "SmoothCursor", -- highlight group, default is { bg = nil, fg = "#FFD400" }
   threshold = 3,
