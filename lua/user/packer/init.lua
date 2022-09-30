@@ -110,6 +110,7 @@ return packer.startup(function(use)
 
   -- Text navigation
   use "ggandor/lightspeed.nvim"
+  use "ggandor/leap.nvim"
   use "nacro90/numb.nvim"
 
   -- Word manipulation enhacements
