@@ -109,7 +109,6 @@ return packer.startup(function(use)
   use "ThePrimeagen/harpoon"
 
   -- Text navigation
-  use "ggandor/lightspeed.nvim"
   use "ggandor/leap.nvim"
   use "nacro90/numb.nvim"
 
