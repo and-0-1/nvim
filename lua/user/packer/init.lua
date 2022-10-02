@@ -94,7 +94,6 @@ return packer.startup(function(use)
   }
 
   -- Registers
-  use "tversteeg/registers.nvim"
   use "kkharji/sqlite.lua"
   use {
     "AckslD/nvim-neoclip.lua",
