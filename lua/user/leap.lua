@@ -24,3 +24,5 @@ leap.setup {
   --   prev_group     = '<tab>',
   -- },
 }
+
+leap.set_default_keymaps()
