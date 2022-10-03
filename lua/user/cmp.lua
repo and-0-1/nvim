@@ -88,7 +88,7 @@ cmp.setup {
         nvim_lua = "",
         luasnip = "",
         buffer = "",
-        rg = "",
+        -- rg = "",
         path = "",
         emoji = "",
       })[entry.source.name]
@@ -107,7 +107,7 @@ cmp.setup {
     },
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
-    { name = "rg", group_index = 3, max_item_count = 3 },
+    -- { name = "rg", group_index = 3, max_item_count = 3, keyword_length = 6 },
     { name = "emoji", group_index = 3 },
   },
   sorting = {
