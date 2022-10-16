@@ -196,6 +196,7 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
   use "https://github.com/rhysd/conflict-marker.vim"
+  use "almo7aya/openingh.nvim"
 
   -- TMUX
   use "christoomey/vim-tmux-navigator"
@@ -203,12 +204,15 @@ return packer.startup(function(use)
   -- File types
   use "jxnblk/vim-mdx-js"
 
+  -- JSON utils
+  use "gennaro-tedesco/nvim-jqx"
+
   -- Debugging
   use {
     "mfussenegger/nvim-dap",
-    opt = true,
-    event = "BufReadPre",
-    module = { "dap" },
+    -- opt = true,
+    -- event = "BufReadPre",
+    -- module = { "dap" },
     wants = { "nvim-dap-virtual-text", "nvim-dap-ui", "which-key.nvim" },
     requires = {
       "theHamsta/nvim-dap-virtual-text",
@@ -217,6 +221,8 @@ return packer.startup(function(use)
       { "jbyuki/one-small-step-for-vimkind", module = "osv" },
     },
   }
+
+  -- Note-taking
   use "phaazon/mind.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
