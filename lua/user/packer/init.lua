@@ -62,6 +62,8 @@ return packer.startup(function(use)
     run = "cd app && npm install",
     ft = "markdown",
   }
+  -- Delay repeat execution of certain keys
+  use "ja-ford/delaytrain.nvim"
 
   -- Comment
   use "numToStr/Comment.nvim"
