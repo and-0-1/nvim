@@ -136,12 +136,7 @@ return packer.startup(function(use)
   -- use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
-  use {
-    "levouh/tint.nvim",
-    config = function()
-      require("tint").setup {}
-    end,
-  }
+  use "levouh/tint.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
