@@ -1,7 +1,7 @@
 -- colorscheme settings
 require "user.colorscheme.rose-pine"
 
-local colorscheme = "rose-pine"
+local colorscheme = "mellow"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then

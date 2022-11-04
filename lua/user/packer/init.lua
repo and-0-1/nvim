@@ -136,6 +136,7 @@ return packer.startup(function(use)
   -- use "lunarvim/darkplus.nvim"
   use "rose-pine/neovim"
   use "rebelot/kanagawa.nvim"
+  use "kvrohit/mellow.nvim"
   use "levouh/tint.nvim"
 
   -- cmp plugins
