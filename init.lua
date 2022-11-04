@@ -43,5 +43,5 @@ require("user.winbar").create_winbar()
 -- require "user.windows"
 require "user.smooth-cursor"
 require "user.tint"
-require "user.delaytrain"
 require "user.zippy"
+-- require "user.delaytrain"
