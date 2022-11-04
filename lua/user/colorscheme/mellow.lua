@@ -18,9 +18,9 @@ if not status_ok then
   return
 end
 
-vim.api.nvim_set_hl(0, "Function", { fg = colors.dark.bright_blue, italic = true, bold = true })
--- vim.api.nvim_set_hl(0, "Keyword", {
---   fg = colors.dark.blue,
---   bold = true,
---   -- standout = true,
--- })
+vim.api.nvim_set_hl(0, "Function", { fg = colors.dark.bright_blue, italic = true })
+vim.api.nvim_set_hl(0, "Keyword", {
+  fg = colors.dark.blue,
+  bold = true,
+  -- standout = true,
+})
