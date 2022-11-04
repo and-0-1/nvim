@@ -56,7 +56,7 @@ function _LAZYGIT_TOGGLE()
   lazygit:toggle()
 end
 
-local htop = Terminal:new { cmd = "bpytop", hidden = true }
+local htop = Terminal:new { cmd = "btop", hidden = true }
 
 function _HTOP_TOGGLE()
   htop:toggle()
