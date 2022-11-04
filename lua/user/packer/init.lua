@@ -226,6 +226,9 @@ return packer.startup(function(use)
   -- Note-taking
   use "phaazon/mind.nvim"
 
+  -- console log generator
+  use "PatschD/zippy.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
