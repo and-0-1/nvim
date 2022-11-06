@@ -1,3 +1,5 @@
+local theme = "auto"
+
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
   return
@@ -58,24 +60,7 @@ local branch = {
 
 local progress = {
   "progress",
-  color = "SLProgress",
-}
-
-local current_signature = {
-  function()
-    if not pcall(require, "lsp_signature") then
-      return
-    end
-    local sig = require("lsp_signature").status_line(30)
-    local hint = sig.hint
-
-    if not require("user.functions").isempty(hint) then
-      return icons.misc.Squirrel .. " " .. hint
-    end
-
-    return ""
-  end,
-  cond = hide_in_width,
+  color = "StatusLine",
 }
 
 local spaces = {
@@ -94,17 +79,11 @@ local location = {
   },
 }
 
-local current_file = {
-  function()
-    return require("user.winbar").get_filename()
-  end,
-}
-
 lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
-    theme = "auto",
+    theme = theme,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = { "alpha", "dashboard" },
