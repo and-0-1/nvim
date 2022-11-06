@@ -3,14 +3,29 @@ if not status_ok then
   return
 end
 
-local function tmux_off()
+local lualine_ok, lualine = pcall(require, "lualine")
+if not status_ok then
+  return
+end
+
+local function open_pre()
+  if lualine_ok then
+    lualine.hide {}
+    vim.opt.laststatus = 3
+    vim.opt.statusline = "%#Normal# --Zen Mode 🤔--"
+  end
+
   if vim.fn.exists "$TMUX" == 0 then
     return
   end
   vim.cmd [[silent !tmux set status off]]
 end
 
-local function tmux_on()
+local function close_pre()
+  if lualine_ok then
+    lualine.hide { unhide = true }
+  end
+
   if vim.fn.exists "$TMUX" == 0 then
     return
   end
@@ -18,8 +33,8 @@ local function tmux_on()
 end
 
 local callbacks = {
-  open_pre = tmux_off,
-  close_pre = tmux_on,
+  open_pos = open_pre,
+  close_pos = close_pre,
 }
 
 zen.setup {
@@ -46,9 +61,9 @@ zen.setup {
         relativenumber = true,
         showtabline = 0,
         signcolumn = "yes",
-        -- statusline = "",
+        -- statusline = "%#Normal# --Minimalist mode--",
         cmdheight = 1,
-        -- laststatus = 0,
+        -- laststatus = 3,
         showcmd = true,
         showmode = false,
         ruler = false,
@@ -63,7 +78,7 @@ zen.setup {
       enabled = false,
       font = "+0",
     },
-    lualine = true,
+    lualine = false,
   },
   -- your config goes here
   -- or just leave it empty :)
