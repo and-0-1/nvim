@@ -24,9 +24,4 @@ vim.api.nvim_set_hl(0, "Keyword", {
   fg = colors.blue,
   bold = true,
 })
--- vim.api.nvim_set_hl(0, "StatusLine", { fg = colors.white, bg = colors.bg })
--- vim.api.nvim_set_hl(0, "StatusLineNC", { fg = colors.bg_dark, bg = colors.bg })
--- vim.api.nvim_set_hl(0, "StatusLineTerm", { fg = colors.white, bg = colors.bg })
--- vim.api.nvim_set_hl(0, "StatusLineTermNC", { fg = colors.gray05 })
 vim.api.nvim_set_hl(0, "Winbar", { fg = colors.white, bg = nil })
--- vim.api.nvim_set_hl(0, "WinbarNC", { bg = nil })
