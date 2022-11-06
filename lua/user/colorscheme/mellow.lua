@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local colors = require "mellow.colors"
+local colors = require("mellow.colors").dark
 
 -- vim.g.mellow_italic_functions = true
 -- vim.g.mellow_bold_functions = true
@@ -18,9 +18,15 @@ if not status_ok then
   return
 end
 
-vim.api.nvim_set_hl(0, "Function", { fg = colors.dark.bright_blue, italic = true })
+-- NOTE: color highlight overrides
+vim.api.nvim_set_hl(0, "Function", { fg = colors.bright_blue, italic = true })
 vim.api.nvim_set_hl(0, "Keyword", {
-  fg = colors.dark.blue,
+  fg = colors.blue,
   bold = true,
-  -- standout = true,
 })
+-- vim.api.nvim_set_hl(0, "StatusLine", { fg = colors.white, bg = colors.bg })
+-- vim.api.nvim_set_hl(0, "StatusLineNC", { fg = colors.bg_dark, bg = colors.bg })
+-- vim.api.nvim_set_hl(0, "StatusLineTerm", { fg = colors.white, bg = colors.bg })
+-- vim.api.nvim_set_hl(0, "StatusLineTermNC", { fg = colors.gray05 })
+vim.api.nvim_set_hl(0, "Winbar", { fg = colors.white, bg = nil })
+-- vim.api.nvim_set_hl(0, "WinbarNC", { bg = nil })
