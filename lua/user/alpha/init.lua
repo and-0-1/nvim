@@ -30,7 +30,11 @@ dashboard.section.header.val = {
   "      ``````````````````````````````````          ",
 }
 dashboard.section.buttons.val = {
-  dashboard.button("f", icons.documents.Files .. " Find file", ":Telescope find_files <CR>"),
+  dashboard.button(
+    "f",
+    icons.documents.Files .. " Find file",
+    "<cmd>lua require('user.telescope.finders').project_files()<cr>"
+  ),
   dashboard.button("t", icons.ui.List .. " Find text", ":Telescope live_grep <CR>"),
   -- dashboard.button("n", icons.ui.Note .. " Notebook", ":e ~/Notes/<cr>"),
   dashboard.button("c", icons.ui.Gear .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
