@@ -34,7 +34,7 @@ M.get_filename = function()
       file_icon_color = ""
     end
 
-    return " " .. "%#" .. hl_group .. "#" .. file_icon .. " " .. "%#Normal#" .. filename
+    return "%#Winbar#" .. " " .. "%#" .. hl_group .. "#" .. file_icon .. " " .. "%#Winbar#" .. filename
   end
 end
 
