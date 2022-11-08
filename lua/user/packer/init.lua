@@ -64,6 +64,7 @@ return packer.startup(function(use)
   }
   -- Delay repeat execution of certain keys
   use "ja-ford/delaytrain.nvim"
+  use "samjwill/nvim-unception"
 
   -- Comment
   use "numToStr/Comment.nvim"
