@@ -1,5 +1,8 @@
 return {
   settings = {
-    Lua = { hint = { enable = true } },
+    Lua = {
+      hint = { enable = true },
+      workspace = { checkThirdParty = false },
+    },
   },
 }
