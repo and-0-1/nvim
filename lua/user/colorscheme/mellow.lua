@@ -5,11 +5,6 @@ end
 
 local colors = require("mellow.colors").dark
 
--- vim.g.mellow_italic_functions = true
--- vim.g.mellow_bold_functions = true
--- vim.g.mellow_bold_variables = true
--- vim.g.mellow_bold_keywords = true
-
 local colorscheme = "mellow"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
@@ -25,3 +20,6 @@ vim.api.nvim_set_hl(0, "Keyword", {
   bold = true,
 })
 vim.api.nvim_set_hl(0, "Winbar", { fg = colors.white, bg = nil })
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.blue, bold = true })
+vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.blue })
