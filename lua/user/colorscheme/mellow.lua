@@ -23,3 +23,8 @@ vim.api.nvim_set_hl(0, "Winbar", { fg = colors.white, bg = nil })
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.blue, bold = true })
 vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.blue })
+vim.api.nvim_set_hl(0, "Visual", { bg = colors.gray04 })
+vim.api.nvim_set_hl(0, "VisualNOS", { bg = colors.gray04 })
+vim.api.nvim_set_hl(0, "Search", { fg = colors.bright_yellow, bg = colors.bright_black })
+
+-- vim.api.nvim_set_hl(0, "lualine_c_normal", { bg = colors.bg })
