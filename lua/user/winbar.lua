@@ -113,6 +113,4 @@ M.create_winbar = function()
   end
 end
 
--- M.create_winbar()
-
 return M
