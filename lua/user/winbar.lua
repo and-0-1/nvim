@@ -14,6 +14,8 @@ M.winbar_filetype_exclude = {
   "spectre_panel",
   "toggleterm",
   "",
+  "DressingSelect",
+  "DressingInput",
 }
 
 M.get_filename = function()
@@ -61,6 +63,7 @@ local get_gps = function()
 end
 
 local excludes = function()
+  -- vim.notify "fetching winbar..."
   if vim.tbl_contains(M.winbar_filetype_exclude, vim.bo.filetype) then
     vim.opt_local.winbar = nil
     return true
@@ -98,18 +101,26 @@ end
 M.create_winbar = function()
   vim.api.nvim_create_augroup("_winbar", {})
   if vim.fn.has "nvim-0.8" == 1 then
-    vim.api.nvim_create_autocmd(
-      { "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
-      {
-        group = "_winbar",
-        callback = function()
-          local status_ok, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
-          if not status_ok then
-            require("user.winbar").get_winbar()
-          end
-        end,
-      }
-    )
+    vim.api.nvim_create_autocmd({
+      "BufEnter",
+      "TextChanged",
+      "InsertLeave",
+      "BufWritePost",
+      -- "TextYankPost",
+      -- "InsertEnter",
+      -- "CursorMoved",
+      -- "CursorHold",
+      -- "BufFilePost",
+      -- "TabClosed",
+    }, {
+      group = "_winbar",
+      callback = function()
+        local in_floating_window, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
+        if not in_floating_window then
+          M.get_winbar()
+        end
+      end,
+    })
   end
 end
 
