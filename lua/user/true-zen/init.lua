@@ -12,7 +12,7 @@ local function open_pre()
   if lualine_ok then
     lualine.hide {}
     vim.opt.laststatus = 3
-    vim.opt.statusline = "%#Normal# --Zen Mode 🤔--"
+    vim.opt.statusline = "%#Normal# --Zen Mode ☺️---"
   end
 
   if vim.fn.exists "$TMUX" == 0 then
