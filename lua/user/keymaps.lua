@@ -71,8 +71,7 @@ keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 -- keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
 
-keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
-keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+keymap("n", "gx", [[:silent execute '!open ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 
 -- Quickfix toggle
 keymap("n", "<C-q>", ":lua require'user.functions'.qf_toggle()<cr>", opts)
