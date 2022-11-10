@@ -122,7 +122,7 @@ return packer.startup(function(use)
 
   -- File navigation
   use "kyazdani42/nvim-tree.lua"
-  use "tamago324/lir.nvim"
+  -- use "tamago324/lir.nvim"
 
   -- Buffer management
   -- use "akinsho/bufferline.nvim"
@@ -179,6 +179,7 @@ return packer.startup(function(use)
 
   -- Lua
   use "folke/lua-dev.nvim"
+
   -- Java
   -- use "mfussenegger/nvim-jdtls"
 
