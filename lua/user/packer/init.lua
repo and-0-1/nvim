@@ -60,7 +60,10 @@ return packer.startup(function(use)
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
-    ft = "markdown",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown", "markdown.mdx" }
+    end,
+    ft = { "markdown", "markdown.mdx" },
   }
   -- Delay repeat execution of certain keys
   use "ja-ford/delaytrain.nvim"
