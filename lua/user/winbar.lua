@@ -16,6 +16,7 @@ M.winbar_filetype_exclude = {
   "",
   "DressingSelect",
   "DressingInput",
+  "dap-repl",
 }
 
 M.get_filename = function()
@@ -114,6 +115,7 @@ M.create_winbar = function()
       -- "TabClosed",
     }, {
       group = "_winbar",
+      pattern = { "*.*" },
       callback = function()
         local in_floating_window, _ = pcall(vim.api.nvim_buf_get_var, 0, "lsp_floating_window")
         if not in_floating_window then
