@@ -9,8 +9,9 @@ local icons = require "user.icons"
 telescope.setup {
   defaults = {
     prompt_prefix = icons.ui.Telescope .. " ",
+    file_sorter = require("telescope.sorters").get_fuzzy_file,
     selection_caret = " ",
-    path_display = { "smart" },
+    path_display = { "truncate" },
     file_ignore_patterns = { ".git/", "node_modules/", "yarn-offline-cache/" },
 
     winblend = 0,
