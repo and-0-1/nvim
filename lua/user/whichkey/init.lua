@@ -67,4 +67,15 @@ local mappings = {
   -- },
 }
 
+local vmappings = {
+  l = {
+    name = "LSP",
+    f = {
+      "<cmd>lua require('user.lsp.handlers').null_ls_format()<cr>",
+      "Format",
+    },
+  },
+}
+
 which_key.register(mappings, wk_settings.opts)
+which_key.register(vmappings, wk_settings.vopts)
