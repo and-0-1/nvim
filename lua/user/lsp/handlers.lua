@@ -60,7 +60,7 @@ M.setup = function()
 
   local doc_window_settings = {
     border = "rounded",
-    width = 60,
+    width = 80,
   }
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, doc_window_settings)
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, doc_window_settings)

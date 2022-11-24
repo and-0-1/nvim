@@ -40,6 +40,7 @@ null_ls.setup {
     -- formatting.markdownlint,
     formatting.yamlfmt,
     formatting.beautysh,
+    formatting.phpcsfixer,
 
     diagnostics.eslint_d,
     diagnostics.stylelint.with {
