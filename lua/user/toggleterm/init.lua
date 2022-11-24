@@ -20,17 +20,17 @@ toggleterm.setup {
   insert_mappings = true,
   persist_size = true,
   persist_mode = true,
-  direction = "vertical",
+  direction = "float",
   close_on_exit = true,
   shell = vim.o.shell,
   float_opts = {
     border = "curved",
     winblend = 0,
     highlights = {
-      border = "Normal",
+      border = "FloatBorder",
       background = "Normal",
     },
-    height = 30,
+    height = 50,
     -- width = 25,
   },
 }
