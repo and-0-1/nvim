@@ -39,9 +39,8 @@ require "user.true-zen"
 require "user.dap"
 require "user.mind"
 require("user.winbar").create_winbar()
--- TODO: create utility for toggleterm to disable windows before opening
--- doesn't work currently 😐
--- require "user.windows"
+-- NOTE: Doesn't work with vertical/horizontal toggleterm 😐
+require "user.windows"
 require "user.smooth-cursor"
 require "user.tint"
 require "user.zippy"
