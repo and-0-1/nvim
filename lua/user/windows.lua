@@ -6,7 +6,7 @@ end
 windows.setup {
   autowidth = { --		     |windows.autowidth|
     enable = true,
-    winwidth = 5, --		      |windows.winwidth|
+    winwidth = 0.6, --		      |windows.winwidth|
     filetype = { --	    |windows.autowidth.filetype|
       help = 2,
     },
@@ -16,9 +16,9 @@ windows.setup {
     filetype = { "NvimTree", "neo-tree", "undotree", "gundo", "toggleterm", "term://*" },
   },
   animation = {
-    enable = true,
+    enable = false,
     duration = 300,
-    fps = 30,
+    fps = 60,
     easing = "in_out_sine",
   },
 }
