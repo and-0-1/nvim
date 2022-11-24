@@ -33,8 +33,6 @@ cmp.setup {
     ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    -- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-c>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -43,33 +41,28 @@ cmp.setup {
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<C-y>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.jumpable(1) then
+      if luasnip.jumpable(1) then
         luasnip.jump(1)
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
       elseif luasnip.expandable() then
         luasnip.expand()
       elseif check_backspace() then
-        -- cmp.complete()
         fallback()
       else
         fallback()
       end
     end, {
+      "n",
       "i",
       "s",
     }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
+      if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
         fallback()
       end
     end, {
+      "n",
       "i",
       "s",
     }),
@@ -141,7 +134,7 @@ cmp.setup {
   },
 }
 
-cmp.setup.cmdline("/", {
+cmp.setup.cmdline({ "/", "?", ":s/", ":%s/", "'<,'>s/" }, {
   sources = cmp.config.sources {
     { name = "buffer" },
   },
