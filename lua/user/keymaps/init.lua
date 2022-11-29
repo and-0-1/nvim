@@ -18,6 +18,8 @@ nnoremap("<C-k>", "<C-w>k")
 nnoremap("<C-l>", "<C-w>l")
 
 -- Center on scroll
+nnoremap("gg", "ggzz")
+nnoremap("G", "Gzz")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 
