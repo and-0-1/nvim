@@ -206,7 +206,7 @@ return packer.startup(function(use)
   use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
 
   -- TMUX
-  use "christoomey/vim-tmux-navigator"
+  use "andoni0305/vim-tmux-navigator"
 
   -- File types
   use "jxnblk/vim-mdx-js"
