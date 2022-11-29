@@ -5,10 +5,11 @@ end
 
 local get_hex = require("cokeline/utils").get_hex
 
-local map = vim.api.nvim_set_keymap
+local Remap = require "user.keymaps.bind"
+local nnoremap = Remap.nnoremap
 
-map("n", "H", "<Plug>(cokeline-focus-prev)", { silent = true })
-map("n", "L", "<Plug>(cokeline-focus-next)", { silent = true })
+nnoremap("H", "<Plug>(cokeline-focus-prev)")
+nnoremap("L", "<Plug>(cokeline-focus-next)")
 
 vim.api.nvim_set_hl(0, "TabLineFill", { fg = get_hex("ColorColumn", "bg") })
 

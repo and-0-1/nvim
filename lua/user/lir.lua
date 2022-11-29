@@ -4,10 +4,10 @@ if not status_ok then
 end
 
 --keymaps
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local Remap = require "user.keymaps.bind"
+local nnoremap = Remap.nnoremap
 
-keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
+nnoremap("-", ":lua require'lir.float'.toggle()<cr>")
 
 local actions = require "lir.actions"
 local mark_actions = require "lir.mark.actions"

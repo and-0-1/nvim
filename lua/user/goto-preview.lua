@@ -3,14 +3,14 @@ if not status_ok then
   return
 end
 
-local keymap = vim.api.nvim_set_keymap
-local keymap_opts = { noremap = true, silent = true, nowait = true }
+local Remap = require "user.keymaps.bind"
+local nnoremap = Remap.nnoremap
 
-keymap("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", keymap_opts)
-keymap("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", keymap_opts)
-keymap("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>", keymap_opts)
+nnoremap("gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
+nnoremap("gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
+nnoremap("gP", "<cmd>lua require('goto-preview').close_all_win()<CR>")
 -- requires telescope
-keymap("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", keymap_opts)
+nnoremap("gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>")
 
 gpreview.setup {
   width = 120, -- Width of the floating window

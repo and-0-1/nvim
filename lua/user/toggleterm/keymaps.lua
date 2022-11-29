@@ -3,9 +3,11 @@ if not status_ok then
   return
 end
 
+local Remap = require "user.keymaps.bind"
+local nnoremap = Remap.nnoremap
 local wk_settings = require "user.whichkey.settings"
 
-vim.api.nvim_set_keymap("", "<C-t>", "<cmd>ToggleTerm<cr>", { silent = true })
+nnoremap("<C-t>", "<cmd>ToggleTerm<cr>", { silent = true })
 
 local mappings = {
   t = {
