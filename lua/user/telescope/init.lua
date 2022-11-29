@@ -165,6 +165,6 @@ telescope.setup {
 require "user.telescope.extensions"
 
 require("telescope").load_extension "fzf"
-require("telescope").load_extension "neoclip"
+-- require("telescope").load_extension "neoclip"
 
 require "user.telescope.keymaps"

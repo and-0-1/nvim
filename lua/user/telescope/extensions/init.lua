@@ -1,1 +1,1 @@
-require "user.telescope.extensions.neoclip"
+-- require "user.telescope.extensions.neoclip"
