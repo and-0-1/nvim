@@ -22,6 +22,7 @@ local servers = {
   "prosemd_lsp",
   "rust_analyzer",
   -- "gitlint",
+  "vimls",
 }
 
 local settings = {
