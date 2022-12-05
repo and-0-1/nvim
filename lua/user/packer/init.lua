@@ -169,6 +169,7 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "jayp0521/mason-null-ls.nvim"
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
   use "rmagatti/goto-preview"

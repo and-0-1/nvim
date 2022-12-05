@@ -70,3 +70,15 @@ null_ls.setup {
     -- code_actions.refactoring,
   },
 }
+
+local mason_null_ok, mason_null = pcall(require, "mason-null-ls")
+
+if not mason_null_ok then
+  return
+end
+
+mason_null.setup {
+  ensure_installed = nil,
+  automatic_installation = true,
+  automatic_setup = false,
+}
