@@ -101,7 +101,7 @@ cmp.setup {
     { name = "emoji", group_index = 3 },
   },
   sorting = {
-    priority_weight = 2,
+    priority_weight = 1,
     comparators = {
       compare.offset,
       compare.exact,
