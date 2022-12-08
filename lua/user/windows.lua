@@ -6,7 +6,7 @@ end
 windows.setup {
   autowidth = { --		     |windows.autowidth|
     enable = true,
-    winwidth = 0.6, --		      |windows.winwidth|
+    winwidth = 5, --		      |windows.winwidth|
     filetype = { --	    |windows.autowidth.filetype|
       help = 2,
     },
