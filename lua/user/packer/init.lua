@@ -98,6 +98,8 @@ return packer.startup(function(use)
       "anuvyklack/animation.nvim",
     },
   }
+  -- install latest stable version (recommended)
+  use { "shortcuts/no-neck-pain.nvim", tag = "*" }
 
   -- Registers
   use "kkharji/sqlite.lua"
