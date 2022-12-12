@@ -111,7 +111,11 @@ return packer.startup(function(use)
 
   -- Bookmarks
   -- use "MattesGroeger/vim-bookmarks"
-  use "ThePrimeagen/harpoon"
+  -- use "ThePrimeagen/harpoon"
+  use {
+    "cbochs/grapple.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  }
 
   -- Text navigation
   use "ggandor/leap.nvim"
