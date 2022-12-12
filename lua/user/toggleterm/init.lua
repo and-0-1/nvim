@@ -31,7 +31,7 @@ toggleterm.setup {
       background = "Normal",
     },
     height = 50,
-    -- width = 25,
+    width = 150,
   },
 }
 
