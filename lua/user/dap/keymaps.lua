@@ -5,7 +5,7 @@ end
 
 local keymap = {
   ["<space>"] = {
-    D = {
+    d = {
       name = "Debug",
       R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
       E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
