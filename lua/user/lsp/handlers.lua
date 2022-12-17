@@ -27,7 +27,7 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_lines = false,
-    virtual_text = false,
+    virtual_text = true,
     -- virtual_text = {
     --   -- spacing = 7,
     --   -- update_in_insert = false,
@@ -66,24 +66,14 @@ M.setup = function()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, doc_window_settings)
 end
 
-local function lsp_highlight_document(client)
-  -- if client.server_capabilities.document_highlight then
-  local status_ok, illuminate = pcall(require, "illuminate")
-  if not status_ok then
-    return
-  end
-  illuminate.on_attach(client)
-  -- end
-end
-
-local function attach_navic(client, bufnr)
-  vim.g.navic_silence = true
-  local status_ok, navic = pcall(require, "nvim-navic")
-  if not status_ok then
-    return
-  end
-  navic.attach(client, bufnr)
-end
+-- local function attach_navic(client, bufnr)
+--   vim.g.navic_silence = true
+--   local status_ok, navic = pcall(require, "nvim-navic")
+--   if not status_ok then
+--     return
+--   end
+--   navic.attach(client, bufnr)
+-- end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
