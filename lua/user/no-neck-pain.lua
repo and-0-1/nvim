@@ -7,7 +7,7 @@ end
 no_neck_pain.setup {
   -- the width of the focused buffer when enabling NNP.
   -- If the available window size is less than `width`, the buffer will take the whole screen.
-  width = 125,
+  width = 133,
   -- prints useful logs about what event are triggered, and reasons actions are executed.
   debug = false,
   -- options related to the side buffers
