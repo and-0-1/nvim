@@ -3,16 +3,6 @@ if not status_ok then
   return
 end
 
-local theme
--- NOTE: mellow overrides
-local mellow_ok = pcall(require, "mellow")
-if mellow_ok then
-  local mellow_colors = require("mellow.colors").dark
-  local lualine_mellow = require "lualine.themes.mellow"
-  lualine_mellow.normal.c.bg = mellow_colors.bg
-  theme = lualine_mellow
-end
-
 local halfcircle_right = ""
 local halfcircle_left = ""
 
@@ -112,7 +102,7 @@ lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
-    theme = theme or "auto",
+    theme = "auto",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = { "alpha", "dashboard" },
