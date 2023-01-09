@@ -148,6 +148,8 @@ return packer.startup(function(use)
   use "rebelot/kanagawa.nvim"
   use "andoni0305/mellow.nvim"
   use "levouh/tint.nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use "projekt0n/github-nvim-theme"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -202,7 +204,7 @@ return packer.startup(function(use)
   use "nvim-treesitter/nvim-treesitter-context"
   use "nvim-treesitter/nvim-treesitter-textobjects"
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "p00f/nvim-ts-rainbow"
+  use "mrjones2014/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
 
