@@ -5,11 +5,16 @@ if not ok then
 end
 -- values below are the default
 no_neck_pain.setup {
-  -- The width of the focused buffer when enabling NNP.
-  -- If the available window size is less than `width`, the buffer will take the whole screen.
-  width = 133,
   -- Prints useful logs about what event are triggered, and reasons actions are executed.
   debug = false,
+  -- When `true`, enables the plugin when you start Neovim.
+  enableOnVimEnter = false,
+  -- The width of the focused buffer when enabling NNP.
+  -- If the available window size is less than `width`, the buffer will take the whole screen.
+  width = 140,
+  -- Set globally to Neovim, it allows you to toggle the enable/disable state.
+  -- When `false`, the mapping is not created.
+  toggleMapping = "<Leader>np",
   -- Disables NNP if the last valid buffer in the list has been closed.
   disableOnLastBuffer = false,
   -- When `true`, disabling NNP kills every split/vsplit buffers except the main NNP buffer.
@@ -20,35 +25,21 @@ no_neck_pain.setup {
     -- When `true`, the side buffers will be named `no-neck-pain-left` and `no-neck-pain-right` respectively.
     setNames = false,
     -- Hexadecimal color code to override the current background color of the buffer. (e.g. #24273A)
-    -- popular theme are supported by their name:
-    -- - catppuccin-frappe
-    -- - catppuccin-frappe-dark
-    -- - catppuccin-latte
-    -- - catppuccin-latte-dark
-    -- - catppuccin-macchiato
-    -- - catppuccin-macchiato-dark
-    -- - catppuccin-mocha
-    -- - catppuccin-mocha-dark
-    -- - tokyonight-day
-    -- - tokyonight-moon
-    -- - tokyonight-night
-    -- - tokyonight-storm
-    -- - rose-pine
-    -- - rose-pine-moon
-    -- - rose-pine-dawn
+    -- See |NoNeckPain.bufferOptions| for more details.
     backgroundColor = nil,
+    -- Brighten (positive) or darken (negative) the side buffers background color. Accepted values are [-1..1].
+    blend = 0,
     -- Hexadecimal color code to override the current text color of the buffer. (e.g. #7480c2)
     textColor = nil,
-    -- buffer-scoped options: any `vim.bo` options is accepted here.
+    -- Vim buffer-scoped options: any `vim.bo` options is accepted here.
     bo = {
       filetype = "no-neck-pain",
       buftype = "nofile",
       bufhidden = "hide",
-      modifiable = false,
       buflisted = false,
       swapfile = false,
     },
-    -- window-scoped options: any `vim.wo` options is accepted here.
+    -- Vim window-scoped options: any `vim.wo` options is accepted here.
     wo = {
       cursorline = false,
       cursorcolumn = false,
@@ -56,6 +47,8 @@ no_neck_pain.setup {
       relativenumber = false,
       foldenable = false,
       list = false,
+      wrap = true,
+      linebreak = true,
     },
     --- Options applied to the `left` buffer, the options defined here overrides the ones at the root of the `buffers` level.
     --- See |NoNeckPain.bufferOptions|.
@@ -64,10 +57,15 @@ no_neck_pain.setup {
     --- See |NoNeckPain.bufferOptions|.
     right = NoNeckPain.bufferOptions,
   },
-  -- lists supported integrations that might clash with `no-neck-pain.nvim`'s behavior
+  -- Supported integrations that might clash with `no-neck-pain.nvim`'s behavior.
   integrations = {
     -- https://github.com/nvim-tree/nvim-tree.lua
-    nvimTree = {
+    NvimTree = {
+      -- the position of the tree, can be `left` or `right``
+      position = "left",
+    },
+    -- https://github.com/mbbill/undotree
+    undotree = {
       -- the position of the tree, can be `left` or `right``
       position = "left",
     },
@@ -78,35 +76,21 @@ NoNeckPain.bufferOptions = {
   -- When `false`, the buffer won't be created.
   enabled = true,
   -- Hexadecimal color code to override the current background color of the buffer. (e.g. #24273A)
-  -- popular theme are supported by their name:
-  -- - catppuccin-frappe
-  -- - catppuccin-frappe-dark
-  -- - catppuccin-latte
-  -- - catppuccin-latte-dark
-  -- - catppuccin-macchiato
-  -- - catppuccin-macchiato-dark
-  -- - catppuccin-mocha
-  -- - catppuccin-mocha-dark
-  -- - tokyonight-day
-  -- - tokyonight-moon
-  -- - tokyonight-night
-  -- - tokyonight-storm
-  -- - rose-pine
-  -- - rose-pine-moon
-  -- - rose-pine-dawn
+  -- See |NoNeckPain.bufferOptions| for more details.
   backgroundColor = nil,
+  -- Brighten (positive) or darken (negative) the side buffers background color. Accepted values are [-1..1].
+  blend = 0,
   -- Hexadecimal color code to override the current text color of the buffer. (e.g. #7480c2)
   textColor = nil,
-  -- buffer-scoped options: any `vim.bo` options is accepted here.
+  -- Vim buffer-scoped options: any `vim.bo` options is accepted here.
   bo = {
     filetype = "no-neck-pain",
     buftype = "nofile",
     bufhidden = "hide",
-    modifiable = false,
     buflisted = false,
     swapfile = false,
   },
-  -- window-scoped options: any `vim.wo` options is accepted here.
+  -- Vim window-scoped options: any `vim.wo` options is accepted here.
   wo = {
     cursorline = false,
     cursorcolumn = false,
@@ -114,6 +98,8 @@ NoNeckPain.bufferOptions = {
     relativenumber = false,
     foldenable = false,
     list = false,
+    wrap = true,
+    linebreak = true,
   },
 }
 
@@ -128,3 +114,5 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
     end)
   end,
 })
+
+require "user.no-neck-pain.keymaps"
