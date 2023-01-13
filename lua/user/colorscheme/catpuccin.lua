@@ -47,7 +47,7 @@ end
 -- }
 
 -- setup must be called before loading
-local colorscheme = "catppuccin"
+local colorscheme = "catppuccin-macchiato"
 
 local colorscheme_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not colorscheme_ok then
