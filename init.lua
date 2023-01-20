@@ -41,7 +41,7 @@ require "user.mind"
 require("user.winbar").create_winbar()
 -- NOTE: Doesn't work with vertical/horizontal toggleterm 😐
 -- require "user.windows"
-require "user.smooth-cursor"
+-- require "user.smooth-cursor"
 -- require "user.tint"
 require "user.zippy"
 -- require "user.delaytrain"
