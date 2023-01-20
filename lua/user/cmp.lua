@@ -17,6 +17,14 @@ local check_backspace = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
 end
 
+local has_words_before = function()
+  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+    return false
+  end
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match "^%s*$" == nil
+end
+
 local icons = require "user.icons"
 
 local kind_icons = icons.kind
@@ -29,8 +37,22 @@ cmp.setup {
   },
   preselect = cmp.PreselectMode.None,
   mapping = cmp.mapping.preset.insert {
-    ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-    ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+    ["<C-j>"] = vim.schedule_wrap(function(fallback)
+      if cmp.visible() and has_words_before() then
+        cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+      else
+        fallback()
+      end
+    end),
+    ["<C-k>"] = vim.schedule_wrap(function(fallback)
+      if cmp.visible() and has_words_before() then
+        cmp.select_prev_item { behavior = cmp.SelectBehavior.Select }
+      else
+        fallback()
+      end
+    end),
+    -- ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+    -- ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-c>"] = cmp.mapping {
@@ -39,7 +61,10 @@ cmp.setup {
     },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<C-y>"] = cmp.mapping.confirm { select = true },
+    ["<C-y>"] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
         luasnip.jump(1)
@@ -81,6 +106,7 @@ cmp.setup {
         -- rg = "",
         path = "",
         emoji = "",
+        copilot = "",
       })[entry.source.name]
       return vim_item
     end,
@@ -99,12 +125,16 @@ cmp.setup {
     { name = "path", group_index = 2 },
     -- { name = "rg", group_index = 3, max_item_count = 3, keyword_length = 6 },
     { name = "emoji", group_index = 3 },
+    -- Copilot Source
+    { name = "copilot", group_index = 2 },
   },
   sorting = {
-    priority_weight = 1,
+    priority_weight = 2,
     comparators = {
-      compare.offset,
+      require("copilot_cmp.comparators").prioritize,
+      require("copilot_cmp.comparators").score,
       compare.exact,
+      compare.offset,
       compare.scopes,
       compare.locality,
       compare.kind,
