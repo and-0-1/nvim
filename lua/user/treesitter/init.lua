@@ -38,7 +38,7 @@ configs.setup {
     disable = { "xml" },
   },
   rainbow = {
-    enable = true,
+    enable = false,
     -- disable = { "html" },
   },
   playground = {
