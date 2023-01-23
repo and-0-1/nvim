@@ -150,6 +150,7 @@ return packer.startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
   use "projekt0n/github-nvim-theme"
   use "savq/melange-nvim"
+  use "AlexvZyl/nordic.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
