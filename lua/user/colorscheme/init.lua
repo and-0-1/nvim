@@ -4,5 +4,5 @@ vim.opt.termguicolors = true
 -- require "user.colorscheme.mellow"
 -- require "user.colorscheme.tokyonight"
 -- require "user.colorscheme.catpuccin"
--- require "user.colorscheme.melange"
-require "user.colorscheme.nordic"
+require "user.colorscheme.melange"
+-- require "user.colorscheme.nordic"
