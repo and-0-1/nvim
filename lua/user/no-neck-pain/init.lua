@@ -3,7 +3,7 @@ if not ok then
   vim.notify "no-neck-pain load issue"
   return
 end
--- values below are the default
+
 no_neck_pain.setup {
   -- Prints useful logs about what event are triggered, and reasons actions are executed.
   debug = false,
@@ -11,7 +11,7 @@ no_neck_pain.setup {
   enableOnVimEnter = false,
   -- The width of the focused buffer when enabling NNP.
   -- If the available window size is less than `width`, the buffer will take the whole screen.
-  width = 140,
+  width = 130,
   -- Set globally to Neovim, it allows you to toggle the enable/disable state.
   -- When `false`, the mapping is not created.
   toggleMapping = "<Leader>np",
