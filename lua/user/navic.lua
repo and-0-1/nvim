@@ -40,8 +40,8 @@ navic.setup {
     Operator = "%#CmpItemKindOperator#" .. icons.kind.Operator .. "%*" .. space,
     TypeParameter = "%#CmpItemKindTypeParameter#" .. icons.kind.TypeParameter .. "%*" .. space,
   },
-  highlight = true,
+  highlight = false,
   separator = " " .. icons.ui.ChevronRight .. " ",
-  depth_limit = 0,
+  depth_limit = 3,
   depth_limit_indicator = "..",
 }
