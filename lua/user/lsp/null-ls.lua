@@ -10,8 +10,6 @@ local diagnostics = null_ls.builtins.diagnostics
 
 local code_actions = null_ls.builtins.code_actions
 
--- https://github.com/prettier-solidity/prettier-plugin-solidity
--- npm install --save-dev prettier prettier-plugin-solidity
 null_ls.setup {
   debug = false,
   sources = {
@@ -31,13 +29,11 @@ null_ls.setup {
       end,
     },
     formatting.eslint_d,
-    -- formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
-    -- formatting.google_java_format,
     formatting.rustfmt,
     formatting.shfmt,--[[ .with { extra_filetypes = { "zsh", "sh" } } ]]
     formatting.fixjson,
-    -- formatting.markdownlint,
+    formatting.markdownlint,
     formatting.yamlfmt,
     formatting.beautysh,
     formatting.phpcsfixer,
@@ -60,14 +56,13 @@ null_ls.setup {
     diagnostics.zsh,
     diagnostics.shellcheck.with { extra_filetypes = { "bash", "zsh" } },
     diagnostics.gitlint,
-    -- diagnostics.markdownlint,
+    diagnostics.markdownlint,
     diagnostics.yamllint,
     diagnostics.luacheck,
 
     code_actions.eslint_d,
     code_actions.shellcheck,
     code_actions.proselint,
-    -- code_actions.refactoring,
   },
 }
 
