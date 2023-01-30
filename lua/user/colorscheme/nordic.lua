@@ -26,7 +26,7 @@ nordic.setup {
   cursorline = {
     bold = true,
     -- Available themes: 'dark', 'light'.
-    theme = "dark",
+    theme = "light",
   },
 }
 
