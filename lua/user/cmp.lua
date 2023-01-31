@@ -97,17 +97,6 @@ cmp.setup {
     format = function(entry, vim_item)
       -- Kind icons
       vim_item.kind = kind_icons[vim_item.kind]
-      -- NOTE: order matters
-      vim_item.menu = ({
-        nvim_lsp = "",
-        nvim_lua = "",
-        luasnip = "",
-        buffer = "",
-        -- rg = "",
-        path = "",
-        emoji = "",
-        copilot = "",
-      })[entry.source.name]
       return vim_item
     end,
   },
@@ -116,17 +105,18 @@ cmp.setup {
       name = "nvim_lsp",
       group_index = 1,
     },
+    { name = "luasnip", group_index = 1 },
+    -- Copilot Source
     { name = "copilot", group_index = 1 },
+    { name = "codeium", group_index = 1 },
     {
       name = "buffer",
       group_index = 1,
     },
-    { name = "luasnip", group_index = 1 },
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
     -- { name = "rg", group_index = 3, max_item_count = 3, keyword_length = 6 },
     { name = "emoji", group_index = 3 },
-    -- Copilot Source
   },
   sorting = {
     priority_weight = 2,

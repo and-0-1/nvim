@@ -216,6 +216,19 @@ return packer.startup(function(use)
     end,
   }
 
+  -- codeium
+  use {
+    "jcdickinson/codeium.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup {}
+    end,
+  }
+
   -- Lua
   use "folke/lua-dev.nvim"
 
