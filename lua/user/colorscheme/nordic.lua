@@ -20,7 +20,7 @@ nordic.setup {
   -- Override styling of any highlight group.
   -- (see next section for an example)
   override = {
-    CursorLineNr = { fg = palette.yellow.dim },
+    CmpItemAbbrMatch = { fg = palette.green.base, bold = true },
     LineNr = { fg = palette.gray5 },
   },
   cursorline = {
