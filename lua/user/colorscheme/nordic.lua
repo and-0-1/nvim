@@ -21,6 +21,7 @@ nordic.setup {
   -- (see next section for an example)
   override = {
     CmpItemAbbrMatch = { fg = palette.green.base, bold = true },
+    CursorLineNr = { fg = palette.yellow.dim },
     LineNr = { fg = palette.gray5 },
   },
   cursorline = {
