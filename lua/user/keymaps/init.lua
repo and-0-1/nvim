@@ -47,13 +47,18 @@ inoremap("kj", "<ESC>")
 vnoremap("<", "<gv")
 vnoremap(">", ">gv")
 
--- next greatest remap ever : asbjornHaland
+-- yank to system clipboard
 nnoremap("<leader>y", '"+y')
 vnoremap("<leader>y", '"+y')
 nmap("<leader>Y", '"+Y')
 
+-- delete to system clipboard
 nnoremap("<leader>d", '"_d')
 vnoremap("<leader>d", '"_d')
+
+-- - Paste in Visual with `P` to not copy selected text (`:h v_P`)
+nnoremap("<leader>p", '"+p')
+xnoremap("<leader>p", '"+P')
 
 -- Visual Block --
 -- Move text up and down
@@ -72,3 +77,17 @@ nnoremap("<C-q>", ":lua require'user.functions'.qf_toggle()<cr>")
 -- Buffer navigation
 nnoremap("H", ":bprevious<cr>")
 nnoremap("L", ":bnext<cr>")
+
+-- Insert n amount of lines above/below
+nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
+nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
+
+-- Reselect latest changed, put, or yanked text
+nnoremap("gV", '"`[" . strpart(getregtype(), 0, 1) . "`]"')
+-- Search inside visually highlighted text. Use `silent = false` for it to
+-- make effect immediately.
+-- xnoremap("g/", "<esc>/\\%V")
+
+-- Search visually selected text (slightly better than builtins in Neovim>=0.8)
+-- xnoremap("*", [[y/\V<C-R>=escape(@", '/\')<CR><CR>]])
+-- xnoremap("#", [[y?\V<C-R>=escape(@", '?\')<CR><CR>]])
