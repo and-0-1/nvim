@@ -116,3 +116,15 @@ require "user.dap.settings"
 configure() -- Configuration
 configure_exts() -- Extensions
 require "user.dap.keymaps"
+
+local mason_dap_ok, mason_dap = pcall(require, "mason-nvim-dap")
+
+if not mason_dap_ok then
+  return
+end
+
+mason_dap.setup {
+  ensure_installed = nil,
+  automatic_installation = true,
+  automatic_setup = false,
+}
