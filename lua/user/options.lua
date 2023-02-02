@@ -38,6 +38,8 @@ local options = {
   scrolloff = 8, -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17", -- the font used in graphical neovim applications
+  listchars = "tab:→ ,trail:·,eol:↲,extends:…,precedes:…",
+  list = true,
 }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
