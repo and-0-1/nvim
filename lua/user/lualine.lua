@@ -10,6 +10,7 @@ local mode = {
   "mode",
   padding = { left = 1, right = 1 },
   separator = {
+    left = halfcircle_left,
     right = halfcircle_right,
   },
 }
@@ -58,7 +59,11 @@ local branch = {
 
 local progress = {
   "progress",
-  color = "SLProgress",
+
+  separator = {
+    left = halfcircle_left,
+    right = halfcircle_right,
+  },
 }
 
 local spaces = {
@@ -116,7 +121,9 @@ lualine.setup {
     },
     lualine_x = { diff, spaces, filetype },
     lualine_y = { progress },
-    lualine_z = { location },
+    lualine_z = {
+      --[[  location  ]]
+    },
   },
   inactive_sections = {
     lualine_a = {},
