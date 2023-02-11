@@ -1,15 +1,10 @@
 local status_ok, comment = pcall(require, "Comment")
-local inlayhints_ok, _ = pcall(require, "lsp-inlayhints")
-if not (status_ok and inlayhints_ok) then
+if not status_ok then
   return
 end
 
 comment.setup {
   pre_hook = function(ctx)
-    local line_start = (ctx.srow or ctx.range.srow) - 1
-    local line_end = ctx.erow or ctx.range.erow
-    require("lsp-inlayhints.core").clear(0, line_start, line_end)
-
     require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
 
     if
