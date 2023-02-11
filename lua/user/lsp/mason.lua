@@ -72,9 +72,6 @@ mason_lsp.setup_handlers {
   end,
 }
 
--- -- TODO: cleanup logic, this could be done through mason lspconfig without havving
--- -- to iterate over it manually; see :h mason-lspconfig-automatic-server-setup
---
 -- for _, server in pairs(servers) do
 --   opts = {
 --     on_attach = require("user.lsp.handlers").on_attach,
