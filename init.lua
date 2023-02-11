@@ -1,6 +1,7 @@
 require "user.keymaps"
 require "user.options"
-require "user.packer"
+require "user.lazy"
+-- require "user.packer"
 require "user.impatient"
 require "user.autocommands"
 require "user.colorscheme"

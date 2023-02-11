@@ -279,6 +279,14 @@ return packer.startup(function(use)
     },
   }
 
+  -- Testing
+  use {
+    "klen/nvim-test",
+    config = function()
+      require("nvim-test").setup()
+    end,
+  }
+
   -- Note-taking
   use "phaazon/mind.nvim"
 
