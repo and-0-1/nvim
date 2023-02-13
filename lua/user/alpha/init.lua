@@ -38,7 +38,7 @@ dashboard.section.buttons.val = {
   dashboard.button("t", icons.ui.List .. " Find text", ":Telescope live_grep <CR>"),
   -- dashboard.button("n", icons.ui.Note .. " Notebook", ":e ~/Notes/<cr>"),
   dashboard.button("c", icons.ui.Gear .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
-  dashboard.button("u", icons.ui.CloudDownload .. " Update", ":PackerSync<CR>"),
+  dashboard.button("u", icons.ui.CloudDownload .. " Update", ":Lazy sync<CR>"),
   dashboard.button("q", icons.ui.SignOut .. " Quit", ":qa<CR>"),
 }
 dashboard.section.footer.opts.hl = "Constant"
