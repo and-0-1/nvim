@@ -10,7 +10,7 @@ local servers = {
   "html",
   "jdtls",
   "jsonls",
-  "sumneko_lua",
+  "lua_ls",
   "tflint",
   "tsserver",
   "pyright",
@@ -58,7 +58,7 @@ mason_lsp.setup_handlers {
   function(server_name)
     lspconfig[server_name].setup(server_opts)
   end,
-  ["sumneko_lua"] = function(server_name)
+  ["lua_ls"] = function(server_name)
     local l_status_ok, lua_dev = pcall(require, "neodev")
     if not l_status_ok then
       return
