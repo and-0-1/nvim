@@ -61,16 +61,6 @@ return lazy.setup {
   "nvim-lualine/lualine.nvim",
   "kevinhwang91/nvim-bqf",
   { "Pocco81/true-zen.nvim", branch = "dev" },
-  {
-    "gen740/SmoothCursor.nvim",
-  },
-  {
-    "anuvyklack/windows.nvim",
-    dependencies = {
-      "anuvyklack/middleclass",
-      "anuvyklack/animation.nvim",
-    },
-  },
   -- install latest stable version (recommended)
   { "shortcuts/no-neck-pain.nvim", version = "*" },
 
@@ -119,7 +109,6 @@ return lazy.setup {
   "rose-pine/neovim",
   "rebelot/kanagawa.nvim",
   "andoni0305/mellow.nvim",
-  "levouh/tint.nvim",
   { "catppuccin/nvim", name = "catppuccin" },
   "projekt0n/github-nvim-theme",
   "savq/melange-nvim",
