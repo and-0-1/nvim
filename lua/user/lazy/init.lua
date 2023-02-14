@@ -39,43 +39,25 @@ return lazy.setup {
     ft = { "markdown", "markdown.mdx" },
   },
   -- Delay repeat execution of certain keys
-  "ja-ford/delaytrain.nvim",
   "samjwill/nvim-unception",
 
   -- Comment
   "numToStr/Comment.nvim",
   "folke/todo-comments.nvim",
-  --  "B4mbus/todo-comments.nvim"
 
   -- UI
   "stevearc/dressing.nvim",
   "goolord/alpha-nvim",
   "folke/which-key.nvim",
   "rcarriga/nvim-notify",
-  {
-    "SmiteshP/nvim-navic",
-    dependencies = "neovim/nvim-lspconfig",
-  },
   "kyazdani42/nvim-web-devicons",
-  --  "andymass/vim-matchup"
   "nvim-lualine/lualine.nvim",
   "kevinhwang91/nvim-bqf",
   { "Pocco81/true-zen.nvim", branch = "dev" },
   -- install latest stable version (recommended)
   { "shortcuts/no-neck-pain.nvim", version = "*" },
 
-  -- Registers
-  --  "kkharji/sqlite.lua",
-  --  {
-  --   "AckslD/nvim-neoclip.lua",
-  --   dependencies = {
-  --     { "kkharji/sqlite.lua", module = "sqlite" },
-  --     { "nvim-telescope/telescope.nvim" },
-  --   },
-  -- },
-
   -- Bookmarks
-  --  "MattesGroeger/vim-bookmarks"
   {
     "cbochs/grapple.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -95,17 +77,8 @@ return lazy.setup {
   "kyazdani42/nvim-tree.lua",
   "tamago324/lir.nvim",
 
-  -- Buffer management
-  --  "akinsho/bufferline.nvim"
-  --  {
-  --   "noib3/nvim-cokeline",
-  --   dependencies = "kyazdani42/nvim-web-devicons", -- If you want devicons
-  -- }
-
   -- Colorschemes
   "folke/tokyonight.nvim",
-  --  "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  --  "lunarvim/darkplus.nvim"
   "rose-pine/neovim",
   "rebelot/kanagawa.nvim",
   "andoni0305/mellow.nvim",
@@ -195,9 +168,6 @@ return lazy.setup {
   -- Lua
   "folke/lua-dev.nvim",
 
-  -- Java
-  --  "mfussenegger/nvim-jdtls"
-
   -- Telescope
   "nvim-telescope/telescope.nvim",
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -229,9 +199,6 @@ return lazy.setup {
   -- Debugging
   {
     "mfussenegger/nvim-dap",
-    -- opt = true,
-    -- event = "BufReadPre",
-    -- module = { "dap" },
     dependencies = {
       "theHamsta/nvim-dap-virtual-text",
       "rcarriga/nvim-dap-ui",
