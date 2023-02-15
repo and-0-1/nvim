@@ -8,13 +8,13 @@ no_neck_pain.setup {
   -- Prints useful logs about what event are triggered, and reasons actions are executed.
   debug = false,
   -- When `true`, enables the plugin when you start Neovim.
-  enableOnVimEnter = false,
+  enableOnVimEnter = true,
   -- The width of the focused buffer when enabling NNP.
   -- If the available window size is less than `width`, the buffer will take the whole screen.
   width = 130,
   -- Set globally to Neovim, it allows you to toggle the enable/disable state.
   -- When `false`, the mapping is not created.
-  toggleMapping = "<Leader>np",
+  toggleMapping = "<Leader>N",
   -- Disables NNP if the last valid buffer in the list has been closed.
   disableOnLastBuffer = false,
   -- When `true`, disabling NNP kills every split/vsplit buffers except the main NNP buffer.
@@ -102,17 +102,3 @@ NoNeckPain.bufferOptions = {
     linebreak = true,
   },
 }
-
--- NOTE: autocomand for activating on init
-vim.api.nvim_create_augroup("OnVimEnter", { clear = true })
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-  group = "OnVimEnter",
-  pattern = "*",
-  callback = function()
-    vim.schedule(function()
-      require("no-neck-pain").enable()
-    end)
-  end,
-})
-
-require "user.no-neck-pain.keymaps"
