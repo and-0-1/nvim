@@ -29,7 +29,7 @@ return lazy.setup {
   "akinsho/toggleterm.nvim",
   "NvChad/nvim-colorizer.lua",
   --  "nvim-colortils/colortils.nvim"
-  "windwp/nvim-spectre",
+  { "windwp/nvim-spectre", cmd = "Spectre" },
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
@@ -75,7 +75,7 @@ return lazy.setup {
 
   -- File navigation
   "kyazdani42/nvim-tree.lua",
-  "tamago324/lir.nvim",
+  -- "tamago324/lir.nvim",
 
   -- Colorschemes
   "folke/tokyonight.nvim",
@@ -120,8 +120,21 @@ return lazy.setup {
   "rmagatti/goto-preview",
   "b0o/SchemaStore.nvim",
   --  "folke/trouble.nvim",
-  "RRethy/vim-illuminate",
+  -- "RRethy/vim-illuminate",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  {
+    "tzachar/local-highlight.nvim",
+    -- TODO: move this into it's own file
+    config = function()
+      require("local-highlight").setup {}
+      vim.api.nvim_create_autocmd("BufRead", {
+        pattern = { "*.*" },
+        callback = function(data)
+          require("local-highlight").attach(data.buf)
+        end,
+      })
+    end,
+  },
   -- "lvimuser/lsp-inlayhints.nvim",
   --  "simrat39/inlay-hints.nvim"
   -- "j-hui/fidget.nvim",
@@ -178,7 +191,7 @@ return lazy.setup {
   "nvim-treesitter/nvim-treesitter-textobjects",
   "JoosepAlviste/nvim-ts-context-commentstring",
   "mrjones2014/nvim-ts-rainbow",
-  "nvim-treesitter/playground",
+  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
   "windwp/nvim-ts-autotag",
 
   -- Git
