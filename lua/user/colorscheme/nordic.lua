@@ -23,6 +23,7 @@ nordic.setup {
     CmpItemAbbrMatch = { fg = palette.green.base, bold = true },
     CursorLineNr = { fg = palette.yellow.dim },
     LineNr = { fg = palette.gray5 },
+    WinBar = { bg = palette.bg },
   },
   cursorline = {
     bold = true,
