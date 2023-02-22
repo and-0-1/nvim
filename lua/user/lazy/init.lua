@@ -47,6 +47,12 @@ return lazy.setup {
 
   -- UI
   "stevearc/dressing.nvim",
+  {
+    "liangxianzhe/floating-input.nvim",
+    init = function()
+      require("floating-input").setup()
+    end,
+  },
   "goolord/alpha-nvim",
   "folke/which-key.nvim",
   "rcarriga/nvim-notify",
