@@ -59,9 +59,7 @@ return lazy.setup {
   "kyazdani42/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
   "kevinhwang91/nvim-bqf",
-  { "Pocco81/true-zen.nvim", branch = "dev" },
-  -- install latest stable version (recommended)
-  { "shortcuts/no-neck-pain.nvim", version = "*" },
+  "folke/zen-mode.nvim",
 
   -- Bookmarks
   {
