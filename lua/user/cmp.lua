@@ -106,13 +106,14 @@ cmp.setup {
       group_index = 1,
     },
     { name = "luasnip", group_index = 1 },
-    -- Copilot Source
-    { name = "copilot", group_index = 1 },
-    { name = "codeium", group_index = 1 },
     {
       name = "buffer",
       group_index = 1,
     },
+    -- Copilot Source
+    { name = "copilot", group_index = 1 },
+    { name = "codeium", group_index = 1 },
+
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
     -- { name = "rg", group_index = 3, max_item_count = 3, keyword_length = 6 },
