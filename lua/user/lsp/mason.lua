@@ -8,7 +8,7 @@ local servers = {
   "cssls",
   "cssmodules_ls",
   "html",
-  "jdtls",
+  -- "jdtls",
   "jsonls",
   "lua_ls",
   "tflint",
