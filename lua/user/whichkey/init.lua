@@ -12,7 +12,7 @@ local mappings = {
   w = { "<cmd>w<CR>", "Write" },
   h = { "<cmd>nohlsearch<CR>", "No HL" },
   q = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
-  zz = { '<cmd>lua require("user.functions").save_and_exit()<CR>', "Save and exit" },
+  Z = { '<cmd>lua require("user.functions").save_and_exit()<CR>', "Save and exit" },
   c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 
   -- options
