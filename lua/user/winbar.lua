@@ -107,6 +107,8 @@ M.create_winbar = function()
       "TextChanged",
       "InsertLeave",
       "BufWritePost",
+      "WinEnter",
+      "BufWinEnter",
       -- "TextYankPost",
       -- "InsertEnter",
       -- "CursorMoved",
