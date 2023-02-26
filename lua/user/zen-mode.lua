@@ -35,6 +35,6 @@ zen.setup {
   },
 }
 
-require("user.keymaps.bind").nnoremap("<leader>N", function()
+require("user.keymaps.bind").nnoremap("<leader>z", function()
   zen.toggle()
 end)
