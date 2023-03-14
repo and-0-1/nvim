@@ -19,7 +19,7 @@ zen.setup {
       cursorline = true, -- disable cursorline
       cursorcolumn = false, -- disable cursor column
       foldcolumn = "0", -- disable fold column
-      list = true, -- disable whitespace characters
+      list = false, -- disable whitespace characters
     },
   },
   plugins = {
