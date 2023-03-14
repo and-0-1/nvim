@@ -9,7 +9,7 @@ local mappings = {
   n = {
     name = "Notes",
     g = { "<cmd>MindOpenMain<cr>", "Global notes" },
-    p = { "<cmd>MindOpenProject<cr>", "Global notes" },
+    p = { "<cmd>MindOpenProject<cr>", "Project notes" },
   },
 }
 
