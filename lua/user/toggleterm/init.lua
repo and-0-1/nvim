@@ -8,7 +8,7 @@ toggleterm.setup {
     if term.direction == "horizontal" then
       return 30
     elseif term.direction == "vertical" then
-      return vim.o.columns * 0.75
+      return vim.o.columns * 0.66
     end
   end,
   open_mapping = [[<c-t>]],
@@ -20,7 +20,7 @@ toggleterm.setup {
   insert_mappings = true,
   persist_size = true,
   persist_mode = true,
-  direction = "float",
+  direction = "vertical",
   close_on_exit = true,
   shell = vim.o.shell,
   float_opts = {
