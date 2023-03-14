@@ -18,8 +18,6 @@ if not status_ok then
   return
 end
 
--- require "user.plugins.keymaps"
-
 -- Install your plugins here
 return lazy.setup {
   -- General
@@ -38,8 +36,17 @@ return lazy.setup {
     end,
     ft = { "markdown", "markdown.mdx" },
   },
-  -- Delay repeat execution of certain keys
-  "samjwill/nvim-unception",
+
+  -- opening files from withing nvim terminal
+  {
+    "willothy/flatten.nvim",
+    config = true,
+    -- or pass configuration with
+    -- opts = {  }
+    -- Ensure that it runs first to minimize delay when opening file from terminal
+    lazy = false,
+    priority = 1001,
+  },
 
   -- Comment
   "numToStr/Comment.nvim",
@@ -83,7 +90,7 @@ return lazy.setup {
 
   -- Colorschemes
   "folke/tokyonight.nvim",
-  "rose-pine/neovim",
+  { "rose-pine/neovim", name = "rose-pine" },
   "rebelot/kanagawa.nvim",
   "andoni0305/mellow.nvim",
   { "catppuccin/nvim", name = "catppuccin" },
