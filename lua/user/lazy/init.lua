@@ -79,7 +79,11 @@ return lazy.setup {
   "nacro90/numb.nvim",
 
   -- Word manipulation enhacements
-  "tpope/vim-surround",
+  -- "tpope/vim-surround",
+  {
+    "kylechui/nvim-surround",
+    config = true,
+  },
   "tpope/vim-repeat",
   "tpope/vim-abolish",
   "monaqa/dial.nvim",
