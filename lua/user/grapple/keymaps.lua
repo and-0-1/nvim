@@ -3,15 +3,21 @@ if not status_ok then
   return
 end
 
-local m_opts = require("user.whichkey.settings").m_opts
+local wk_settings = require "user.whichkey.settings"
+
+local opts = wk_settings._opts
+local m_opts = wk_settings.m_opts
 
 local mappings = {
+  H = { '<cmd>lua require("grapple").cycle_backward()<cr>', "Next mark" },
+  L = { '<cmd>lua require("grapple").cycle_forward()<cr>', "Previous mark" },
+}
+local mmappings = {
   name = "Grapple",
+  f = { '<cmd>lua require("user.grapple.picker")()<cr>', "Find" },
   a = { '<cmd>lua require("grapple").toggle()<cr>', "Add" },
-  h = { '<cmd>lua require("grapple").cycle_backward()<cr>', "Next mark" },
-  l = { '<cmd>lua require("grapple").cycle_forward()<cr>', "Previous mark" },
   u = { '<cmd>lua require("grapple").popup_tags()<cr>', "Quick menu" },
-  -- f = { "<cmd>Telescope harpoon marks<cr>", "Search" },
 }
 
-which_key.register(mappings, m_opts)
+which_key.register(mappings, opts)
+which_key.register(mmappings, m_opts)

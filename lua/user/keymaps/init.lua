@@ -75,8 +75,8 @@ nnoremap("gx", [[:silent execute '!open ' . shellescape(expand('<cfile>'), 1)<CR
 nnoremap("<C-q>", ":lua require'user.functions'.qf_toggle()<cr>")
 
 -- Buffer navigation
-nnoremap("H", ":bprevious<cr>")
-nnoremap("L", ":bnext<cr>")
+nmap("H", ":bprevious<cr>")
+nmap("L", ":bnext<cr>")
 
 -- Insert n amount of lines above/below
 nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
