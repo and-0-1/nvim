@@ -130,7 +130,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
     auto_open = true,
   },
   update_focused_file = {
-    enable = true,
+    enable = false,
     update_root = false,
     ignore_list = {},
   },
