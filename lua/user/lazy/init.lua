@@ -26,8 +26,11 @@ return lazy.setup {
   "moll/vim-bbye",
   "akinsho/toggleterm.nvim",
   "NvChad/nvim-colorizer.lua",
-  --  "nvim-colortils/colortils.nvim"
+
+  -- find and replace
   { "windwp/nvim-spectre", cmd = "Spectre" },
+
+  -- Markdown preview
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
@@ -53,13 +56,17 @@ return lazy.setup {
   "folke/todo-comments.nvim",
 
   -- UI
-  "stevearc/dressing.nvim",
   {
-    "liangxianzhe/floating-input.nvim",
-    init = function()
-      require("floating-input").setup()
-    end,
+    "stevearc/dressing.nvim",
+    lazy = true,
   },
+  { "MunifTanjim/nui.nvim", lazy = true },
+  -- {
+  --   "liangxianzhe/floating-input.nvim",
+  --   init = function()
+  --     require("floating-input").setup()
+  --   end,
+  -- },
   "goolord/alpha-nvim",
   "folke/which-key.nvim",
   "rcarriga/nvim-notify",
@@ -90,7 +97,7 @@ return lazy.setup {
 
   -- File navigation
   "kyazdani42/nvim-tree.lua",
-  -- "tamago324/lir.nvim",
+  "tamago324/lir.nvim",
 
   -- Colorschemes
   "folke/tokyonight.nvim",
@@ -113,15 +120,14 @@ return lazy.setup {
   "hrsh7th/cmp-emoji",
   "hrsh7th/cmp-nvim-lua",
   "lukas-reineke/cmp-rg",
-  --  'David-Kunz/cmp-npm' -- doesn't seem to work
 
   -- snippets
   "L3MON4D3/LuaSnip", --snippet engine
   "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-  {
-    "dsznajder/vscode-es7-javascript-react-snippets",
-    build = "yarn install --frozen-lockfile && yarn compile",
-  },
+  -- {
+  --   "dsznajder/vscode-es7-javascript-react-snippets",
+  --   build = "yarn install --frozen-lockfile && yarn compile",
+  -- },
 
   -- LSP
   "neovim/nvim-lspconfig", -- enable LSP
@@ -134,21 +140,49 @@ return lazy.setup {
   "ray-x/lsp_signature.nvim",
   "rmagatti/goto-preview",
   "b0o/SchemaStore.nvim",
-  --  "folke/trouble.nvim",
-  -- "RRethy/vim-illuminate",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  -- {
+  --   "tzachar/local-highlight.nvim",
+  --   -- TODO: move this into it's own file
+  --   config = function()
+  --     require("local-highlight").setup {}
+  --     vim.api.nvim_create_autocmd("BufRead", {
+  --       pattern = { "*.*" },
+  --       callback = function(data)
+  --         require("local-highlight").attach(data.buf)
+  --       end,
+  --     })
+  --   end,
+  -- },
   {
-    "tzachar/local-highlight.nvim",
-    -- TODO: move this into it's own file
-    config = function()
-      require("local-highlight").setup {}
-      vim.api.nvim_create_autocmd("BufRead", {
-        pattern = { "*.*" },
-        callback = function(data)
-          require("local-highlight").attach(data.buf)
+    "RRethy/vim-illuminate",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = { delay = 200 },
+    config = function(_, opts)
+      require("illuminate").configure(opts)
+
+      local function map(key, dir, buffer)
+        vim.keymap.set("n", key, function()
+          require("illuminate")["goto_" .. dir .. "_reference"](false)
+        end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
+      end
+
+      map("))", "next")
+      map("((", "prev")
+
+      -- also set it after loading ftplugins, since a lot overwrite (( and ))
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          local buffer = vim.api.nvim_get_current_buf()
+          map("))", "next", buffer)
+          map("((", "prev", buffer)
         end,
       })
     end,
+    keys = {
+      { "))", desc = "Next Reference" },
+      { "((", desc = "Prev Reference" },
+    },
   },
   -- "lvimuser/lsp-inlayhints.nvim",
   --  "simrat39/inlay-hints.nvim"
@@ -241,6 +275,11 @@ return lazy.setup {
     "klen/nvim-test",
     config = function()
       require("nvim-test").setup()
+      -- require("nvim-test.runners.jest"):setup {
+      --   command = "yarn test", -- a command to run the test runner
+      --   file_pattern = "\\v(__tests__/.*|(spec|test))\\.(js|jsx|coffee|ts|tsx)$", -- determine whether a file is a testfile
+      --   find_files = { "{name}.test.{ext}", "{name}.spec.{ext}" }, -- find testfile for a file
+      -- }
     end,
   },
 
