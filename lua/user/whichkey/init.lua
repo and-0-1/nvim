@@ -39,7 +39,6 @@ local mappings = {
   -- TODO: maybe move these to lsp?
   l = {
     name = "LSP",
-    c = { "<cmd>lua require('user.lsp').server_capabilities()<cr>", "Get Capabilities" },
     f = {
       "<cmd>lua require('user.lsp.handlers').null_ls_format()<cr>",
       "Format",
@@ -59,13 +58,7 @@ local mappings = {
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
     v = { '<cmd>lua require("lsp_lines").toggle()<cr>', "Toggle virtual text" },
-    h = { '<cmd>lua require("lsp-inlayhints").toggle()<cr>', "Toggle hints" },
   },
-
-  -- N = {
-  --   ":e ~/Notes/<cr>",
-  --   "Notebook",
-  -- },
 }
 
 local vmappings = {
