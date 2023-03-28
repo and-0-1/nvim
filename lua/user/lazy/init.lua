@@ -271,15 +271,26 @@ return lazy.setup {
   },
 
   -- Testing
+  -- {
+  --   "klen/nvim-test",
+  --   config = function()
+  --     require("nvim-test").setup()
+  --   end,
+  -- },
   {
-    "klen/nvim-test",
+    "andoni0305/continuous-testing.nvim",
     config = function()
-      require("nvim-test").setup()
-      -- require("nvim-test.runners.jest"):setup {
-      --   command = "yarn test", -- a command to run the test runner
-      --   file_pattern = "\\v(__tests__/.*|(spec|test))\\.(js|jsx|coffee|ts|tsx)$", -- determine whether a file is a testfile
-      --   find_files = { "{name}.test.{ext}", "{name}.spec.{ext}" }, -- find testfile for a file
-      -- }
+      require("continuous-testing").setup {
+        notify = true, -- The default is false
+        run_tests_on_setup = true, -- The default is true, run test on attach
+        framework_setup = {
+          javascript = {
+            test_tool = "jest", -- cwd of the executing test will be at package.json
+            test_cmd = "yarn test %file",
+          },
+        },
+        project_override = {},
+      }
     end,
   },
 
