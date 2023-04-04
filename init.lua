@@ -35,7 +35,6 @@ require "user.goto-preview"
 require "user.dap"
 require "user.mind"
 require("user.winbar").create_winbar()
--- NOTE: Doesn't work with vertical/horizontal toggleterm 😐
 require "user.zippy"
 require "user.zen-mode"
 -- require "user.delaytrain"
