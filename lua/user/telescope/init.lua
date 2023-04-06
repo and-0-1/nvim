@@ -40,11 +40,8 @@ telescope.setup {
 
     mappings = {
       i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
-
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-n>"] = actions.move_selection_next,
+        ["<C-p>"] = actions.move_selection_previous,
 
         ["<C-c>"] = actions.close,
 
@@ -75,6 +72,8 @@ telescope.setup {
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
         -- ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 
+        ["<C-n>"] = actions.move_selection_next,
+        ["<C-p>"] = actions.move_selection_previous,
         ["j"] = actions.move_selection_next,
         ["k"] = actions.move_selection_previous,
         ["H"] = actions.move_to_top,
@@ -99,36 +98,15 @@ telescope.setup {
     },
   },
   pickers = {
-    git_files = {
-      -- theme = "dropdown",
-      -- previewer = false,
-    },
-    find_files = {
-      -- theme = "dropdown",
-      -- previewer = false,
-    },
-    live_grep = {
-      -- theme = "ivy",
-    },
-    grep_string = {
-      -- theme = "ivy",
-    },
-    buffers = {
-      -- theme = "dropdown",
-      -- previewer = false,
-    },
-    lsp_references = {
-      -- theme = "ivy",
-    },
-    lsp_definitions = {
-      -- theme = "ivy",
-    },
-    lsp_declarations = {
-      -- theme = "ivy",
-    },
-    lsp_implementations = {
-      -- theme = "ivy",
-    },
+    git_files = {},
+    find_files = {},
+    live_grep = {},
+    grep_string = {},
+    buffers = {},
+    lsp_references = {},
+    lsp_definitions = {},
+    lsp_declarations = {},
+    lsp_implementations = {},
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
