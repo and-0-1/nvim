@@ -67,7 +67,7 @@ return lazy.setup {
   --     require("floating-input").setup()
   --   end,
   -- },
-  "goolord/alpha-nvim",
+  -- "goolord/alpha-nvim",
   "folke/which-key.nvim",
   "rcarriga/nvim-notify",
   "kyazdani42/nvim-web-devicons",
@@ -82,7 +82,7 @@ return lazy.setup {
   },
 
   -- Text navigation
-  "ggandor/leap.nvim",
+  -- "ggandor/leap.nvim",
   "nacro90/numb.nvim",
 
   -- Word manipulation enhacements
@@ -299,4 +299,11 @@ return lazy.setup {
 
   -- console log generator
   "PatschD/zippy.nvim",
+
+  -- auto close buffer if not used
+  {
+    "chrisgrieser/nvim-early-retirement",
+    config = true,
+    event = "VeryLazy",
+  },
 }
