@@ -38,6 +38,7 @@ return {
     Operator = "",
     TypeParameter = "",
     Copilot = "",
+    Codeium = "ﮧ",
     Suggestion = "ﮧ",
   },
   type = {
