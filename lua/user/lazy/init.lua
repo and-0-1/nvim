@@ -97,17 +97,17 @@ return lazy.setup {
 
   -- File navigation
   "kyazdani42/nvim-tree.lua",
-  "tamago324/lir.nvim",
+  -- "tamago324/lir.nvim",
 
   -- Colorschemes
-  "folke/tokyonight.nvim",
+  -- "folke/tokyonight.nvim",
   { "rose-pine/neovim", name = "rose-pine" },
-  "rebelot/kanagawa.nvim",
-  "andoni0305/mellow.nvim",
-  { "catppuccin/nvim", name = "catppuccin" },
-  "projekt0n/github-nvim-theme",
-  "savq/melange-nvim",
-  "AlexvZyl/nordic.nvim",
+  -- "rebelot/kanagawa.nvim",
+  -- "andoni0305/mellow.nvim",
+  -- { "catppuccin/nvim", name = "catppuccin" },
+  -- "projekt0n/github-nvim-theme",
+  -- "savq/melange-nvim",
+  -- "AlexvZyl/nordic.nvim",
 
   -- cmp plugins
   "hrsh7th/nvim-cmp",
@@ -137,23 +137,10 @@ return lazy.setup {
   "jayp0521/mason-null-ls.nvim",
   "jay-babu/mason-nvim-dap.nvim",
   "simrat39/symbols-outline.nvim",
-  "ray-x/lsp_signature.nvim",
-  "rmagatti/goto-preview",
+  -- "ray-x/lsp_signature.nvim",
+  -- "rmagatti/goto-preview",
   "b0o/SchemaStore.nvim",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  -- {
-  --   "tzachar/local-highlight.nvim",
-  --   -- TODO: move this into it's own file
-  --   config = function()
-  --     require("local-highlight").setup {}
-  --     vim.api.nvim_create_autocmd("BufRead", {
-  --       pattern = { "*.*" },
-  --       callback = function(data)
-  --         require("local-highlight").attach(data.buf)
-  --       end,
-  --     })
-  --   end,
-  -- },
   {
     "RRethy/vim-illuminate",
     event = { "BufReadPost", "BufNewFile" },
