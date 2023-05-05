@@ -59,20 +59,11 @@ M.setup = function()
 
   local doc_window_settings = {
     border = "rounded",
-    width = 80,
+    -- width = 80,
   }
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, doc_window_settings)
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, doc_window_settings)
 end
-
--- local function attach_navic(client, bufnr)
---   vim.g.navic_silence = true
---   local status_ok, navic = pcall(require, "nvim-navic")
---   if not status_ok then
---     return
---   end
---   navic.attach(client, bufnr)
--- end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
@@ -88,7 +79,6 @@ end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-  -- attach_navic(client, bufnr)
 end
 
 function M.enable_format_on_save()
