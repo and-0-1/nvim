@@ -36,7 +36,7 @@ local settings = {
     },
   },
   log_level = vim.log.levels.INFO,
-  max_concurrent_installers = 4,
+  max_concurrent_installers = 10,
 }
 
 mason.setup(settings)
@@ -71,41 +71,3 @@ mason_lsp.setup_handlers {
     lspconfig[server_name].setup(server_opts)
   end,
 }
-
--- for _, server in pairs(servers) do
---   opts = {
---     on_attach = require("user.lsp.handlers").on_attach,
---     capabilities = require("user.lsp.handlers").capabilities,
---   }
---
---   server = vim.split(server, "@")[1]
---
---   -- if server == "tsserver" then
---   --   local tsserver_opts = require "user.lsp.settings.tsserver"
---   --   opts = vim.tbl_deep_extend("force", tsserver_opts, opts) or opts
---   -- end
---   --
---   -- if server == "yamlls" then
---   --   local yamlls_opts = require "user.lsp.settings.yamlls"
---   --   opts = vim.tbl_deep_extend("force", yamlls_opts, opts) or opts
---   -- end
---
---   -- if server == "jsonls" then
---   --   local jsonls_opts = require "user.lsp.settings.jsonls"
---   --   opts = vim.tbl_deep_extend("force", jsonls_opts, opts) or opts
---   -- end
---
---   if server == "sumneko_lua" then
---     local l_status_ok, lua_dev = pcall(require, "neodev")
---     if not l_status_ok then
---       return
---     end
---
---     lua_dev.setup {}
---
---     local lua_opts = require "user.lsp.settings.sumneko_lua"
---     opts = vim.tbl_deep_extend("force", lua_opts, opts)
---   end
---
---   lspconfig[server].setup(opts)
--- end
