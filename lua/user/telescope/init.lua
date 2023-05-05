@@ -21,8 +21,8 @@ telescope.setup {
       vertical = {
         height = 0.9,
         preview_cutoff = 0,
-        preview_height = 0.6,
-        results_height = 0.3,
+        preview_height = 0.4,
+        results_height = 0.6,
         width = 0.7,
       },
 
