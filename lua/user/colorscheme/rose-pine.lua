@@ -12,7 +12,7 @@ rp.setup {
     TelescopeSelection = { fg = "text", bg = "base" },
     -- TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
     NormalFloat = { bg = "base" },
-    FloatBorder = { bg = "base", fg = "rose" },
+    FloatBorder = { bg = "base", fg = "iris" },
     WhichkeyFloat = { bg = "base" },
     LspFloatWinNormal = { bg = "base" },
     FloatShadow = { bg = "base" },
