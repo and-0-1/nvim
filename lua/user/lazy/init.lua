@@ -211,19 +211,6 @@ return lazy.setup {
     end,
   },
 
-  -- codeium
-  -- {
-  --   "jcdickinson/codeium.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   config = function()
-  --     require("codeium").setup {}
-  --   end,
-  -- },
-
   -- Lua
   "folke/lua-dev.nvim",
 
