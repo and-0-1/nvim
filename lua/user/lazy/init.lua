@@ -185,6 +185,16 @@ return lazy.setup {
         require("copilot").setup {
           suggestion = { enabled = false },
           panel = { enabled = false },
+          filetypes = {
+            rust = false,
+            yaml = false,
+            help = false,
+            gitrebase = false,
+            hgcommit = false,
+            svn = false,
+            cvs = false,
+            ["."] = false,
+          },
         }
       end, 100)
     end,
@@ -202,17 +212,17 @@ return lazy.setup {
   },
 
   -- codeium
-  {
-    "jcdickinson/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup {}
-    end,
-  },
+  -- {
+  --   "jcdickinson/codeium.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  --   config = function()
+  --     require("codeium").setup {}
+  --   end,
+  -- },
 
   -- Lua
   "folke/lua-dev.nvim",
@@ -237,7 +247,12 @@ return lazy.setup {
   { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
   -- TMUX
-  "christoomey/vim-tmux-navigator",
+  {
+    "christoomey/vim-tmux-navigator",
+    init = function()
+      vim.g.tmux_navigator_disable_when_zoomed = 1
+    end,
+  },
 
   -- File types
   "jxnblk/vim-mdx-js",
@@ -272,8 +287,9 @@ return lazy.setup {
         run_tests_on_setup = true, -- The default is true, run test on attach
         framework_setup = {
           javascript = {
-            test_tool = "jest", -- cwd of the executing test will be at package.json
-            test_cmd = "yarn test %file",
+            test_tool = "vitest", -- cwd of the executing test will be at package.json
+            test_cmd = "yarn vitest run %file",
+            root_pattern = "vite.config.js", -- used to populate the root option of vitest
           },
         },
         project_override = {},
