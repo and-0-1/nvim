@@ -37,8 +37,26 @@ null_ls.setup {
     formatting.yamlfmt,
     formatting.beautysh,
     formatting.phpcsfixer,
+    formatting.deno_fmt.with {
+      condition = function(utils)
+        return utils.root_has_file {
+          "deno.json",
+          "deno.jsonc",
+        }
+      end,
+    },
 
-    diagnostics.eslint_d,
+    diagnostics.eslint_d.with {
+      condition = function(utils)
+        return utils.root_has_file {
+          ".eslintrc.js",
+          ".eslintrc.cjs",
+          ".eslintrc.yaml",
+          ".eslintrc.yml",
+          ".eslintrc.json",
+        }
+      end,
+    },
     diagnostics.stylelint.with {
       extra_filetypes = { "javascriptreact" },
       condition = function(utils)
