@@ -1,4 +1,4 @@
-local ok, actions = pcall(require, "diffview.actions")
+local ok = pcall(require, "diffview.actions")
 
 if not ok then
   vim.notify "Diffview issues"
