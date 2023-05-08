@@ -20,7 +20,7 @@ toggleterm.setup {
   insert_mappings = true,
   persist_size = true,
   persist_mode = true,
-  direction = "vertical",
+  direction = "float",
   close_on_exit = true,
   shell = vim.o.shell,
   float_opts = {
@@ -30,7 +30,7 @@ toggleterm.setup {
       border = "FloatBorder",
       background = "Normal",
     },
-    height = 50,
+    height = 24,
     width = 150,
   },
 }
