@@ -260,27 +260,10 @@ return lazy.setup {
   },
 
   -- Testing
-  -- {
-  --   "klen/nvim-test",
-  --   config = function()
-  --     require("nvim-test").setup()
-  --   end,
-  -- },
   {
-    "andoni0305/continuous-testing.nvim",
-    config = function()
-      require("continuous-testing").setup {
-        notify = true, -- The default is false
-        run_tests_on_setup = true, -- The default is true, run test on attach
-        framework_setup = {
-          javascript = {
-            test_tool = "vitest", -- cwd of the executing test will be at package.json
-            test_cmd = "yarn vitest run %file",
-            root_pattern = "vite.config.js", -- used to populate the root option of vitest
-          },
-        },
-        project_override = {},
-      }
+    "vim-test/vim-test",
+    init = function()
+      vim.g["test#strategy"] = "toggleterm"
     end,
   },
 
