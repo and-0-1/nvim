@@ -114,7 +114,9 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = { mode },
+    lualine_a = {
+      --[[ mode ]]
+    },
     lualine_b = { branch, diagnostics, grapple },
     lualine_c = {
       --[[ current_signature ]]
