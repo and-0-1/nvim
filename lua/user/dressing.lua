@@ -143,7 +143,6 @@ dressing.setup {
 
       -- Set to `false` to disable
       mappings = {
-        ["<Esc>"] = "Close",
         ["<C-c>"] = "Close",
         ["<CR>"] = "Confirm",
       },
