@@ -39,8 +39,8 @@ nnoremap("<A-k>", "<Esc>:m .-2<CR>==gi")
 
 -- Insert --
 -- Press jk fast to enter
-inoremap("jk", "<ESC>")
-inoremap("kj", "<ESC>")
+-- inoremap("jk", "<ESC>")
+-- inoremap("kj", "<ESC>")
 
 -- Visual --
 -- Stay in indent mode
