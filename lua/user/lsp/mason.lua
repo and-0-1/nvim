@@ -9,6 +9,7 @@ local servers = {
   "cssmodules_ls",
   "html",
   -- "jdtls",
+  "clangd",
   "jsonls",
   "lua_ls",
   "tflint",
@@ -56,6 +57,31 @@ local server_opts = {
 }
 mason_lsp.setup_handlers {
   function(server_name)
+    lspconfig[server_name].setup(server_opts)
+  end,
+  ["tsserver"] = function(server_name)
+    local tsserver_opts = require "user.lsp.settings.tsserver"
+    server_opts = vim.tbl_deep_extend("force", tsserver_opts, server_opts)
+    lspconfig[server_name].setup(server_opts)
+  end,
+  ["jsonls"] = function(server_name)
+    local jsonls_opts = {
+      settings = {
+        json = {
+          schemas = require("schemastore").json.schemas(),
+          validate = { enable = true },
+        },
+      },
+    }
+    server_opts = vim.tbl_deep_extend("force", jsonls_opts, server_opts)
+    lspconfig[server_name].setup(server_opts)
+  end,
+  ["clangd"] = function(server_name)
+    server_opts = vim.tbl_deep_extend("force", {
+      capabilities = {
+        offsetEncoding = { "utf-16" },
+      },
+    }, server_opts)
     lspconfig[server_name].setup(server_opts)
   end,
   ["lua_ls"] = function(server_name)

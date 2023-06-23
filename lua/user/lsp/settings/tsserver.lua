@@ -10,17 +10,30 @@ local inlayHints = {
 
 return {
   settings = {
-    javascript = {
-      suggest = {
-        autoImports = true,
+    tsserver = {
+      javascript = {
+        format = {
+          enable = false,
+        },
+        implicitProjectConfig = {
+          checkJs = true,
+        },
+        suggest = {
+          autoImports = true,
+        },
+        inlayHints = inlayHints,
       },
-      inlayHints = inlayHints,
-    },
-    typescript = {
-      suggest = {
-        autoImports = true,
+      ["js/ts"] = {
+        implicitProjectConfig = {
+          checkJs = true,
+        },
       },
-      inlayHints = inlayHints,
+      typescript = {
+        suggest = {
+          autoImports = true,
+        },
+        inlayHints = inlayHints,
+      },
     },
   },
 }
