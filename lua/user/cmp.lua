@@ -121,13 +121,13 @@ cmp.setup {
   sorting = {
     priority_weight = 2,
     comparators = {
-      require("copilot_cmp.comparators").prioritize,
-      require("copilot_cmp.comparators").score,
       compare.exact,
       compare.offset,
       compare.scopes,
       compare.locality,
       compare.kind,
+      require("copilot_cmp.comparators").prioritize,
+      require("copilot_cmp.comparators").score,
       compare.recently_used,
       compare.score,
       compare.sort_text,
