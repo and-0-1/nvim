@@ -17,6 +17,7 @@ rp.setup {
     LspFloatWinNormal = { bg = "base" },
     FloatShadow = { bg = "base" },
     FloatShadowThrough = { bg = "base" },
+    MatchParen = { fg = "love", bold = true },
   },
 }
 
