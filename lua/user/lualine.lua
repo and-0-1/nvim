@@ -70,7 +70,7 @@ local progress = {
 
 local spaces = {
   function()
-    return " " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+    return "󰌒 " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
   end,
   separator = "|",
   padding = 1,
