@@ -3,8 +3,10 @@ if not status_ok then
   return
 end
 
-local halfcircle_right = ""
-local halfcircle_left = ""
+-- local halfcircle_right = ""
+-- local halfcircle_left = ""
+local halfcircle_right = " "
+local halfcircle_left = " "
 
 local mode = {
   "mode",
