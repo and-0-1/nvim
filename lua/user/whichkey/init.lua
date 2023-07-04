@@ -11,7 +11,7 @@ local mappings = {
   -- general
   w = { "<cmd>w<CR>", "Write" },
   h = { "<cmd>nohlsearch<CR>", "No HL" },
-  q = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
+  q = { "<cmd>q<CR>", "Quit" },
   Z = { '<cmd>lua require("user.functions").save_and_exit()<CR>', "Save and exit" },
   c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 
@@ -24,7 +24,6 @@ local mappings = {
     c = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
     l = { '<cmd>lua require("user.functions").toggle_option("list")<cr>', "Listchars" },
     s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
-    t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
   },
 
   -- window splitting

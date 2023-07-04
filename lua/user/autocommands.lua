@@ -1,22 +1,3 @@
--- vim.api.nvim_create_autocmd({ "User" }, {
---   pattern = { "AlphaReady" },
---   callback = function()
---     vim.cmd [[
---       set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
---     ]]
---   end,
--- })
-
-vim.api.nvim_create_autocmd({ "User" }, {
-  group = vim.api.nvim_create_augroup("AndoAlphaReady", { clear = true }),
-  pattern = { "AlphaReady" },
-  callback = function()
-    vim.cmd [[
-      set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
-    ]]
-  end,
-})
-
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = vim.api.nvim_create_augroup("AndoQForExit", { clear = true }),
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "DressingSelect" },
@@ -37,32 +18,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  group = vim.api.nvim_create_augroup("AndoLIROpts", { clear = true }),
-  pattern = { "lir" },
-  callback = function()
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
-  end,
-})
-
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
---   group = vim.api.nvim_create_augroup("AndoTermOpts", { clear = true }),
---   pattern = { "term://*" },
---   callback = function()
---     vim.cmd "startinsert!"
---     vim.cmd "set cmdheight=1"
---   end,
--- })
-
-vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
---   callback = function()
---     vim.cmd [[
---       if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
---     ]]
---   end,
--- })
+-- vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = vim.api.nvim_create_augroup("AndoWinResize", { clear = true }),
@@ -89,26 +45,5 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   group = vim.api.nvim_create_augroup("AndoYank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
-  end,
-})
-
--- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
---   pattern = { "*.java" },
---   callback = function()
---     vim.lsp.codelens.refresh()
---   end,
--- })
-
--- vim.api.nvim_create_autocmd({ "VimEnter" }, {
---   callback = function()
---     vim.cmd "hi link illuminatedWord LspReferenceText"
---   end,
--- })
-
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  group = vim.api.nvim_create_augroup("AndoCheckTime", { clear = true }),
-  pattern = { "*" },
-  callback = function()
-    vim.cmd "checktime"
   end,
 })

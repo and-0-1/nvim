@@ -268,7 +268,6 @@ return lazy.setup {
   },
 
   -- Note-taking
-  -- "phaazon/mind.nvim",
 
   -- console log generator
   "PatschD/zippy.nvim",
