@@ -1,7 +1,7 @@
 local Remap = require "user.keymaps.bind"
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
-local inoremap = Remap.inoremap
+-- local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
@@ -81,12 +81,6 @@ nmap("L", ":bnext<cr>")
 -- Insert n amount of lines above/below
 nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
 nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
-
--- Reselect latest changed, put, or yanked text
-nnoremap("gV", '"`[" . strpart(getregtype(), 0, 1) . "`]"')
--- Search inside visually highlighted text. Use `silent = false` for it to
--- make effect immediately.
--- xnoremap("g/", "<esc>/\\%V")
 
 -- Search visually selected text (slightly better than builtins in Neovim>=0.8)
 -- xnoremap("*", [[y/\V<C-R>=escape(@", '/\')<CR><CR>]])
