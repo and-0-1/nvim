@@ -27,13 +27,6 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
-  group = vim.api.nvim_create_augroup("AndoWinEnter", { clear = true }),
-  callback = function()
-    vim.cmd "quit"
-  end,
-})
-
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   group = vim.api.nvim_create_augroup("AndoCRO", { clear = true }),
   callback = function()

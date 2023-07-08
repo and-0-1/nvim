@@ -20,7 +20,6 @@ M.winbar_filetype_exclude = {
 }
 
 M.get_filename = function()
-  -- local filename = vim.fn.expand "%:t"
   local filename = vim.fn.expand "%:p:h:t" .. "/" .. "%t"
   local extension = vim.fn.expand "%:e"
   local f = require "user.functions"
@@ -42,7 +41,6 @@ M.get_filename = function()
 end
 
 local excludes = function()
-  -- vim.notify "fetching winbar..."
   if vim.tbl_contains(M.winbar_filetype_exclude, vim.bo.filetype) then
     vim.opt_local.winbar = nil
     return true
@@ -57,10 +55,10 @@ M.get_winbar = function()
   local f = require "user.functions"
   local value = M.get_filename()
 
-  if not f.isempty(value) and f.get_buf_option "mod" then
-    local mod = "%#LineNr#" .. require("user.icons").ui.Circle .. "%*"
-    value = value .. " " .. mod
-  end
+  -- if not f.isempty(value) and f.get_buf_option "mod" then
+  --   local mod = "%#LineNr#" .. require("user.icons").ui.Circle .. "%*"
+  --   value = value .. " " .. mod
+  -- end
 
   local status_ok, _ = pcall(vim.api.nvim_set_option_value, "winbar", value, { scope = "local" })
   if not status_ok then
@@ -72,11 +70,11 @@ M.create_winbar = function()
   vim.api.nvim_create_augroup("_winbar", {})
   vim.api.nvim_create_autocmd({
     "BufEnter",
-    "TextChanged",
-    "InsertLeave",
-    "BufWritePost",
-    "WinEnter",
-    "BufWinEnter",
+    -- "TextChanged",
+    -- "InsertLeave",
+    -- "BufWritePost",
+    -- "WinEnter",
+    -- "BufWinEnter",
   }, {
     group = "_winbar",
     pattern = { "*.*" },
