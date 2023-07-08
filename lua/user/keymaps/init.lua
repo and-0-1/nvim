@@ -82,6 +82,13 @@ nmap("L", ":bnext<cr>")
 nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
 nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
 
--- Search visually selected text (slightly better than builtins in Neovim>=0.8)
--- xnoremap("*", [[y/\V<C-R>=escape(@", '/\')<CR><CR>]])
--- xnoremap("#", [[y?\V<C-R>=escape(@", '?\')<CR><CR>]])
+-- Normal <leader> + key
+-- general
+nnoremap("<leader>w", "<cmd>w<CR>")
+nnoremap("<leader>q", "<cmd>q<CR>")
+nnoremap("<leader>Z", '<cmd>lua require("user.functions").save_and_exit()<CR>')
+nnoremap("<leader>c", "<cmd>Bdelete!<CR>")
+
+-- window splitting
+nnoremap("<leader>-", "<cmd>split<cr>")
+nnoremap("<leader>|", "<cmd>vsplit<cr>")
