@@ -102,12 +102,6 @@ return lazy.setup {
   -- Colorschemes
   -- "folke/tokyonight.nvim",
   { "rose-pine/neovim", name = "rose-pine" },
-  -- "rebelot/kanagawa.nvim",
-  -- "andoni0305/mellow.nvim",
-  -- { "catppuccin/nvim", name = "catppuccin" },
-  -- "projekt0n/github-nvim-theme",
-  -- "savq/melange-nvim",
-  -- "AlexvZyl/nordic.nvim",
 
   -- cmp plugins
   "hrsh7th/nvim-cmp",
@@ -119,15 +113,10 @@ return lazy.setup {
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-emoji",
   "hrsh7th/cmp-nvim-lua",
-  "lukas-reineke/cmp-rg",
 
   -- snippets
   "L3MON4D3/LuaSnip", --snippet engine
   "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-  -- {
-  --   "dsznajder/vscode-es7-javascript-react-snippets",
-  --   build = "yarn install --frozen-lockfile && yarn compile",
-  -- },
 
   -- LSP
   "neovim/nvim-lspconfig", -- enable LSP
@@ -137,43 +126,8 @@ return lazy.setup {
   "jayp0521/mason-null-ls.nvim",
   "jay-babu/mason-nvim-dap.nvim",
   "simrat39/symbols-outline.nvim",
-  -- "ray-x/lsp_signature.nvim",
-  -- "rmagatti/goto-preview",
   "b0o/SchemaStore.nvim",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  -- {
-  --   "RRethy/vim-illuminate",
-  --   event = { "BufReadPost", "BufNewFile" },
-  --   opts = { delay = 200 },
-  --   config = function(_, opts)
-  --     require("illuminate").configure(opts)
-  --
-  --     local function map(key, dir, buffer)
-  --       vim.keymap.set("n", key, function()
-  --         require("illuminate")["goto_" .. dir .. "_reference"](false)
-  --       end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
-  --     end
-  --
-  --     map("))", "next")
-  --     map("((", "prev")
-  --
-  --     -- also set it after loading ftplugins, since a lot overwrite (( and ))
-  --     vim.api.nvim_create_autocmd("FileType", {
-  --       callback = function()
-  --         local buffer = vim.api.nvim_get_current_buf()
-  --         map("))", "next", buffer)
-  --         map("((", "prev", buffer)
-  --       end,
-  --     })
-  --   end,
-  --   keys = {
-  --     { "))", desc = "Next Reference" },
-  --     { "((", desc = "Prev Reference" },
-  --   },
-  -- },
-  -- "lvimuser/lsp-inlayhints.nvim",
-  --  "simrat39/inlay-hints.nvim"
-  -- "j-hui/fidget.nvim",
 
   -- copilot
   {
