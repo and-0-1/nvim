@@ -56,10 +56,10 @@ function _LAZYGIT_TOGGLE()
   lazygit:toggle()
 end
 
-local htop = Terminal:new { cmd = "btop", hidden = true }
+local Remap = require "user.keymaps.bind"
+local nnoremap = Remap.nnoremap
 
-function _HTOP_TOGGLE()
-  htop:toggle()
-end
-
-require "user.toggleterm.keymaps"
+nnoremap("<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>")
+nnoremap("<leader>th", "<cmd>ToggleTerm size=20 direction=horizontal<cr>")
+nnoremap("<leader>tf", "<cmd>ToggleTerm direction=float<cr>")
+nnoremap("<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<cr>")
