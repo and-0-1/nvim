@@ -182,9 +182,6 @@ return lazy.setup {
 
   -- Git
   "lewis6991/gitsigns.nvim",
-  "https://github.com/rhysd/conflict-marker.vim",
-  "almo7aya/openingh.nvim",
-  { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
   -- TMUX
   {
