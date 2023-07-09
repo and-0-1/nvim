@@ -72,7 +72,6 @@ telescope.setup {
 }
 
 -- Load extension configs and bindings
-require "user.telescope.extensions"
 require("telescope").load_extension "fzf"
 
 -- Keymaps

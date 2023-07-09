@@ -60,7 +60,6 @@ return lazy.setup {
     lazy = true,
   },
   { "MunifTanjim/nui.nvim", lazy = true },
-  "folke/which-key.nvim",
   "rcarriga/nvim-notify",
   "kyazdani42/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
@@ -195,7 +194,6 @@ return lazy.setup {
       "rcarriga/nvim-dap-ui",
       "nvim-telescope/telescope-dap.nvim",
       { "jbyuki/one-small-step-for-vimkind" },
-      "which-key.nvim",
     },
   },
 
