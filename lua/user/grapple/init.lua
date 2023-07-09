@@ -4,30 +4,7 @@ if not ok then
   return
 end
 
-grapple.setup {
-  ---@type "debug" | "info" | "warn" | "error"
-  log_level = "warn",
-
-  ---Can be either the name of a builtin scope resolver,
-  ---or a custom scope resolver
-  ---@type string | Grapple.ScopeResolver
-  scope = "git",
-
-  ---Window options used for the popup menu
-  popup_options = {
-    relative = "editor",
-    width = 60,
-    height = 12,
-    style = "minimal",
-    focusable = false,
-    border = "single",
-  },
-
-  integrations = {
-    ---Support for saving tag state using resession.nvim
-    resession = false,
-  },
-}
+grapple.setup {}
 
 -- Create a fallback scope resolver that first tries to use the LSP for a scope
 -- path, then looks for a ".git" repository, and finally falls back on using
@@ -37,4 +14,11 @@ require("grapple.scope").fallback {
   require("grapple").resolvers.static,
 }
 
-require "user.grapple.keymaps"
+local Remap = require "user.keymaps.bind"
+local nnoremap = Remap.nnoremap
+
+nnoremap("mf", '<cmd>lua require("user.grapple.picker")()<cr>')
+nnoremap("ma", '<cmd>lua require("grapple").toggle()<cr>')
+nnoremap("mu", '<cmd>lua require("grapple").popup_tags()<cr>')
+nnoremap("mh", '<cmd>lua require("grapple").cycle_backward()<cr>')
+nnoremap("ml", '<cmd>lua require("grapple").cycle_forward()<cr>')
