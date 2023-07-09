@@ -43,7 +43,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
       glyphs = {
         default = "",
         symlink = "",
-        bookmark = "",
+        bookmark = "󰆤",
         modified = "●",
         folder = {
           arrow_open = icons.ui.ArrowOpen,
@@ -162,4 +162,9 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
     },
   },
 }
-require "user.nvim-tree.keymaps"
+
+local Remap = require "user.keymaps.bind"
+local nnoremap = Remap.nnoremap
+
+nnoremap("<leader>e", "<cmd>NvimTreeToggle<cr>")
+nnoremap("<leader>E", "<cmd>NvimTreeFindFile<cr>")
