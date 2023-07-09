@@ -60,13 +60,6 @@ return lazy.setup {
     lazy = true,
   },
   { "MunifTanjim/nui.nvim", lazy = true },
-  -- {
-  --   "liangxianzhe/floating-input.nvim",
-  --   init = function()
-  --     require("floating-input").setup()
-  --   end,
-  -- },
-  -- "goolord/alpha-nvim",
   "folke/which-key.nvim",
   "rcarriga/nvim-notify",
   "kyazdani42/nvim-web-devicons",
@@ -81,7 +74,6 @@ return lazy.setup {
   },
 
   -- Text navigation
-  -- "ggandor/leap.nvim",
   "nacro90/numb.nvim",
 
   -- Word manipulation enhacements
@@ -92,11 +84,9 @@ return lazy.setup {
   },
   "tpope/vim-repeat",
   "tpope/vim-abolish",
-  "monaqa/dial.nvim",
 
   -- File navigation
   "kyazdani42/nvim-tree.lua",
-  -- "tamago324/lir.nvim",
 
   -- Colorschemes
   -- "folke/tokyonight.nvim",
@@ -124,11 +114,11 @@ return lazy.setup {
   "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
   "jayp0521/mason-null-ls.nvim",
   "jay-babu/mason-nvim-dap.nvim",
-  "simrat39/symbols-outline.nvim",
   "b0o/SchemaStore.nvim",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 
   -- copilot
+  -- TODO: replace with codeium once this expires =(
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -216,11 +206,6 @@ return lazy.setup {
       vim.g["test#strategy"] = "toggleterm"
     end,
   },
-
-  -- Note-taking
-
-  -- console log generator
-  "PatschD/zippy.nvim",
 
   -- auto close buffer if not used
   {
