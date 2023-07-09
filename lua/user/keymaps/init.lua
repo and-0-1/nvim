@@ -88,6 +88,7 @@ nnoremap("<leader>w", "<cmd>w<CR>")
 nnoremap("<leader>q", "<cmd>q<CR>")
 nnoremap("<leader>Z", '<cmd>lua require("user.functions").save_and_exit()<CR>')
 nnoremap("<leader>c", "<cmd>bdelete<CR>")
+nnoremap("<leader>x", "<cmd>Ex<cr>")
 
 -- window splitting
 nnoremap("<leader>-", "<cmd>split<cr>")
