@@ -10,8 +10,6 @@ end
 
 local compare = require "cmp.config.compare"
 
-require("luasnip/loaders/from_vscode").lazy_load()
-
 local check_backspace = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
@@ -51,8 +49,6 @@ cmp.setup {
         fallback()
       end
     end),
-    -- ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-    -- ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-c>"] = cmp.mapping {
@@ -111,11 +107,10 @@ cmp.setup {
       group_index = 1,
     },
     -- Copilot Source
-    { name = "copilot", group_index = 1 },
+    { name = "copilot", group_index = 2 },
 
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
-    -- { name = "rg", group_index = 3, max_item_count = 3, keyword_length = 6 },
     { name = "emoji", group_index = 3 },
   },
   sorting = {
@@ -153,13 +148,6 @@ cmp.setup {
     ghost_text = true,
   },
 }
-
-cmp.setup.cmdline({ "/", "?", ":s/", ":%s/", "'<,'>s/" }, {
-  sources = cmp.config.sources {
-    { name = "buffer" },
-  },
-  mapping = cmp.mapping.preset.cmdline {},
-})
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
