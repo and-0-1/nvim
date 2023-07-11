@@ -27,6 +27,9 @@ local icons = require "user.icons"
 
 local kind_icons = icons.kind
 
+-- NOTE: load snippets
+require("luasnip.loaders.from_vscode").lazy_load()
+
 cmp.setup {
   snippet = {
     expand = function(args)
