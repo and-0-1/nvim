@@ -37,14 +37,14 @@ null_ls.setup {
     formatting.yamlfmt,
     formatting.beautysh,
     formatting.phpcsfixer,
-    formatting.deno_fmt.with {
-      condition = function(utils)
-        return utils.root_has_file {
-          "deno.json",
-          "deno.jsonc",
-        }
-      end,
-    },
+    -- formatting.deno_fmt.with {
+    --   condition = function(utils)
+    --     return utils.root_has_file {
+    --       "deno.json",
+    --       "deno.jsonc",
+    --     }
+    --   end,
+    -- },
 
     diagnostics.eslint_d.with {
       condition = function(utils)
