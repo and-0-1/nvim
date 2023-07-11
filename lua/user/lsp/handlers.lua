@@ -26,18 +26,7 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_lines = false,
-    virtual_text = false,
-    -- virtual_text = {
-    --   -- spacing = 7,
-    --   -- update_in_insert = false,
-    --   -- severity_sort = true,
-    --   -- prefix = "<-",
-    --   prefix = "●",
-    --   source = "if_many", -- Or "always"
-    --   -- format = function(diag)
-    --   --   return diag.message .. "blah"
-    --   -- end,
-    -- },
+    virtual_text = true,
     -- show signs
     signs = {
       active = signs,
@@ -139,5 +128,8 @@ function M.null_ls_format()
     end,
   }
 end
+
+vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
+vim.cmd [[ command! LspFormat execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
 
 return M
