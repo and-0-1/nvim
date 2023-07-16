@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 rp.setup {
+  -- variant = "moon",
   highlight_groups = {
     TelescopeBorder = { fg = "highlight_high", bg = "none" },
     TelescopeNormal = { bg = "none" },
@@ -18,6 +19,8 @@ rp.setup {
     FloatShadow = { bg = "base" },
     FloatShadowThrough = { bg = "base" },
     MatchParen = { fg = "love", bold = true },
+    CursorLineNr = { fg = "pine", bold = true },
+    LineNr = { fg = "subtle" },
   },
 }
 
