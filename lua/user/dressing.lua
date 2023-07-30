@@ -21,10 +21,9 @@ dressing.setup {
     start_in_insert = false,
 
     -- These are passed to nvim_open_win
-    anchor = "SW",
     border = "rounded",
     -- 'editor' and 'win' will default to being centered
-    relative = "cursor",
+    relative = "editor",
 
     -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     prefer_width = 40,
@@ -55,15 +54,6 @@ dressing.setup {
         ["<Down>"] = "HistoryNext",
       },
     },
-
-    override = function(conf)
-      -- This is the config that will be passed to nvim_open_win.
-      -- Change values here to customize the layout
-      return conf
-    end,
-
-    -- see :help dressing_get_config
-    get_config = nil,
   },
   select = {
     -- Set to false to disable the vim.ui.select implementation
@@ -119,8 +109,6 @@ dressing.setup {
 
     -- Options for built-in selector
     builtin = {
-      -- These are passed to nvim_open_win
-      anchor = "NW",
       border = "rounded",
       -- 'editor' and 'win' will default to being centered
       relative = "editor",
@@ -146,18 +134,6 @@ dressing.setup {
         ["<C-c>"] = "Close",
         ["<CR>"] = "Confirm",
       },
-
-      override = function(conf)
-        -- This is the config that will be passed to nvim_open_win.
-        -- Change values here to customize the layout
-        return conf
-      end,
     },
-
-    -- Used to override format_item. See :help dressing-format
-    format_item_override = {},
-
-    -- see :help dressing_get_config
-    get_config = nil,
   },
 }
