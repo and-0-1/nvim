@@ -93,11 +93,17 @@ cmp.setup {
   },
   formatting = {
     fields = { "abbr", "kind", "menu" },
-    format = function(entry, vim_item)
-      -- Kind icons
-      vim_item.kind = kind_icons[vim_item.kind]
-      return vim_item
-    end,
+    -- format = function(entry, vim_item)
+    --   -- Kind icons
+    --   vim_item.kind = kind_icons[vim_item.kind]
+    --   return vim_item
+    -- end,
+    format = require("lspkind").cmp_format {
+      mode = "symbol",
+      maxwidth = 50,
+      ellipsis_char = "...",
+      symbol_map = { Codeium = "" },
+    },
   },
   sources = {
     {
@@ -110,8 +116,9 @@ cmp.setup {
       group_index = 1,
     },
     -- Copilot Source
-    { name = "copilot", group_index = 2 },
-
+    -- { name = "copilot", group_index = 2 },
+    -- Codeium
+    { name = "codeium", group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
     { name = "emoji", group_index = 3 },
@@ -124,8 +131,8 @@ cmp.setup {
       compare.scopes,
       compare.locality,
       compare.kind,
-      require("copilot_cmp.comparators").prioritize,
-      require("copilot_cmp.comparators").score,
+      -- require("copilot_cmp.comparators").prioritize,
+      -- require("copilot_cmp.comparators").score,
       compare.recently_used,
       compare.score,
       compare.sort_text,
