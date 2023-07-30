@@ -62,6 +62,7 @@ return lazy.setup {
   { "MunifTanjim/nui.nvim", lazy = true },
   "rcarriga/nvim-notify",
   "kyazdani42/nvim-web-devicons",
+  "onsails/lspkind.nvim",
   "nvim-lualine/lualine.nvim",
   "kevinhwang91/nvim-bqf",
   "folke/zen-mode.nvim",
@@ -118,38 +119,50 @@ return lazy.setup {
 
   -- copilot
   -- TODO: replace with codeium once this expires =(
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "VimEnter",
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require("copilot").setup {
+  --         suggestion = { enabled = false },
+  --         panel = { enabled = false },
+  --         filetypes = {
+  --           rust = false,
+  --           yaml = false,
+  --           help = false,
+  --           gitrebase = false,
+  --           hgcommit = false,
+  --           svn = false,
+  --           cvs = false,
+  --           ["."] = false,
+  --         },
+  --       }
+  --     end, 100)
+  --   end,
+  -- },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   dependencies = { "copilot.lua" },
+  --   config = function()
+  --     require("copilot_cmp").setup {
+  --       formatters = {
+  --         insert_text = require("copilot_cmp.format").remove_existing,
+  --       },
+  --     }
+  --   end,
+  -- },
+
+  -- codeium
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "VimEnter",
+    "jcdickinson/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
     config = function()
-      vim.defer_fn(function()
-        require("copilot").setup {
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-          filetypes = {
-            rust = false,
-            yaml = false,
-            help = false,
-            gitrebase = false,
-            hgcommit = false,
-            svn = false,
-            cvs = false,
-            ["."] = false,
-          },
-        }
-      end, 100)
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    dependencies = { "copilot.lua" },
-    config = function()
-      require("copilot_cmp").setup {
-        formatters = {
-          insert_text = require("copilot_cmp.format").remove_existing,
-        },
-      }
+      require("codeium").setup {}
     end,
   },
 
@@ -165,11 +178,11 @@ return lazy.setup {
   "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
   "JoosepAlviste/nvim-ts-context-commentstring",
-  "mrjones2014/nvim-ts-rainbow",
-  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
+  -- { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
   "windwp/nvim-ts-autotag",
 
   -- Git
+  "tpope/vim-fugitive",
   "lewis6991/gitsigns.nvim",
 
   -- TMUX
