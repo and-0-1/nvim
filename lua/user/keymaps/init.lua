@@ -87,7 +87,7 @@ nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
 nnoremap("<leader>w", "<cmd>w<CR>")
 nnoremap("<leader>q", "<cmd>q<CR>")
 nnoremap("<leader>Z", '<cmd>lua require("user.functions").save_and_exit()<CR>')
-nnoremap("<leader>c", "<cmd>bdelete<CR>")
+nnoremap("<leader>c", "<cmd>bnext | bd#<CR>")
 nnoremap("<leader>x", "<cmd>Ex<cr>")
 
 -- window splitting

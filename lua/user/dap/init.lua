@@ -8,7 +8,7 @@ local function configure()
       numhl = "",
     },
     rejected = {
-      text = "",
+      text = "󰃤",
       texthl = "LspDiagnosticsSignHint",
       linehl = "",
       numhl = "",
@@ -76,14 +76,14 @@ local function configure_exts()
       -- Display controls in this element
       element = "repl",
       icons = {
-        pause = "",
+        pause = "󰏤",
         play = "",
-        step_into = "",
-        step_over = "",
-        step_out = "",
-        step_back = "倫",
-        run_last = "ﰇ",
-        terminate = "栗",
+        step_into = "󰆹",
+        step_over = "󰆷",
+        step_out = "󰆸",
+        step_back = "󰓕",
+        run_last = "󰜉",
+        terminate = "󰓛",
       },
     },
     floating = {
