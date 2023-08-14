@@ -21,6 +21,7 @@ local servers = {
   "prosemd_lsp",
   "rust_analyzer",
   "vimls",
+  "arduino_language_server"
 }
 
 local settings = {

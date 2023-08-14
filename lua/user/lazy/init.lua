@@ -116,6 +116,7 @@ return lazy.setup {
   "jay-babu/mason-nvim-dap.nvim",
   "b0o/SchemaStore.nvim",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  "mfussenegger/nvim-jdtls",
 
   -- copilot
   -- TODO: replace with codeium once this expires =(
