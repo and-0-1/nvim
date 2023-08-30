@@ -118,7 +118,7 @@ cmp.setup {
     -- Copilot Source
     -- { name = "copilot", group_index = 2 },
     -- Codeium
-    { name = "codeium", group_index = 2 },
+    -- { name = "codeium", group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
     { name = "emoji", group_index = 3 },
