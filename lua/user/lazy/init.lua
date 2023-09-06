@@ -156,17 +156,14 @@ return lazy.setup {
   -- },
 
   -- codeium
-  -- {
-  --   "jcdickinson/codeium.nvim",
-  --   commit = "c4e491a87eeacf0408902c32f031d802c7eafce8",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   config = function()
-  --     require("codeium").setup {}
-  --   end,
-  -- },
+  {
+    "jcdickinson/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = true,
+  },
 
   -- Lua
   "folke/lua-dev.nvim",
