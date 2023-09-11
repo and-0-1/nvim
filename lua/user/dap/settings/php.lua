@@ -18,6 +18,7 @@ dap.configurations.php = {
       ["/sailthru/api-php"] = "${workspaceFolder}/api",
       ["/sailthru/ui"] = "${workspaceFolder}/ui",
       ["/sailthru/su"] = "${workspaceFolder}/su",
+      ["/sailthru/link-php"] = "${workspaceFolder}/link",
     },
   },
 }

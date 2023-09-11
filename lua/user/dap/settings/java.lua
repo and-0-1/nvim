@@ -21,4 +21,14 @@ dap.configurations.java = {
     processId = "${command:PickJavaProcess}",
     cwd = "${workspaceFolder}/template-service",
   },
+  {
+    type = "java",
+    request = "attach",
+    name = "Attach to profile-service",
+    hostName = "profile-service",
+    port = 5002,
+    projectName = "template-service",
+    processId = "${command:PickJavaProcess}",
+    cwd = "${workspaceFolder}/profile-service",
+  },
 }
