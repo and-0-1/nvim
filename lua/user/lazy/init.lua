@@ -111,8 +111,15 @@ return lazy.setup {
   "neovim/nvim-lspconfig", -- enable LSP
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-  "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
-  "jayp0521/mason-null-ls.nvim",
+  "nvimtools/none-ls.nvim", -- for formatters and linters
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "nvimtools/none-ls.nvim",
+    },
+  },
   "jay-babu/mason-nvim-dap.nvim",
   "b0o/SchemaStore.nvim",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -156,14 +163,14 @@ return lazy.setup {
   -- },
 
   -- codeium
-  {
-    "jcdickinson/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = true,
-  },
+  -- {
+  --   "jcdickinson/codeium.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  --   config = true,
+  -- },
 
   -- Lua
   "folke/lua-dev.nvim",
