@@ -25,7 +25,7 @@ end
 
 local icons = require "user.icons"
 
-local kind_icons = icons.kind
+-- local kind_icons = icons.kind
 
 -- NOTE: load snippets
 require("luasnip.loaders.from_vscode").lazy_load()

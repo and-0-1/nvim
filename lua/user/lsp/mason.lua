@@ -9,19 +9,19 @@ local servers = {
   "cssmodules_ls",
   "html",
   -- "jdtls",
-  "clangd",
+  -- "clangd",
   "jsonls",
   "lua_ls",
   "tflint",
   "tsserver",
-  "pyright",
+  -- "pyright",
   "yamlls",
   "bashls",
   "intelephense",
   "prosemd_lsp",
   "rust_analyzer",
   "vimls",
-  "arduino_language_server"
+  -- "arduino_language_server"
 }
 
 local settings = {
