@@ -30,14 +30,14 @@ return lazy.setup {
   { "windwp/nvim-spectre", cmd = "Spectre" },
 
   -- Markdown preview
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "cd app && npm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown", "markdown.mdx" }
-    end,
-    ft = { "markdown", "markdown.mdx" },
-  },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   build = "cd app && npm install",
+  --   init = function()
+  --     vim.g.mkdp_filetypes = { "markdown", "markdown.mdx" }
+  --   end,
+  --   ft = { "markdown", "markdown.mdx" },
+  -- },
 
   -- opening files from withing nvim terminal
   {
