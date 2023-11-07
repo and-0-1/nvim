@@ -22,6 +22,7 @@ local servers = {
   "rust_analyzer",
   "vimls",
   -- "arduino_language_server"
+  "tailwindcss"
 }
 
 local settings = {
