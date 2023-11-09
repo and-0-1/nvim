@@ -93,3 +93,6 @@ nnoremap("<leader>x", "<cmd>Ex<cr>")
 -- window splitting
 nnoremap("<leader>-", "<cmd>split<cr>")
 nnoremap("<leader>|", "<cmd>vsplit<cr>")
+
+-- In the case where no lsp is attached
+nmap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
