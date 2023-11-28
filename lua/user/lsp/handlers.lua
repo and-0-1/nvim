@@ -132,4 +132,6 @@ end
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
 vim.cmd [[ command! LspFormat execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
 
+M.enable_format_on_save()
+
 return M
