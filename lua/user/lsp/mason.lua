@@ -17,12 +17,13 @@ local servers = {
   -- "pyright",
   "yamlls",
   "bashls",
-  "intelephense",
+  -- "intelephense",
   "prosemd_lsp",
   "rust_analyzer",
   "vimls",
   -- "arduino_language_server"
-  "tailwindcss"
+  "tailwindcss",
+  "graphql",
 }
 
 local settings = {
