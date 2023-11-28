@@ -102,7 +102,7 @@ cmp.setup {
       mode = "symbol",
       maxwidth = 50,
       ellipsis_char = "...",
-      symbol_map = { Codeium = "" },
+      symbol_map = { Codeium = "", Copilot = "" },
     },
   },
   sources = {
@@ -116,7 +116,7 @@ cmp.setup {
       group_index = 1,
     },
     -- Copilot Source
-    -- { name = "copilot", group_index = 2 },
+    { name = "copilot", group_index = 2 },
     -- Codeium
     { name = "codeium", group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
@@ -131,8 +131,8 @@ cmp.setup {
       compare.scopes,
       compare.locality,
       compare.kind,
-      -- require("copilot_cmp.comparators").prioritize,
-      -- require("copilot_cmp.comparators").score,
+      require("copilot_cmp.comparators").prioritize,
+      require("copilot_cmp.comparators").score,
       compare.recently_used,
       compare.score,
       compare.sort_text,

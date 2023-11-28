@@ -127,40 +127,40 @@ return lazy.setup {
 
   -- copilot
   -- TODO: replace with codeium once this expires =(
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "VimEnter",
-  --   config = function()
-  --     vim.defer_fn(function()
-  --       require("copilot").setup {
-  --         suggestion = { enabled = false },
-  --         panel = { enabled = false },
-  --         filetypes = {
-  --           rust = false,
-  --           yaml = false,
-  --           help = false,
-  --           gitrebase = false,
-  --           hgcommit = false,
-  --           svn = false,
-  --           cvs = false,
-  --           ["."] = false,
-  --         },
-  --       }
-  --     end, 100)
-  --   end,
-  -- },
-  -- {
-  --   "zbirenbaum/copilot-cmp",
-  --   dependencies = { "copilot.lua" },
-  --   config = function()
-  --     require("copilot_cmp").setup {
-  --       formatters = {
-  --         insert_text = require("copilot_cmp.format").remove_existing,
-  --       },
-  --     }
-  --   end,
-  -- },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "VimEnter",
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup {
+          suggestion = { enabled = false },
+          panel = { enabled = false },
+          filetypes = {
+            rust = false,
+            yaml = false,
+            help = false,
+            gitrebase = false,
+            hgcommit = false,
+            svn = false,
+            cvs = false,
+            ["."] = false,
+          },
+        }
+      end, 100)
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup {
+        formatters = {
+          insert_text = require("copilot_cmp.format").remove_existing,
+        },
+      }
+    end,
+  },
 
   -- codeium
   -- {
@@ -181,9 +181,9 @@ return lazy.setup {
 
   -- Treesitter
   "nvim-treesitter/nvim-treesitter",
-  "nvim-treesitter/nvim-treesitter-context",
+  -- "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
-  "JoosepAlviste/nvim-ts-context-commentstring",
+  -- "JoosepAlviste/nvim-ts-context-commentstring",
   -- { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
   "windwp/nvim-ts-autotag",
 
@@ -218,10 +218,24 @@ return lazy.setup {
   },
 
   -- Testing
+  -- {
+  --   "vim-test/vim-test",
+  --   init = function()
+  --     vim.g["test#strategy"] = "toggleterm"
+  --     vim.g["test#typescript#jest#test_command"] = "yarn test"
+  --   end,
+  -- },
+
   {
-    "vim-test/vim-test",
+    "klen/nvim-test",
     init = function()
-      vim.g["test#strategy"] = "toggleterm"
+      require("nvim-test").setup {
+        term = "toggleterm", -- a terminal to run ("terminal"|"toggleterm")
+      }
+      require("nvim-test.runners.jest"):setup {
+        command = "yarn", -- a command to run the test runner
+        args = { "test" }, -- default arguments
+      }
     end,
   },
 
