@@ -80,7 +80,7 @@ local nnoremap = Remap.nnoremap
 
 nnoremap("<leader>b", "<cmd>Telescope buffers<CR>")
 nnoremap("<C-p>", "<cmd>lua require('user.telescope.finders').project_files()<cr>")
--- nnoremap("<leader>ff", "<cmd>Telescope find_files<cr>")
+nnoremap("<leader>ff", "<cmd>Telescope find_files<cr>")
 nnoremap("<leader>ft", "<cmd>Telescope live_grep<cr>")
 nnoremap("<leader>fw", "<cmd>Telescope grep_string<cr>")
 nnoremap("<leader>fl", "<cmd>Telescope resume<cr>")

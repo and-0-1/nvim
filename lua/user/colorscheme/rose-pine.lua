@@ -5,6 +5,10 @@ end
 
 rp.setup {
   -- variant = "moon",
+  dim_nc_background = true,
+  disable_background = false,
+  disable_float_background = false,
+  disable_italics = true,
   highlight_groups = {
     TelescopeBorder = { fg = "highlight_high", bg = "none" },
     TelescopeNormal = { bg = "none" },
