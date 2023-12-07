@@ -51,7 +51,9 @@ return lazy.setup {
   },
 
   -- Comment
-  "numToStr/Comment.nvim",
+  { "numToStr/Comment.nvim", dependencies = {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  } },
   "folke/todo-comments.nvim",
 
   -- UI
@@ -183,7 +185,15 @@ return lazy.setup {
   "nvim-treesitter/nvim-treesitter",
   -- "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
-  -- "JoosepAlviste/nvim-ts-context-commentstring",
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    init = function()
+      vim.g.skip_ts_context_commentstring_module = true
+      require("ts_context_commentstring").setup {
+        enable_autocmd = false,
+      }
+    end,
+  },
   -- { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
   "windwp/nvim-ts-autotag",
 
