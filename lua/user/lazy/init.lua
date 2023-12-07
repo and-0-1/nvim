@@ -183,7 +183,7 @@ return lazy.setup {
 
   -- Treesitter
   "nvim-treesitter/nvim-treesitter",
-  -- "nvim-treesitter/nvim-treesitter-context",
+  "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
