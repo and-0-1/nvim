@@ -8,8 +8,13 @@ rp.setup {
   dim_nc_background = true,
   disable_background = false,
   disable_float_background = false,
-  disable_italics = true,
+
+  styles = {
+    italic = false,
+  },
+
   highlight_groups = {
+    Winbar = { fg = "iris", bg = "base" },
     TelescopeBorder = { fg = "highlight_high", bg = "none" },
     TelescopeNormal = { bg = "none" },
     TelescopePromptNormal = { bg = "base" },
