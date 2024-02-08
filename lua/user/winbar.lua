@@ -4,8 +4,6 @@ M.winbar_filetype_exclude = {
   "help",
   "startify",
   "dashboard",
-  "packer",
-  "neogitstatus",
   "NvimTree",
   "Trouble",
   "alpha",
@@ -20,23 +18,47 @@ M.winbar_filetype_exclude = {
 }
 
 M.get_filename = function()
-  local filename = vim.fn.expand "%:p:h:t" .. "/" .. "%t"
+  local filepath = vim.fn.expand "%"
+  local filename = vim.fn.expand "%:t"
   local extension = vim.fn.expand "%:e"
   local f = require "user.functions"
+  local max_folders_to_show = 2
 
-  if not f.isempty(filename) then
+  local folders = {}
+
+  for match in string.gmatch(filepath, "/?%w*/") do
+    table.insert(folders, match)
+  end
+
+  local path = ""
+
+  for i = #folders, #folders - (max_folders_to_show - 1), -1 do
+    if folders[i] then
+      path = folders[i] .. path
+    end
+  end
+
+  -- if #folders > max_folders_to_show then
+  --   path = " …" .. path
+  -- end
+
+  path = path .. filename
+
+  if not f.isempty(filepath) then
     local file_icon, file_icon_color =
-      require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
+      require("nvim-web-devicons").get_icon_color(filepath, extension, { default = true })
 
     local hl_group = "FileIconColor" .. extension
 
     vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
     if f.isempty(file_icon) then
-      file_icon = ""
+      file_icon = ""
       file_icon_color = ""
     end
 
-    return "%#Winbar#" .. " " .. "%#" .. hl_group .. "#" .. file_icon .. " " .. "%#Winbar#" .. filename
+    return " " .. "%#" .. hl_group .. "#" .. file_icon .. " " .. "%#Normal#" .. path
+    -- return "%#Winbar#" .. " " .. "%#" .. hl_group .. "#" .. file_icon .. " " .. "%#Winbar#" .. filename
+    -- return "%#Winbar#" .. file_icon .. " " .. filename
   end
 end
 
