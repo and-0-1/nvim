@@ -16,9 +16,10 @@ configs.setup {
   highlight = {
     -- use_languagetree = true,
     enable = true, -- false will disable the whole extension
-    -- disable = { "css", "html" }, -- list of language that will be disabled
-    disable = { "css", "markdown" }, -- list of language that will be disabled
     -- additional_vim_regex_highlighting = true,
+    disable = function(_lang, bufnr) -- Disable in large C++ buffers
+      return vim.api.nvim_buf_line_count(bufnr) > 50000
+    end,
   },
   autopairs = {
     enable = true,
