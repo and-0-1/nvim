@@ -5,7 +5,7 @@ end
 
 rp.setup {
   -- variant = "moon",
-  dim_nc_background = true,
+  dim_nc_background = false,
   disable_background = false,
   disable_float_background = false,
 
