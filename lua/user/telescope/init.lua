@@ -10,11 +10,11 @@ telescope.setup {
   defaults = {
     prompt_prefix = icons.ui.Telescope .. " ",
     file_sorter = require("telescope.sorters").get_fuzzy_file,
-    selection_caret = " ",
+    -- selection_caret = " ",
     path_display = { "truncate" },
     file_ignore_patterns = { ".git/", "node_modules/", "yarn-offline-cache/" },
     winblend = 0,
-    layout_strategy = "vertical",
+    -- layout_strategy = "vertical",
     layout_config = {
       vertical = {
         height = 0.9,
@@ -58,6 +58,36 @@ telescope.setup {
         ["G"] = actions.move_to_bottom,
         ["?"] = actions.which_key,
       },
+    },
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+      layout_config = {
+        width = 0.6,
+      },
+    },
+    git_files = {
+      theme = "dropdown",
+      layout_config = {
+        width = 0.6,
+      },
+    },
+    buffers = {
+      theme = "dropdown",
+      previewer = false,
+    },
+    lsp_references = {
+      theme = "dropdown",
+    },
+    lsp_definitions = {
+      theme = "dropdown",
+    },
+    lsp_implementations = {
+      theme = "dropdown",
+    },
+    lsp_document_symbols = {
+      theme = "dropdown",
     },
   },
   extensions = {
