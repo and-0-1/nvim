@@ -10,10 +10,13 @@ rp.setup {
   disable_float_background = false,
 
   styles = {
-    italic = false,
+    italic = true,
   },
 
   highlight_groups = {
+    ["@variable"] = { fg = "text", italic = false },
+    ["@variable.parameter"] = { fg = "iris", italic = false },
+    ["@property"] = { fg = "foam", italic = false },
     Winbar = { fg = "iris", bg = "base" },
     TelescopeBorder = { fg = "highlight_high", bg = "none" },
     TelescopeNormal = { bg = "none" },
