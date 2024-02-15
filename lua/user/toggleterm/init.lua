@@ -6,9 +6,9 @@ end
 toggleterm.setup {
   size = function(term)
     if term.direction == "horizontal" then
-      return 30
+      return 16
     elseif term.direction == "vertical" then
-      return vim.o.columns * 0.66
+      return vim.o.columns * 0.50
     end
   end,
   open_mapping = [[<c-t>]],
@@ -30,7 +30,7 @@ toggleterm.setup {
       border = "FloatBorder",
       background = "Normal",
     },
-    height = 24,
+    -- height = 30,
     width = 150,
   },
 }
@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new { cmd = "lazygit", hidden = true }
+local lazygit = Terminal:new { cmd = "lazygit", direction = "float", hidden = true }
 
 function _LAZYGIT_TOGGLE()
   lazygit:toggle()
