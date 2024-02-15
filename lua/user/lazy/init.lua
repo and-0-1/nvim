@@ -1,4 +1,4 @@
--- Automatically install lzay
+-- Automatically install lazy
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
@@ -30,14 +30,14 @@ return lazy.setup {
   { "windwp/nvim-spectre", cmd = "Spectre" },
 
   -- Markdown preview
-  -- {
-  --   "iamcco/markdown-preview.nvim",
-  --   build = "cd app && npm install",
-  --   init = function()
-  --     vim.g.mkdp_filetypes = { "markdown", "markdown.mdx" }
-  --   end,
-  --   ft = { "markdown", "markdown.mdx" },
-  -- },
+  {
+    "iamcco/markdown-preview.nvim",
+    build = "cd app && npm install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown", "markdown.mdx" }
+    end,
+    ft = { "markdown", "markdown.mdx" },
+  },
 
   -- opening files from withing nvim terminal
   {
