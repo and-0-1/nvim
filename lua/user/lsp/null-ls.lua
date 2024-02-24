@@ -28,15 +28,15 @@ null_ls.setup {
         }
       end,
     },
-    formatting.eslint_d,
+    -- formatting.eslint_d,
     formatting.stylua,
-    formatting.rustfmt,
+    -- formatting.rustfmt,
     formatting.shfmt,--[[ .with { extra_filetypes = { "zsh", "sh" } } ]]
-    formatting.fixjson,
+    -- formatting.fixjson,
     formatting.markdownlint,
     formatting.yamlfmt,
-    formatting.beautysh,
-    formatting.phpcsfixer,
+    -- formatting.beautysh,
+    -- formatting.phpcsfixer,
     -- formatting.deno_fmt.with {
     --   condition = function(utils)
     --     return utils.root_has_file {
@@ -46,17 +46,17 @@ null_ls.setup {
     --   end,
     -- },
 
-    diagnostics.eslint_d.with {
-      condition = function(utils)
-        return utils.root_has_file {
-          ".eslintrc.js",
-          ".eslintrc.cjs",
-          ".eslintrc.yaml",
-          ".eslintrc.yml",
-          ".eslintrc.json",
-        }
-      end,
-    },
+    -- diagnostics.eslint_d.with {
+    --   condition = function(utils)
+    --     return utils.root_has_file {
+    --       ".eslintrc.js",
+    --       ".eslintrc.cjs",
+    --       ".eslintrc.yaml",
+    --       ".eslintrc.yml",
+    --       ".eslintrc.json",
+    --     }
+    --   end,
+    -- },
     diagnostics.stylelint.with {
       extra_filetypes = { "javascriptreact" },
       condition = function(utils)
@@ -72,14 +72,14 @@ null_ls.setup {
       end,
     },
     diagnostics.zsh,
-    diagnostics.shellcheck.with { extra_filetypes = { "bash", "zsh" } },
+    -- diagnostics.shellcheck.with { extra_filetypes = { "bash", "zsh" } },
     diagnostics.gitlint,
     diagnostics.markdownlint,
     diagnostics.yamllint,
-    diagnostics.luacheck,
+    -- diagnostics.luacheck,
 
-    code_actions.eslint_d,
-    code_actions.shellcheck,
+    -- code_actions.eslint_d,
+    -- code_actions.shellcheck,
     code_actions.proselint,
   },
 }
