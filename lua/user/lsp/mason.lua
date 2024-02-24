@@ -24,6 +24,11 @@ local servers = {
   -- "arduino_language_server"
   "tailwindcss",
   "graphql",
+  -- "denols",
+  -- "omnisharp",
+  "csharp_ls",
+  "pylsp",
+  "eslint",
 }
 
 local settings = {
@@ -97,6 +102,11 @@ mason_lsp.setup_handlers {
 
     local lua_opts = require "user.lsp.settings.sumneko_lua"
     server_opts = vim.tbl_deep_extend("force", lua_opts, server_opts)
+    lspconfig[server_name].setup(server_opts)
+  end,
+  ["tailwindcss"] = function(server_name)
+    local tailwindcss_opts = require "user.lsp.settings.tailwindcss"
+    server_opts = vim.tbl_deep_extend("force", tailwindcss_opts, server_opts)
     lspconfig[server_name].setup(server_opts)
   end,
 }
