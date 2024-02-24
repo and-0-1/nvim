@@ -14,6 +14,9 @@ rp.setup {
   },
 
   highlight_groups = {
+    Whitespace = { fg = "overlay" },
+    NonText = { fg = "overlay" },
+    CursorLine = { bg = "surface" },
     ["@variable"] = { fg = "text", italic = false },
     ["@variable.parameter"] = { fg = "iris", italic = false },
     ["@property"] = { fg = "foam", italic = false },
