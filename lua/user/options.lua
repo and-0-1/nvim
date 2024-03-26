@@ -47,12 +47,14 @@ local options = {
 -- vim.opt.fillchars = vim.opt.fillchars + "vertleft: "
 -- vim.opt.fillchars = vim.opt.fillchars + "vertright: "
 
-vim.opt.fillchars = vim.opt.fillchars + "eob: "
-vim.opt.fillchars:append {
-  stl = " ",
-}
+-- vim.opt.fillchars = vim.opt.fillchars + "eob: "
+-- vim.opt.fillchars:append {
+--   stl = " ",
+-- }
 
-vim.opt.shortmess:append "c"
+-- vim.opt.shortmess:append "c"
+
+vim.g.netrw_keepdir = 0
 
 for k, v in pairs(options) do
   vim.opt[k] = v
