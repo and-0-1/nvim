@@ -1,7 +1,7 @@
 local Remap = require "user.keymaps.bind"
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
--- local inoremap = Remap.inoremap
+local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
@@ -20,8 +20,8 @@ nnoremap("<C-l>", "<C-w>l")
 -- Center on scroll
 nnoremap("gg", "ggzz")
 nnoremap("G", "Gzz")
-nnoremap("<C-d>", "<C-d>zz")
-nnoremap("<C-u>", "<C-u>zz")
+-- nnoremap("<C-d>", "<C-d>zz")
+-- nnoremap("<C-u>", "<C-u>zz")
 
 -- Center on search
 nnoremap("n", "nzzzv")
@@ -48,17 +48,17 @@ vnoremap("<", "<gv")
 vnoremap(">", ">gv")
 
 -- yank to system clipboard
-nnoremap("<leader>y", '"+y')
-vnoremap("<leader>y", '"+y')
-nmap("<leader>Y", '"+Y')
+-- nnoremap("<leader>y", '"+y')
+-- vnoremap("<leader>y", '"+y')
+-- nmap("<leader>Y", '"+Y')
 
 -- delete to system clipboard
-nnoremap("<leader>d", '"_d')
-vnoremap("<leader>d", '"_d')
+-- nnoremap("<leader>d", '"_d')
+-- vnoremap("<leader>d", '"_d')
 
 -- - Paste in Visual with `P` to not copy selected text (`:h v_P`)
-nnoremap("<leader>p", '"+p')
-xnoremap("<leader>p", '"+P')
+-- nnoremap("<leader>p", '"+p')
+-- xnoremap("<leader>p", '"+P')
 
 -- Visual Block --
 -- Move text up and down
