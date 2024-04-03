@@ -84,27 +84,6 @@ local location = {
   },
 }
 
-local grapple = {
-  function()
-    local ok, grapple = pcall(require, "grapple")
-    if not ok then
-      return
-    end
-    local key = grapple.key()
-    return " [" .. key .. "]"
-  end,
-  cond = function()
-    local ok, grapple = pcall(require, "grapple")
-    if not ok then
-      return false
-    end
-    return grapple.exists()
-  end,
-  separator = {
-    right = halfcircle_right,
-  },
-}
-
 lualine.setup {
   options = {
     globalstatus = true,
@@ -119,7 +98,11 @@ lualine.setup {
     lualine_a = {
       --[[ mode ]]
     },
-    lualine_b = { branch, diagnostics, grapple },
+    lualine_b = {
+      branch,
+      diagnostics,
+      "grapple",
+    },
     lualine_c = {
       --[[ current_signature ]]
     },
