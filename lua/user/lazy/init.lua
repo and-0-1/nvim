@@ -63,7 +63,7 @@ return lazy.setup {
   },
   { "MunifTanjim/nui.nvim", lazy = true },
   "rcarriga/nvim-notify",
-  "kyazdani42/nvim-web-devicons",
+  "nvim-tree/nvim-web-devicons",
   "onsails/lspkind.nvim",
   "nvim-lualine/lualine.nvim",
   "kevinhwang91/nvim-bqf",
@@ -128,53 +128,6 @@ return lazy.setup {
   "b0o/SchemaStore.nvim",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
   "mfussenegger/nvim-jdtls",
-
-  -- copilot
-  -- TODO: replace with codeium once this expires =(
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "VimEnter",
-    config = function()
-      vim.defer_fn(function()
-        require("copilot").setup {
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-          filetypes = {
-            rust = false,
-            yaml = false,
-            help = false,
-            gitrebase = false,
-            hgcommit = false,
-            svn = false,
-            cvs = false,
-            ["."] = false,
-          },
-        }
-      end, 100)
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    dependencies = { "copilot.lua" },
-    config = function()
-      require("copilot_cmp").setup {
-        formatters = {
-          insert_text = require("copilot_cmp.format").remove_existing,
-        },
-      }
-    end,
-  },
-
-  -- codeium
-  -- {
-  --   "jcdickinson/codeium.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   config = true,
-  -- },
 
   -- Lua
   "folke/lua-dev.nvim",
