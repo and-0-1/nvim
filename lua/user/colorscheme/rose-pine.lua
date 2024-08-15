@@ -18,7 +18,7 @@ rp.setup {
     NonText = { fg = "overlay" },
     CursorLine = { bg = "surface" },
     ["@variable"] = { fg = "text", italic = false },
-    ["@variable.parameter"] = { fg = "iris", italic = false },
+    -- ["@variable.parameter"] = { fg = "iris", italic = false },
     ["@property"] = { fg = "foam", italic = false },
     Winbar = { fg = "iris", bg = "base" },
     TelescopeBorder = { fg = "highlight_high", bg = "none" },
