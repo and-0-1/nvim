@@ -42,6 +42,7 @@ local options = {
   -- listchars = "tab:→ ,trail:·,eol:↲,extends:…,precedes:…",
   listchars = "tab:󰌒 ,trail:·,lead:·,extends:…,precedes:…,eol:↵",
   list = true,
+  foldmethod = "marker",
 }
 
 -- vim.opt.fillchars = vim.opt.fillchars + "vertleft: "
