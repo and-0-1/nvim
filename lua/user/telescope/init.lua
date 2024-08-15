@@ -15,20 +15,6 @@ telescope.setup {
     file_ignore_patterns = { ".git/", "node_modules/", "yarn-offline-cache/" },
     winblend = 0,
     -- layout_strategy = "vertical",
-    layout_config = {
-      vertical = {
-        height = 0.9,
-        preview_cutoff = 0,
-        preview_height = 0.4,
-        results_height = 0.6,
-        width = 0.7,
-      },
-      flex = {
-        horizontal = {
-          preview_width = 0.9,
-        },
-      },
-    },
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     scroll_strategy = "cycle",
