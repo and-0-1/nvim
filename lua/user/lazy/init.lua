@@ -39,17 +39,6 @@ return lazy.setup {
     ft = { "markdown", "markdown.mdx" },
   },
 
-  -- opening files from withing nvim terminal
-  {
-    "willothy/flatten.nvim",
-    config = true,
-    -- or pass configuration with
-    -- opts = {  }
-    -- Ensure that it runs first to minimize delay when opening file from terminal
-    lazy = false,
-    priority = 1001,
-  },
-
   -- Comment
   { "numToStr/Comment.nvim", dependencies = {
     "JoosepAlviste/nvim-ts-context-commentstring",
@@ -128,6 +117,7 @@ return lazy.setup {
   "b0o/SchemaStore.nvim",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
   "mfussenegger/nvim-jdtls",
+  "davidmh/cspell.nvim",
 
   -- Lua
   "folke/lua-dev.nvim",
