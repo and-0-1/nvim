@@ -3,6 +3,8 @@ if not null_ls_status_ok then
   return
 end
 
+local cspell = require "cspell"
+
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
@@ -35,6 +37,7 @@ null_ls.setup {
     -- formatting.fixjson,
     formatting.markdownlint,
     formatting.yamlfmt,
+    formatting.gofmt,
     -- formatting.beautysh,
     -- formatting.phpcsfixer,
     -- formatting.deno_fmt.with {
@@ -76,11 +79,13 @@ null_ls.setup {
     diagnostics.gitlint,
     diagnostics.markdownlint,
     diagnostics.yamllint,
+    cspell.diagnostics,
     -- diagnostics.luacheck,
 
     -- code_actions.eslint_d,
     -- code_actions.shellcheck,
     code_actions.proselint,
+    cspell.code_actions,
   },
 }
 
