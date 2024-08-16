@@ -29,6 +29,7 @@ local servers = {
   "csharp_ls",
   "pylsp",
   "eslint",
+  "typos_lsp",
 }
 
 local settings = {
