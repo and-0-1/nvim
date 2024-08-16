@@ -19,3 +19,9 @@ dap.adapters.php = {
   command = "php-debug-adapter",
   -- args = {"/opt/vscode-php-debug/out/phpDebug.js"},
 }
+
+-- dap.adapters.coreclr = {
+--   type = "executable",
+--   command = "netcoredbg",
+--   args = { "--interpreter=vscode" },
+-- }
