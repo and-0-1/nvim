@@ -117,7 +117,6 @@ return lazy.setup {
   "b0o/SchemaStore.nvim",
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
   "mfussenegger/nvim-jdtls",
-  "davidmh/cspell.nvim",
 
   -- Lua
   "folke/lua-dev.nvim",
