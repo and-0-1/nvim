@@ -10,6 +10,11 @@ end
 
 local compare = require "cmp.config.compare"
 
+local check_backspace = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
+end
+
 -- NOTE: load snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup {
@@ -20,8 +25,8 @@ cmp.setup {
   },
   preselect = cmp.PreselectMode.None,
   mapping = cmp.mapping.preset.insert {
-    ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-    ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+    ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+    ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-c>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -32,6 +37,32 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
+    ["<C-l>"] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(1) then
+        luasnip.jump(1)
+      elseif luasnip.expandable() then
+        luasnip.expand()
+      elseif check_backspace() then
+        fallback()
+      else
+        fallback()
+      end
+    end, {
+      "n",
+      "i",
+      "s",
+    }),
+    ["<C-h>"] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, {
+      "n",
+      "i",
+      "s",
+    }),
   },
   formatting = {
     fields = { "abbr", "kind", "menu" },
