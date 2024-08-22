@@ -110,4 +110,21 @@ mason_lsp.setup_handlers {
     server_opts = vim.tbl_deep_extend("force", tailwindcss_opts, server_opts)
     lspconfig[server_name].setup(server_opts)
   end,
+  ["eslint"] = function(server_name)
+    local eslint_opts = vim.deepcopy(server_opts)
+    eslint_opts["filetypes"] = {
+      "javascript",
+      "javascriptreact",
+      "javascript.jsx",
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+      "vue",
+      "svelte",
+      "astro",
+      "graphql",
+    }
+
+    lspconfig[server_name].setup(eslint_opts)
+  end,
 }
