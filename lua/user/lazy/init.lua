@@ -51,7 +51,6 @@ return lazy.setup {
     lazy = true,
   },
   { "MunifTanjim/nui.nvim", lazy = true },
-  "rcarriga/nvim-notify",
   "nvim-tree/nvim-web-devicons",
   "onsails/lspkind.nvim",
   "nvim-lualine/lualine.nvim",
