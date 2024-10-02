@@ -53,7 +53,7 @@ return lazy.setup {
   { "MunifTanjim/nui.nvim", lazy = true },
   "nvim-tree/nvim-web-devicons",
   "onsails/lspkind.nvim",
-  "nvim-lualine/lualine.nvim",
+  "tjdevries/express_line.nvim",
   "kevinhwang91/nvim-bqf",
   "folke/zen-mode.nvim",
 
