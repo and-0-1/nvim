@@ -69,8 +69,7 @@ return lazy.setup {
   -- Text navigation
   "nacro90/numb.nvim",
 
-  -- Word manipulation enhacements
-  -- "tpope/vim-surround",
+  -- Word manipulation enhancements
   {
     "kylechui/nvim-surround",
     config = true,
@@ -167,9 +166,14 @@ return lazy.setup {
       "theHamsta/nvim-dap-virtual-text",
       "rcarriga/nvim-dap-ui",
       "nvim-telescope/telescope-dap.nvim",
-      { "jbyuki/one-small-step-for-vimkind" },
+      "jbyuki/one-small-step-for-vimkind",
     },
   },
+  { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
+  -- {
+  --   "Cliffback/netcoredbg-macOS-arm64.nvim",
+  --   dependencies = { "mfussenegger/nvim-dap" },
+  -- },
 
   -- Testing
   -- {
