@@ -21,5 +21,4 @@ require "user.nvim-webdev-icons"
 require "user.dressing"
 require "user.dap"
 require "user.zen-mode"
-require("user.winbar").create_winbar()
 require "user.statusline"
