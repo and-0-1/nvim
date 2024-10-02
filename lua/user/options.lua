@@ -41,7 +41,7 @@ local options = {
   -- guifont = "monospace:h17", -- the font used in graphical neovim applications
   -- listchars = "tab:→ ,trail:·,eol:↲,extends:…,precedes:…",
   listchars = "tab:󰌒 ,trail:·,lead:·,extends:…,precedes:…,eol:↵",
-  list = true,
+  list = false,
   foldmethod = "marker",
 }
 
