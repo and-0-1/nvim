@@ -30,6 +30,7 @@ local options = {
   cursorline = true, -- highlight the current line
   number = true, -- set numbered lines
   relativenumber = true, -- set relative numbered lines
+  statusline = "%<%f %h%w%m%r%=%-14.(%l,%c%V%) %P",
   laststatus = 3,
   showcmd = false,
   ruler = false,
