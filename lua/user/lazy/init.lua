@@ -53,7 +53,7 @@ return lazy.setup {
   { "MunifTanjim/nui.nvim", lazy = true },
   "nvim-tree/nvim-web-devicons",
   "onsails/lspkind.nvim",
-  "tjdevries/express_line.nvim",
+  -- "tjdevries/express_line.nvim",
   "kevinhwang91/nvim-bqf",
   "folke/zen-mode.nvim",
 
@@ -125,7 +125,7 @@ return lazy.setup {
 
   -- Treesitter
   "nvim-treesitter/nvim-treesitter",
-  "nvim-treesitter/nvim-treesitter-context",
+  -- "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
@@ -136,8 +136,7 @@ return lazy.setup {
       }
     end,
   },
-  -- { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
-  "windwp/nvim-ts-autotag",
+  -- "windwp/nvim-ts-autotag",
 
   -- Git
   -- "tpope/vim-fugitive",
