@@ -46,11 +46,6 @@ return lazy.setup {
   "folke/todo-comments.nvim",
 
   -- UI
-  {
-    "stevearc/dressing.nvim",
-    lazy = true,
-  },
-  { "MunifTanjim/nui.nvim", lazy = true },
   "nvim-tree/nvim-web-devicons",
   "onsails/lspkind.nvim",
   -- "tjdevries/express_line.nvim",
