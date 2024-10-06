@@ -4,11 +4,9 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
-local icons = require "user.icons"
 
 telescope.setup {
   defaults = {
-    prompt_prefix = icons.ui.Telescope .. " ",
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     -- selection_caret = " ",
     path_display = { "truncate" },

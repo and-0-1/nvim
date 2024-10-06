@@ -11,23 +11,12 @@ M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
-  local icons = require "user.icons"
-
   local config = {
     -- disable virtual text
     virtual_lines = false,
     virtual_text = false,
     -- show signs
-    signs = {
-      -- active = signs,
-      -- active = true,
-      text = {
-        [vim.diagnostic.severity.INFO] = icons.diagnostics.Information,
-        [vim.diagnostic.severity.WARN] = icons.diagnostics.Warning,
-        [vim.diagnostic.severity.ERROR] = icons.diagnostics.Error,
-        [vim.diagnostic.severity.HINT] = icons.diagnostics.Hint,
-      },
-    },
+    signs = {},
     update_in_insert = false,
     underline = true,
     severity_sort = true,
