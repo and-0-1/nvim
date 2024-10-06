@@ -46,8 +46,7 @@ return lazy.setup {
   "folke/todo-comments.nvim",
 
   -- UI
-  "nvim-tree/nvim-web-devicons",
-  "onsails/lspkind.nvim",
+  -- "nvim-tree/nvim-web-devicons",
   -- "tjdevries/express_line.nvim",
   "kevinhwang91/nvim-bqf",
   "folke/zen-mode.nvim",
@@ -55,9 +54,6 @@ return lazy.setup {
   -- Bookmarks
   {
     "cbochs/grapple.nvim",
-    dependencies = {
-      { "nvim-tree/nvim-web-devicons", lazy = true },
-    },
   },
 
   -- Text navigation
