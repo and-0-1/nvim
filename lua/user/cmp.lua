@@ -64,15 +64,6 @@ cmp.setup {
       "s",
     }),
   },
-  formatting = {
-    fields = { "abbr", "kind", "menu" },
-    format = require("lspkind").cmp_format {
-      mode = "symbol",
-      maxwidth = 50,
-      ellipsis_char = "...",
-      symbol_map = { Codeium = "", Copilot = "" },
-    },
-  },
   sources = {
     {
       name = "nvim_lsp",
