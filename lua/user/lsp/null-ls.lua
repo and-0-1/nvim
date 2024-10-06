@@ -33,6 +33,7 @@ null_ls.setup {
     formatting.markdownlint,
     formatting.yamlfmt,
     formatting.gofmt,
+
     diagnostics.stylelint.with {
       extra_filetypes = { "javascriptreact" },
       condition = function(utils)
