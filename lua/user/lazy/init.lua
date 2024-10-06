@@ -52,9 +52,7 @@ return lazy.setup {
   "folke/zen-mode.nvim",
 
   -- Bookmarks
-  {
-    "cbochs/grapple.nvim",
-  },
+  "cbochs/grapple.nvim",
 
   -- Text navigation
   "nacro90/numb.nvim",
@@ -66,9 +64,6 @@ return lazy.setup {
   },
   "tpope/vim-repeat",
   "tpope/vim-abolish",
-
-  -- File navigation
-  "kyazdani42/nvim-tree.lua",
 
   -- Colorschemes
   -- "folke/tokyonight.nvim",
@@ -116,7 +111,6 @@ return lazy.setup {
 
   -- Treesitter
   "nvim-treesitter/nvim-treesitter",
-  -- "nvim-treesitter/nvim-treesitter-context",
   "nvim-treesitter/nvim-treesitter-textobjects",
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
@@ -143,7 +137,7 @@ return lazy.setup {
   },
 
   -- File types
-  "jxnblk/vim-mdx-js",
+  -- "jxnblk/vim-mdx-js",
 
   -- JSON utils
   "gennaro-tedesco/nvim-jqx",
@@ -159,19 +153,8 @@ return lazy.setup {
     },
   },
   { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-  -- {
-  --   "Cliffback/netcoredbg-macOS-arm64.nvim",
-  --   dependencies = { "mfussenegger/nvim-dap" },
-  -- },
 
   -- Testing
-  -- {
-  --   "vim-test/vim-test",
-  --   init = function()
-  --     vim.g["test#strategy"] = "toggleterm"
-  --     vim.g["test#typescript#jest#test_command"] = "yarn test"
-  --   end,
-  -- },
 
   {
     "klen/nvim-test",
@@ -192,17 +175,4 @@ return lazy.setup {
     config = true,
     event = "VeryLazy",
   },
-
-  -- {
-  --   "iabdelkareem/csharp.nvim",
-  --   dependencies = {
-  --     "williamboman/mason.nvim", -- Required, automatically installs omnisharp
-  --     "mfussenegger/nvim-dap",
-  --     "Tastyep/structlog.nvim", -- Optional, but highly recommended for debugging
-  --   },
-  --   config = function()
-  --     require("mason").setup() -- Mason setup must run before csharp
-  --     require("csharp").setup()
-  --   end,
-  -- },
 }
