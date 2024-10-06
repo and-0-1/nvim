@@ -6,7 +6,7 @@ end
 rp.setup {
   -- variant = "moon",
   -- dim_nc_background = false,
-  -- disable_background = false,
+  disable_background = true,
   -- disable_float_background = false,
   --
   styles = {
@@ -41,8 +41,8 @@ rp.setup {
 
 local colorscheme = "rose-pine"
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
+local colorscheme_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not colorscheme_ok then
   vim.notify("colorscheme " .. colorscheme .. " not found!")
   return
 end
