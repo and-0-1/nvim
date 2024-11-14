@@ -4,7 +4,9 @@ if not ok then
   return
 end
 
-grapple.setup {}
+grapple.setup {
+  icons = false,
+}
 
 local Remap = require "user.keymaps.bind"
 local nnoremap = Remap.nnoremap
