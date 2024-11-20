@@ -57,13 +57,6 @@ local function lsp_keymaps(bufnr)
     "<cmd>lua require('user.lsp.handlers').null_ls_format()<cr>",
     opts
   )
-  vim.api.nvim_buf_set_keymap(
-    bufnr,
-    "n",
-    "<leader>lF",
-    '<cmd>lua require("user.lsp.handlers").toggle_format_on_save()<cr>',
-    opts
-  )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ld", "<cmd>Telescope diagnostics<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", opts)
