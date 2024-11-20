@@ -25,6 +25,7 @@ local servers = {
   "angularls",
   "gopls",
   "vuels",
+  "clangd",
 }
 
 local settings = {
@@ -83,7 +84,7 @@ mason_lsp.setup_handlers {
   ["clangd"] = function(server_name)
     server_opts = vim.tbl_deep_extend("force", {
       capabilities = {
-        offsetEncoding = { "utf-16" },
+        offsetEncoding = { "utf-8" },
       },
     }, server_opts)
     lspconfig[server_name].setup(server_opts)
