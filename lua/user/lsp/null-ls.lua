@@ -29,10 +29,11 @@ null_ls.setup {
       end,
     },
     formatting.stylua,
-    formatting.shfmt,--[[ .with { extra_filetypes = { "zsh", "sh" } } ]]
+    formatting.shfmt, --[[ .with { extra_filetypes = { "zsh", "sh" } } ]]
     formatting.markdownlint,
     formatting.yamlfmt,
     formatting.gofmt,
+    formatting.csharpier,
 
     diagnostics.stylelint.with {
       extra_filetypes = { "javascriptreact" },
