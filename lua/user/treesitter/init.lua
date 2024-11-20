@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 configs.setup {
+  auto_install = false,
   ensure_installed = "all", -- one of "all" or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
@@ -25,7 +26,7 @@ configs.setup {
     enable = true,
   },
   indent = {
-    enable = true, --[[ disable = { "python", "css" } ]]
+    enable = true,
   },
   autotag = {
     enable = true,
@@ -33,7 +34,6 @@ configs.setup {
   },
   rainbow = {
     enable = false,
-    -- disable = { "html" },
   },
   playground = {
     enable = false,
