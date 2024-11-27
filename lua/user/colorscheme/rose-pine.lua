@@ -7,7 +7,7 @@ rp.setup {
   -- variant = "moon",
   -- dim_nc_background = false,
   disable_background = true,
-  -- disable_float_background = false,
+  disable_float_background = true,
   --
   styles = {
     italic = false,
