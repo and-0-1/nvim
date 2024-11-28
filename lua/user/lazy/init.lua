@@ -174,18 +174,18 @@ return lazy.setup {
 
     -- Testing
 
-    {
-      "klen/nvim-test",
-      init = function()
-        require("nvim-test").setup {
-          term = "terminal", -- a terminal to run ("terminal"|"toggleterm")
-        }
-        require("nvim-test.runners.jest"):setup {
-          command = "yarn", -- a command to run the test runner
-          args = { "test" }, -- default arguments
-        }
-      end,
-    },
+    -- {
+    --   "klen/nvim-test",
+    --   init = function()
+    --     require("nvim-test").setup {
+    --       term = "terminal", -- a terminal to run ("terminal"|"toggleterm")
+    --     }
+    --     require("nvim-test.runners.jest"):setup {
+    --       command = "yarn", -- a command to run the test runner
+    --       args = { "test" }, -- default arguments
+    --     }
+    --   end,
+    -- },
 
     -- auto close buffer if not used
     -- {
