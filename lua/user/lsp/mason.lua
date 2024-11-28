@@ -64,11 +64,6 @@ mason_lsp.setup_handlers {
   function(server_name)
     lspconfig[server_name].setup(server_opts)
   end,
-  -- ["tsserver"] = function(server_name)
-  --   local tsserver_opts = require "user.lsp.settings.tsserver"
-  --   server_opts = vim.tbl_deep_extend("force", tsserver_opts, server_opts)
-  --   lspconfig[server_name].setup(server_opts)
-  -- end,
   ["jsonls"] = function(server_name)
     local jsonls_opts = {
       settings = {
