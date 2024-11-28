@@ -1,6 +1,0 @@
-require "user.dap.settings.javascript"
-require "user.dap.settings.lua"
-require "user.dap.settings.php"
-require "user.dap.settings.rust"
-require "user.dap.settings.java"
--- require "user.dap.settings.cs"
