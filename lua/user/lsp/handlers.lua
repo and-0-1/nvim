@@ -66,7 +66,7 @@ local function lsp_keymaps(bufnr)
     bufnr,
     "n",
     "<leader>lt",
-    '<cmd>lua require("user.functions").toggle_diagnostics()<cr>',
+    '<cmd>lua require("user.lsp.handlers").toggle_diagnostics()<cr>',
     opts
   )
 end
@@ -106,6 +106,16 @@ function M.null_ls_format()
       return client.name == "null-ls"
     end,
   }
+end
+
+local diagnostics_active = true
+function M.toggle_diagnostics()
+  diagnostics_active = not diagnostics_active
+  if diagnostics_active then
+    vim.diagnostic.show()
+  else
+    vim.diagnostic.hide()
+  end
 end
 
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
