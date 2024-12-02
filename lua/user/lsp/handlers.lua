@@ -4,6 +4,7 @@ M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
+  vim.notify("cmp_nvim_lsp not found", vim.log.levels.ERROR)
   return
 end
 
@@ -13,8 +14,8 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 M.setup = function()
   local config = {
     -- disable virtual text
-    virtual_lines = false,
     virtual_text = false,
+    virtual_lines = true,
     -- show signs
     signs = {},
     update_in_insert = false,
@@ -42,11 +43,13 @@ end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+  -- NOTE: we first do "mark '" to add current position to jumplist, that way if definition/reference/etc.. is in the same file
+  -- we can do ctrl+o to go back to where we were
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>mark ' | lua vim.lsp.buf.definition()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>mark ' | lua vim.lsp.buf.type_definition()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gI", "<cmd>Telescope lsp_implementations<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gI", "<cmd>mark ' | Telescope lsp_implementations<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>mark ' | Telescope lsp_references<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
