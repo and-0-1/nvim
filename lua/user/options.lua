@@ -29,7 +29,7 @@ local options = {
   cursorline = true, -- highlight the current line
   number = true, -- set numbered lines
   relativenumber = true, -- set relative numbered lines
-  statusline = "%<%f %h%w%m%r%=%-14.(%l,%c%V%) %P",
+  statusline = "%#Title#%<%f %#MoreMsg# %h%w%m%r%=%-14.(%l,%c%V%) %P",
   laststatus = 3,
   showcmd = false,
   ruler = false,
@@ -55,7 +55,7 @@ local options = {
 
 -- vim.opt.shortmess:append "c"
 
-vim.g.netrw_keepdir = 0
+-- vim.g.netrw_keepdir = 0
 
 for k, v in pairs(options) do
   vim.opt[k] = v
