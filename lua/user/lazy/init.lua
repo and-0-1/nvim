@@ -39,7 +39,7 @@ return lazy.setup {
   },
   spec = {
     -- General
-    -- "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
+    "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
     -- "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
     -- "akinsho/toggleterm.nvim",
     "NvChad/nvim-colorizer.lua",
@@ -67,7 +67,7 @@ return lazy.setup {
     -- "nvim-tree/nvim-web-devicons",
     -- "tjdevries/express_line.nvim",
     -- "kevinhwang91/nvim-bqf",
-    "folke/zen-mode.nvim",
+    -- "folke/zen-mode.nvim",
 
     -- Bookmarks
     "cbochs/grapple.nvim",
@@ -103,10 +103,12 @@ return lazy.setup {
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
     -- LSP
-    "neovim/nvim-lspconfig", -- enable LSP
+    { "neovim/nvim-lspconfig", commit = "124be12d782d656b3c75b513a44d9e4728406078" }, -- enable LSP
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "nvimtools/none-ls.nvim", -- for formatters and linters
+    {
+      "nvimtools/none-ls.nvim", -- for formatters and linters
+    },
     {
       "jay-babu/mason-null-ls.nvim",
       event = { "BufReadPre", "BufNewFile" },
@@ -118,7 +120,7 @@ return lazy.setup {
     "jay-babu/mason-nvim-dap.nvim",
     "b0o/SchemaStore.nvim",
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    "mfussenegger/nvim-jdtls",
+    -- "mfussenegger/nvim-jdtls",
 
     -- Lua
     "folke/lua-dev.nvim",
@@ -126,6 +128,7 @@ return lazy.setup {
     -- Telescope
     "nvim-telescope/telescope.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-telescope/telescope-ui-select.nvim",
 
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
