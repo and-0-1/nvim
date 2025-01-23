@@ -8,7 +8,6 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
     file_sorter = require("telescope.sorters").get_fuzzy_file,
-    -- selection_caret = " ",
     path_display = { "truncate" },
     file_ignore_patterns = { ".git/", "node_modules/", "yarn-offline-cache/" },
     winblend = 0,
@@ -46,35 +45,44 @@ telescope.setup {
   },
   pickers = {
     find_files = {
-      theme = "dropdown",
-      layout_config = {
-        width = 0.6,
-      },
+      theme = "ivy",
+      -- layout_config = {
+      --   width = 0.6,
+      -- },
     },
     git_files = {
-      theme = "dropdown",
-      layout_config = {
-        width = 0.6,
-      },
+      theme = "ivy",
+      -- layout_config = {
+      --   width = 0.6,
+      -- },
+    },
+    live_grep = {
+      theme = "ivy",
+    },
+    grep_string = {
+      theme = "ivy",
+    },
+    diagnostics = {
+      theme = "ivy",
     },
     buffers = {
       theme = "dropdown",
       previewer = false,
     },
     lsp_references = {
-      theme = "dropdown",
+      theme = "ivy",
     },
     lsp_definitions = {
-      theme = "dropdown",
+      theme = "ivy",
     },
     lsp_implementations = {
-      theme = "dropdown",
+      theme = "ivy",
     },
     lsp_document_symbols = {
       theme = "dropdown",
     },
     grapple = {
-      theme = "dropdown",
+      theme = "ivy",
     },
   },
   extensions = {
@@ -85,12 +93,14 @@ telescope.setup {
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       -- the default case_mode is "smart_case"
     },
+    ["ui-select"] = { require("telescope.themes").get_dropdown {} },
   },
 }
 
 -- Load extension configs and bindings
 require("telescope").load_extension "fzf"
 require("telescope").load_extension "grapple"
+require("telescope").load_extension "ui-select"
 
 -- Keymaps
 local Remap = require "user.keymaps.bind"
