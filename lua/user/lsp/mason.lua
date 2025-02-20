@@ -1,6 +1,7 @@
 local mason_status_ok, mason = pcall(require, "mason")
 local mason_lsp_status_ok, mason_lsp = pcall(require, "mason-lspconfig")
 if not (mason_status_ok or mason_lsp_status_ok) then
+  vim.notify("mason or mason_lsp missing", vim.log.levels.ERROR)
   return
 end
 
@@ -26,6 +27,8 @@ local servers = {
   "gopls",
   "vuels",
   "clangd",
+  "denols",
+  "pylsp",
 }
 
 local settings = {
@@ -53,6 +56,7 @@ mason_lsp.setup {
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
+  vim.notify("lspconfig missing", vim.log.levels.ERROR)
   return
 end
 
@@ -117,5 +121,18 @@ mason_lsp.setup_handlers {
     }
 
     lspconfig[server_name].setup(eslint_opts)
+  end,
+  ["ts_ls"] = function(server_name)
+    local ts_opts = vim.deepcopy(server_opts)
+    ts_opts["root_dir"] = lspconfig.util.root_pattern "package.json"
+    ts_opts["single_file_support"] = false
+
+    lspconfig[server_name].setup(ts_opts)
+  end,
+  ["denols"] = function(server_name)
+    local denols_opts = vim.deepcopy(server_opts)
+    denols_opts["root_dir"] = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
+
+    lspconfig[server_name].setup(denols_opts)
   end,
 }
