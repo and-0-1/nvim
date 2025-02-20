@@ -15,7 +15,7 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_text = false,
-    virtual_lines = true,
+    virtual_lines = false,
     -- show signs
     signs = {},
     update_in_insert = false,
@@ -122,7 +122,8 @@ function M.toggle_diagnostics()
 end
 
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
-vim.cmd [[ command! LspFormat execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
+vim.cmd [[ command! NullLSFormat execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
+vim.cmd [[ command! LSPFormat execute 'lua vim.lsp.buf.format()' ]]
 
 M.enable_format_on_save()
 
