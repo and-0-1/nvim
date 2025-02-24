@@ -2,18 +2,16 @@ local options = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 1, -- more space in the neovim command line for displaying messages
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  completeopt = { "menuone", "noselect", "fuzzy" }, -- mostly just for cmp
   conceallevel = 0, -- so that `` is visible in markdown files
-  -- colorcolumn = "80",
-  -- colorcolumn = "120",
   fileencoding = "utf-8", -- the encoding written to a file
   hlsearch = true, -- highlight all matches on previous search pattern
-  ignorecase = true, -- ignore case in search patterns
+  -- ignorecase = true, -- ignore case in search patterns
   -- mouse = "a", -- allow the mouse to be used in neovim
   -- pumheight = 10, -- pop up menu height
   showtabline = 0, -- always show tabs
   smartcase = true, -- smart case
-  smartindent = true, -- make indenting smarter again
+  smartindent = true,
   autoindent = true,
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
@@ -26,16 +24,14 @@ local options = {
   expandtab = true, -- convert tabs to spaces
   shiftwidth = 2, -- the number of spaces inserted for each indentation
   tabstop = 2, -- insert 2 spaces for a tab
-  cursorline = true, -- highlight the current line
+  cursorline = false, -- highlight the current line
   number = true, -- set numbered lines
   relativenumber = true, -- set relative numbered lines
   statusline = "%#Title#%<%f %#MoreMsg# %h%w%m%r%=%-14.(%l,%c%V%) %P",
   laststatus = 3,
-  showcmd = false,
-  ruler = false,
   numberwidth = 4, -- set number column width to 2 {default 4}
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-  wrap = false, -- display lines as one long line
+  wrap = true, -- wrap lines
   scrolloff = 8, -- is one of my fav
   sidescrolloff = 8,
   -- guifont = "monospace:h17", -- the font used in graphical neovim applications
@@ -56,6 +52,7 @@ local options = {
 -- vim.opt.shortmess:append "c"
 
 -- vim.g.netrw_keepdir = 0
+-- vim.g.netrw_liststyle = 3 -- show tree style by default
 
 for k, v in pairs(options) do
   vim.opt[k] = v
