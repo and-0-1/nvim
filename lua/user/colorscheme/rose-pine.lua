@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 rp.setup {
-  -- variant = "moon",
+  variant = "moon",
   -- dim_nc_background = false,
   disable_background = true,
   disable_float_background = true,
