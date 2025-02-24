@@ -47,16 +47,6 @@ return lazy.setup {
     -- find and replace
     { "windwp/nvim-spectre", cmd = "Spectre" },
 
-    -- Markdown preview
-    -- {
-    --   "iamcco/markdown-preview.nvim",
-    --   build = "cd app && npm install",
-    --   init = function()
-    --     vim.g.mkdp_filetypes = { "markdown", "markdown.mdx" }
-    --   end,
-    --   ft = { "markdown", "markdown.mdx" },
-    -- },
-
     -- Comment
     { "numToStr/Comment.nvim", dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
@@ -103,7 +93,7 @@ return lazy.setup {
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
     -- LSP
-    { "neovim/nvim-lspconfig", commit = "124be12d782d656b3c75b513a44d9e4728406078" }, -- enable LSP
+    { "neovim/nvim-lspconfig" }, -- enable LSP
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     {
