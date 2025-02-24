@@ -1,7 +1,4 @@
-local null_ls_status_ok, null_ls = pcall(require, "null-ls")
-if not null_ls_status_ok then
-  return
-end
+local null_ls = require "null-ls"
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
@@ -31,8 +28,8 @@ null_ls.setup {
     formatting.stylua,
     formatting.shfmt, --[[ .with { extra_filetypes = { "zsh", "sh" } } ]]
     formatting.markdownlint,
-    formatting.yamlfmt,
-    formatting.gofmt,
+    -- formatting.yamlfmt,
+    -- formatting.gofmt,
     formatting.csharpier,
 
     diagnostics.stylelint.with {
@@ -58,11 +55,8 @@ null_ls.setup {
   },
 }
 
-local mason_null_ok, mason_null = pcall(require, "mason-null-ls")
+local mason_null = require "mason-null-ls"
 
-if not mason_null_ok then
-  return
-end
 
 mason_null.setup {
   ensure_installed = nil,
