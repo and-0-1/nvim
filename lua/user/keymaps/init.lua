@@ -34,8 +34,8 @@ nnoremap("N", "Nzzzv")
 -- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Move text up and down
-nnoremap("<A-j>", "<Esc>:m .+1<CR>==gi")
-nnoremap("<A-k>", "<Esc>:m .-2<CR>==gi")
+-- nnoremap("<A-j>", "<Esc>:m .+1<CR>==gi")
+-- nnoremap("<A-k>", "<Esc>:m .-2<CR>==gi")
 
 -- Insert --
 -- Press jk fast to enter
@@ -75,8 +75,8 @@ nnoremap("gx", [[:silent execute '!open ' . shellescape(expand('<cfile>'), 1)<CR
 nnoremap("<C-q>", ":lua require'user.functions'.qf_toggle()<cr>")
 
 -- Buffer navigation
-nmap("H", ":bprevious<cr>")
-nmap("L", ":bnext<cr>")
+-- nmap("H", ":bprevious<cr>")
+-- nmap("L", ":bnext<cr>")
 
 -- Insert n amount of lines above/below
 nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
