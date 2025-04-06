@@ -28,19 +28,14 @@ M.setup = function()
       source = "if_many",
       header = "",
       prefix = "",
+      -- winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
     },
   }
 
   vim.diagnostic.config(config)
-
-  local doc_window_settings = {
-    border = "rounded",
-    -- width = 80,
-  }
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, doc_window_settings)
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, doc_window_settings)
 end
 
+-- TODO(ando): refactor this to be simpler, new nvim lsp api supports a lot of the capabilities we need
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   -- NOTE: we first do "mark '" to add current position to jumplist, that way if definition/reference/etc.. is in the same file
@@ -104,7 +99,7 @@ end
 
 function M.null_ls_format()
   vim.lsp.buf.format {
-    async = true,
+    -- async = true,
     filter = function(client)
       return client.name == "null-ls"
     end,
