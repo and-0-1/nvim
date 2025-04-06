@@ -40,9 +40,7 @@ return lazy.setup {
   spec = {
     -- General
     "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
-    -- "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
-    -- "akinsho/toggleterm.nvim",
-    "NvChad/nvim-colorizer.lua",
+    -- "NvChad/nvim-colorizer.lua",
 
     -- find and replace
     { "windwp/nvim-spectre", cmd = "Spectre" },
@@ -60,9 +58,6 @@ return lazy.setup {
 
     -- Bookmarks
     -- "cbochs/grapple.nvim",
-
-    -- Text navigation
-    "nacro90/numb.nvim",
 
     -- Word manipulation enhancements
     {
@@ -106,10 +101,10 @@ return lazy.setup {
         "nvimtools/none-ls.nvim",
       },
     },
-    "jay-babu/mason-nvim-dap.nvim",
     "b0o/SchemaStore.nvim",
     -- "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     -- "mfussenegger/nvim-jdtls",
+    { url = "https://gitlab.com/schrieveslaach/sonarlint.nvim" },
 
     -- Lua
     "folke/lua-dev.nvim",
@@ -136,7 +131,7 @@ return lazy.setup {
     -- Git
     -- "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
-    "almo7aya/openingh.nvim",
+    { "almo7aya/openingh.nvim", cmd = "OpenInGHFile" },
 
     -- TMUX
     -- {
@@ -150,7 +145,7 @@ return lazy.setup {
     -- "jxnblk/vim-mdx-js",
 
     -- JSON utils
-    "gennaro-tedesco/nvim-jqx",
+    -- { "gennaro-tedesco/nvim-jqx", lazy = true },
 
     -- Debugging
     -- {
