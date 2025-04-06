@@ -42,11 +42,11 @@ local function lsp_keymaps(bufnr)
   -- we can do ctrl+o to go back to where we were
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>mark ' | lua vim.lsp.buf.definition()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>mark ' | lua vim.lsp.buf.type_definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover({border = 'rounded'})<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gI", "<cmd>mark ' | Telescope lsp_implementations<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>mark ' | Telescope lsp_references<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help({border = 'rounded'})<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
   vim.api.nvim_buf_set_keymap(
     bufnr,
@@ -59,7 +59,11 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lv", '<cmd>lua require("lsp_lines").toggle()<cr>', opts)
+  vim.keymap.set("n", "<leader>lv", function()
+    local new_config = not vim.diagnostic.config().virtual_lines
+    vim.diagnostic.config { virtual_lines = new_config }
+  end, { desc = "Toggle diagnostic virtual_lines", buffer = true })
+
   vim.api.nvim_buf_set_keymap(
     bufnr,
     "n",
