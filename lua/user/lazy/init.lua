@@ -57,10 +57,9 @@ return lazy.setup {
     -- "nvim-tree/nvim-web-devicons",
     -- "tjdevries/express_line.nvim",
     -- "kevinhwang91/nvim-bqf",
-    -- "folke/zen-mode.nvim",
 
     -- Bookmarks
-    "cbochs/grapple.nvim",
+    -- "cbochs/grapple.nvim",
 
     -- Text navigation
     "nacro90/numb.nvim",

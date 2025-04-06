@@ -81,9 +81,9 @@ telescope.setup {
     lsp_document_symbols = {
       theme = "dropdown",
     },
-    grapple = {
-      theme = "ivy",
-    },
+    -- grapple = {
+    --   theme = "ivy",
+    -- },
   },
   extensions = {
     fzf = {
@@ -99,8 +99,8 @@ telescope.setup {
 
 -- Load extension configs and bindings
 require("telescope").load_extension "fzf"
-require("telescope").load_extension "grapple"
 require("telescope").load_extension "ui-select"
+-- require("telescope").load_extension "grapple"
 
 -- Keymaps
 local Remap = require "user.keymaps.bind"
