@@ -121,8 +121,8 @@ function M.toggle_diagnostics()
 end
 
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
-vim.cmd [[ command! NullLSFormat execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
-vim.cmd [[ command! LSPFormat execute 'lua vim.lsp.buf.format()' ]]
+vim.cmd [[ command! NullLsFormat execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
+vim.cmd [[ command! Ft execute 'lua vim.lsp.buf.format()' ]]
 
 M.enable_format_on_save()
 
