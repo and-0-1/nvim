@@ -28,7 +28,10 @@ local servers = {
   "vuels",
   "clangd",
   "denols",
-  "pylsp",
+  -- "pylsp",
+  "pyright",
+  "ruff",
+  -- "omnisharp",
 }
 
 local settings = {
@@ -134,5 +137,14 @@ mason_lsp.setup_handlers {
     denols_opts["root_dir"] = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
 
     lspconfig[server_name].setup(denols_opts)
+  end,
+  -- ["pylsp"] = function(server_name)
+  --   lspconfig[server_name].setup(server_opts)
+  -- end,
+  ["pyright"] = function(server_name)
+    lspconfig[server_name].setup(server_opts)
+  end,
+  ["ruff"] = function(server_name)
+    lspconfig[server_name].setup(server_opts)
   end,
 }

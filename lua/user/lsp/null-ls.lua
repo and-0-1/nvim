@@ -31,6 +31,7 @@ null_ls.setup {
     -- formatting.yamlfmt,
     -- formatting.gofmt,
     formatting.csharpier,
+    -- formatting.black,
 
     diagnostics.stylelint.with {
       extra_filetypes = { "javascriptreact" },
@@ -56,7 +57,6 @@ null_ls.setup {
 }
 
 local mason_null = require "mason-null-ls"
-
 
 mason_null.setup {
   ensure_installed = nil,
