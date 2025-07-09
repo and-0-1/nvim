@@ -75,15 +75,12 @@ for index, server_name in pairs(servers) do
         offsetEncoding = { "utf-8" },
       },
     }, server_opts)
-  elseif server_name == "tailwindcss" then
-    local tailwindcss_opts = require "user.lsp.settings.tailwindcss"
-    server_opts = vim.tbl_deep_extend("force", tailwindcss_opts, server_opts)
-  elseif server_name == "ts_ls" then
-    server_opts = vim.tbl_deep_extend("force", { root_dir = lspconfig.util.root_pattern "package.json" }, server_opts)
-    --     ts_opts["single_file_support"] = false
-  elseif server_name == "denols" then
-    server_opts =
-      vim.tbl_deep_extend("force", { root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc") }, server_opts)
+    -- elseif server_name == "tailwindcss" then
+    --   local tailwindcss_opts = require "user.lsp.settings.tailwindcss"
+    --   server_opts = vim.tbl_deep_extend("force", tailwindcss_opts, server_opts)
+    -- elseif server_name == "denols" then
+    --   server_opts =
+    --     vim.tbl_deep_extend("force", { root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc") }, server_opts)
   end
 
   vim.lsp.config[server_name] = server_opts
