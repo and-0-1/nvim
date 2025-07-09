@@ -107,7 +107,17 @@ return lazy.setup {
     { url = "https://gitlab.com/schrieveslaach/sonarlint.nvim" },
 
     -- Lua
-    "folke/lua-dev.nvim",
+    {
+      "folke/lazydev.nvim",
+      ft = "lua", -- only load on lua files
+      opts = {
+        library = {
+          -- See the configuration section for more details
+          -- Load luvit types when the `vim.uv` word is found
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        },
+      },
+    },
 
     -- Telescope
     "nvim-telescope/telescope.nvim",
