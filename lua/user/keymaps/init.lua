@@ -1,7 +1,7 @@
 local Remap = require "user.keymaps.bind"
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
-local inoremap = Remap.inoremap
+-- local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
@@ -18,14 +18,14 @@ nnoremap("<C-k>", "<C-w>k")
 nnoremap("<C-l>", "<C-w>l")
 
 -- Center on scroll
-nnoremap("gg", "ggzz")
-nnoremap("G", "Gzz")
+-- nnoremap("gg", "ggzz")
+-- nnoremap("G", "Gzz")
 -- nnoremap("<C-d>", "<C-d>zz")
 -- nnoremap("<C-u>", "<C-u>zz")
 
 -- Center on search
-nnoremap("n", "nzzzv")
-nnoremap("N", "Nzzzv")
+-- nnoremap("n", "nzzzv")
+-- nnoremap("N", "Nzzzv")
 
 -- Resize with arrows
 -- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -79,20 +79,20 @@ nnoremap("<C-q>", ":lua require'user.functions'.qf_toggle()<cr>")
 -- nmap("L", ":bnext<cr>")
 
 -- Insert n amount of lines above/below
-nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
-nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
+-- nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
+-- nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
 
 -- Normal <leader> + key
 -- general
-nnoremap("<leader>w", "<cmd>w<CR>")
-nnoremap("<leader>q", "<cmd>q<CR>")
-nnoremap("<leader>Z", '<cmd>lua require("user.functions").save_and_exit()<CR>')
+-- nnoremap("<leader>w", "<cmd>w<CR>")
+-- nnoremap("<leader>q", "<cmd>q<CR>")
+-- nnoremap("<leader>Z", '<cmd>lua require("user.functions").save_and_exit()<CR>')
 nnoremap("<leader>c", "<cmd>bnext | bd#<CR>")
 nnoremap("<leader>x", "<cmd>Ex<cr>")
 
 -- window splitting
-nnoremap("<leader>-", "<cmd>split<cr>")
-nnoremap("<leader>|", "<cmd>vsplit<cr>")
+-- nnoremap("<leader>-", "<cmd>split<cr>")
+-- nnoremap("<leader>|", "<cmd>vsplit<cr>")
 
 -- In the case where no lsp is attached
 nmap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
