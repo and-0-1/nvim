@@ -28,7 +28,7 @@ local options = {
   number = true, -- set numbered lines
   relativenumber = true, -- set relative numbered lines
   statusline = "%#Title#%<%f %#MoreMsg# %h%w%m%r%=%-14.(%l,%c%V%) %P",
-  laststatus = 3,
+  laststatus = 2,
   numberwidth = 4, -- set number column width to 2 {default 4}
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
   wrap = true, -- wrap lines
@@ -39,6 +39,7 @@ local options = {
   listchars = "tab:→ ,trail:·,lead:·,extends:…,precedes:…,eol:↵",
   list = false,
   foldmethod = "marker",
+  wildchar = vim.fn.char2nr "", -- change autocomplete menu trigger from Tab -> Ctrl - n; wildchar only accepts number in lua, so we transform char to number
 }
 
 -- vim.opt.fillchars = vim.opt.fillchars + "vertleft: "
