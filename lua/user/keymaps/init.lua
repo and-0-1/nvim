@@ -79,8 +79,8 @@ nnoremap("<C-q>", ":lua require'user.functions'.qf_toggle()<cr>")
 -- nmap("L", ":bnext<cr>")
 
 -- Insert n amount of lines above/below
--- nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
--- nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
+nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
+nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
 
 -- Normal <leader> + key
 -- general
