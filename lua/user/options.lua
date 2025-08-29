@@ -1,3 +1,4 @@
+local statusline = require "user.statusline"
 local options = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -27,11 +28,11 @@ local options = {
   cursorline = true, -- highlight the current line
   number = true, -- set numbered lines
   relativenumber = true, -- set relative numbered lines
-  statusline = "%#Title#%<%f %#MoreMsg# %h%w%m%r%=%-14.(%l,%c%V%) %P",
+  statusline = statusline.full,
   laststatus = 2,
   numberwidth = 4, -- set number column width to 2 {default 4}
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-  wrap = true, -- wrap lines
+  wrap = false, -- wrap lines
   scrolloff = 8, -- is one of my fav
   sidescrolloff = 8,
   -- guifont = "monospace:h17", -- the font used in graphical neovim applications
@@ -40,6 +41,7 @@ local options = {
   list = false,
   foldmethod = "marker",
   wildchar = vim.fn.char2nr "", -- change autocomplete menu trigger from Tab -> Ctrl - n; wildchar only accepts number in lua, so we transform char to number
+  -- winborder = "rounded",
 }
 
 -- vim.opt.fillchars = vim.opt.fillchars + "vertleft: "

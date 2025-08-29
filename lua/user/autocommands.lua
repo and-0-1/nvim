@@ -1,3 +1,5 @@
+local statusline = require "user.statusline"
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = vim.api.nvim_create_augroup("AndoQForExit", { clear = true }),
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "DressingSelect" },
@@ -23,9 +25,9 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     local branch = require("user.git_utils").get_git_branch(current_file)
 
     if branch then
-      vim.wo.statusline = "%#Title#%<%f %#WarningMsg#[" .. branch .. "]%#MoreMsg# %h%w%m%r%=%-14.(%l,%c%V%) %P"
+      vim.wo.statusline = statusline.left .. " %#WarningMsg#[" .. branch .. "]%#StatusLine# " .. statusline.right
     else
-      vim.wo.statusline = "%#Title#%<%f %#MoreMsg# %h%w%m%r%=%-14.(%l,%c%V%) %P"
+      vim.wo.statusline = statusline.full
     end
   end,
 })
