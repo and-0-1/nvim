@@ -30,7 +30,7 @@ null_ls.setup {
     formatting.markdownlint,
     -- formatting.yamlfmt,
     -- formatting.gofmt,
-    formatting.csharpier,
+    -- formatting.csharpier,
     -- formatting.black,
 
     diagnostics.stylelint.with {
