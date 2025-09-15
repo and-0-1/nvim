@@ -1,1 +1,1 @@
-vim.opt_local.ft = "cpp"
+-- vim.opt_local.ft = "cpp"
