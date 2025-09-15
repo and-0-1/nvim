@@ -39,12 +39,14 @@ local servers = {
   -- "omnisharp",
 }
 
-local server_opts = {
+local shared_capabilities = {
   on_attach = require("user.lsp.handlers").on_attach,
   capabilities = require("user.lsp.handlers").capabilities,
 }
 
+-- TODO(ando): move these into ftplugin
 for index, server_name in pairs(servers) do
+  local server_opts
   if server_name == "jsonls" then
     server_opts = vim.tbl_deep_extend("force", {
       settings = {
@@ -53,7 +55,7 @@ for index, server_name in pairs(servers) do
           validate = { enable = true },
         },
       },
-    }, server_opts)
+    }, shared_capabilities)
   elseif server_name == "eslint" then
     server_opts = vim.tbl_deep_extend("force", {
       filetypes = {
@@ -68,19 +70,23 @@ for index, server_name in pairs(servers) do
         "astro",
         "graphql",
       },
-    }, server_opts)
+    }, shared_capabilities)
   elseif server_name == "clangd" then
     server_opts = vim.tbl_deep_extend("force", {
+      filetypes = { "objc", "objcpp", "cpp", "c" },
       capabilities = {
         offsetEncoding = { "utf-8" },
       },
-    }, server_opts)
+    }, shared_capabilities)
     -- elseif server_name == "tailwindcss" then
     --   local tailwindcss_opts = require "user.lsp.settings.tailwindcss"
     --   server_opts = vim.tbl_deep_extend("force", tailwindcss_opts, server_opts)
     -- elseif server_name == "denols" then
     --   server_opts =
     --     vim.tbl_deep_extend("force", { root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc") }, server_opts)
+    --     else
+  else
+    server_opts = shared_capabilities
   end
 
   vim.lsp.config[server_name] = server_opts
