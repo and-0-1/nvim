@@ -84,7 +84,6 @@ for index, server_name in pairs(servers) do
     -- elseif server_name == "denols" then
     --   server_opts =
     --     vim.tbl_deep_extend("force", { root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc") }, server_opts)
-    --     else
   else
     server_opts = shared_capabilities
   end

@@ -141,7 +141,7 @@ return lazy.setup {
     -- Git
     -- "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
-    { "almo7aya/openingh.nvim", cmd = "OpenInGHFile" },
+    { "almo7aya/openingh.nvim", cmd = "OpenInGHFileLines" },
 
     -- TMUX
     -- {
