@@ -82,7 +82,11 @@ function M.enable_format_on_save()
     group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
     pattern = { "*" },
     callback = function()
-      M.null_ls_format()
+      vim.lsp.buf.format {
+        filter = function(client)
+          return client.name ~= "ts_ls"
+        end,
+      }
     end,
   })
   vim.notify "Enabled format on save"
