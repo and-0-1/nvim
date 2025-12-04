@@ -18,6 +18,9 @@ end
 -- NOTE: load snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup {
+  completion = {
+    autocomplete = false,
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
