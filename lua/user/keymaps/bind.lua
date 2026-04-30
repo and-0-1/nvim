@@ -8,6 +8,7 @@ local function bind(mode, default_opts)
 end
 
 M.nmap = bind("n", { remap = true })
+M.xmap = bind("x", { remap = true })
 M.nnoremap = bind "n"
 M.vnoremap = bind "v"
 M.xnoremap = bind "x"

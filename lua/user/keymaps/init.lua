@@ -4,6 +4,7 @@ local vnoremap = Remap.vnoremap
 -- local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
+local xmap = Remap.xmap
 
 --Remap space as leader key
 nnoremap("<Space>", "")
@@ -37,6 +38,10 @@ nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
 -- general
 nnoremap("<leader>c", "<cmd>bnext | bd#<CR>")
 nnoremap("<leader>x", "<cmd>Ex<cr>")
+
+-- Comment toggle (built-in nvim 0.10+ commenting)
+nmap("<leader>/", "gcc")
+xmap("<leader>/", "gc")
 
 -- In the case where no lsp is attached
 nmap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
