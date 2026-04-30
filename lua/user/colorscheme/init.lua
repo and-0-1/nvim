@@ -1,6 +1,5 @@
 -- colorscheme settings
 require "user.colorscheme.rose-pine"
--- require "user.colorscheme.tokyonight"
 
 local blueHighlight = {
   bg = "#0000af", --[[ fg = "#ffffff" ]]
