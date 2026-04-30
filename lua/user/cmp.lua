@@ -3,27 +3,15 @@ if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-  return
-end
-
 local compare = require "cmp.config.compare"
 
-local check_backspace = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
-end
-
--- NOTE: load snippets
-require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup {
   completion = {
     autocomplete = false,
   },
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      vim.snippet.expand(args.body)
     end,
   },
   preselect = cmp.PreselectMode.None,
@@ -41,38 +29,25 @@ cmp.setup {
       select = true,
     },
     ["<C-l>"] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(1) then
-        luasnip.jump(1)
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif check_backspace() then
-        fallback()
+      if vim.snippet.active { direction = 1 } then
+        vim.snippet.jump(1)
       else
         fallback()
       end
-    end, {
-      "n",
-      "i",
-      "s",
-    }),
+    end, { "i", "s" }),
     ["<C-h>"] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
+      if vim.snippet.active { direction = -1 } then
+        vim.snippet.jump(-1)
       else
         fallback()
       end
-    end, {
-      "n",
-      "i",
-      "s",
-    }),
+    end, { "i", "s" }),
   },
   sources = {
     {
       name = "nvim_lsp",
       group_index = 1,
     },
-    { name = "luasnip", group_index = 1 },
     {
       name = "buffer",
       group_index = 1,
