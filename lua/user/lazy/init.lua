@@ -45,11 +45,6 @@ return lazy.setup {
     -- find and replace
     { "windwp/nvim-spectre", cmd = "Spectre" },
 
-    -- Comment
-    { "numToStr/Comment.nvim", dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    } },
-
     -- UI
     -- "nvim-tree/nvim-web-devicons",
     -- "tjdevries/express_line.nvim",
@@ -118,15 +113,6 @@ return lazy.setup {
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-textobjects",
-    {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      init = function()
-        vim.g.skip_ts_context_commentstring_module = true
-        require("ts_context_commentstring").setup {
-          enable_autocmd = false,
-        }
-      end,
-    },
     -- "windwp/nvim-ts-autotag",
 
     -- Git
