@@ -9,6 +9,11 @@ require("gitsigns").setup {
   numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
   linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
   word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+  on_attach = function(bufnr)
+    if vim.b[bufnr].large_buf then
+      return false
+    end
+  end,
 }
 
 local Remap = require "user.keymaps.bind"
