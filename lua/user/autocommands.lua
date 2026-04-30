@@ -2,7 +2,7 @@ local statusline = require "user.statusline"
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = vim.api.nvim_create_augroup("AndoQForExit", { clear = true }),
-  pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "DressingSelect" },
+  pattern = { "qf", "help", "man", "lspinfo" },
   callback = function()
     vim.cmd [[
       nnoremap <silent> <buffer> q :close<CR>

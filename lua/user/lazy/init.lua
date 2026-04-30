@@ -42,9 +42,6 @@ return lazy.setup {
     "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
     -- "NvChad/nvim-colorizer.lua",
 
-    -- find and replace
-    { "windwp/nvim-spectre", cmd = "Spectre" },
-
     -- UI
     -- "nvim-tree/nvim-web-devicons",
     -- "tjdevries/express_line.nvim",
@@ -118,7 +115,6 @@ return lazy.setup {
     -- Git
     -- "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
-    { "almo7aya/openingh.nvim", cmd = "OpenInGHFileLines" },
 
     -- TMUX
     -- {
