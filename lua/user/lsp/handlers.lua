@@ -1,6 +1,6 @@
 local M = {}
 
-M.capabilities = require("cmp_nvim_lsp").default_capabilities()
+M.capabilities = require("blink.cmp").get_lsp_capabilities()
 
 M.setup = function()
   local config = {

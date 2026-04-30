@@ -62,13 +62,8 @@ return lazy.setup {
     -- "folke/tokyonight.nvim",
     { "rose-pine/neovim", name = "rose-pine" },
 
-    -- cmp plugins
-    "hrsh7th/nvim-cmp",
-
-    "hrsh7th/cmp-buffer", -- buffer completions
-    "hrsh7th/cmp-path", -- path completions
-    -- "hrsh7th/cmp-cmdline", -- cmdline completions
-    "hrsh7th/cmp-nvim-lsp",
+    -- completion
+    { "saghen/blink.cmp", version = "1.*" },
 
     -- LSP
     { "neovim/nvim-lspconfig" }, -- enable LSP
