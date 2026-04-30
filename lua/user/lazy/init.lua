@@ -94,7 +94,6 @@ return lazy.setup {
 
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
-    "nvim-treesitter/nvim-treesitter-textobjects",
     -- "windwp/nvim-ts-autotag",
 
     -- Git
