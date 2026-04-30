@@ -77,9 +77,7 @@ cmp.setup {
       name = "buffer",
       group_index = 1,
     },
-    { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
-    { name = "emoji", group_index = 3 },
   },
   sorting = {
     priority_weight = 2,
