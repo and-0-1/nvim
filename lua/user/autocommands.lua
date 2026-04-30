@@ -18,20 +18,27 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   end,
 })
 
+local branch_group = vim.api.nvim_create_augroup("AndoGitBranch", { clear = true })
+
+local function update_branch_statusline()
+  if vim.bo.filetype == "" then
+    return
+  end
+  local branch = vim.b.gitsigns_head
+  if branch and branch ~= "" then
+    vim.wo.statusline = statusline.left .. " %#WarningMsg#[" .. branch .. "]%#StatusLine# " .. statusline.right
+  else
+    vim.wo.statusline = statusline.full
+  end
+end
+
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  group = vim.api.nvim_create_augroup("AndoGitBranch", { clear = true }),
-  callback = function()
-    if vim.bo.filetype == nil or vim.bo.filetype == "" then
-      return
-    end
+  group = branch_group,
+  callback = update_branch_statusline,
+})
 
-    local current_file = vim.fn.expand "%:p"
-    local branch = require("user.git_utils").get_git_branch(current_file)
-
-    if branch then
-      vim.wo.statusline = statusline.left .. " %#WarningMsg#[" .. branch .. "]%#StatusLine# " .. statusline.right
-    else
-      vim.wo.statusline = statusline.full
-    end
-  end,
+vim.api.nvim_create_autocmd("User", {
+  group = branch_group,
+  pattern = "GitSignsUpdate",
+  callback = update_branch_statusline,
 })
