@@ -1,14 +1,6 @@
 local M = {}
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_cmp_ok then
-  vim.notify("cmp_nvim_lsp not found", vim.log.levels.ERROR)
-  return
-end
-
-M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
+M.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 M.setup = function()
   local config = {

@@ -1,7 +1,4 @@
-local ok, conform = pcall(require, "conform")
-if not ok then
-  return
-end
+local conform = require "conform"
 
 local function has_prettier_config(bufnr)
   local found = vim.fs.find({

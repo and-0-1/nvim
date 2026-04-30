@@ -1,10 +1,5 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-  return
-end
-
 ---@diagnostic disable-next-line: missing-fields
-configs.setup {
+require("nvim-treesitter.configs").setup {
   auto_install = false,
   ensure_installed = "all", -- one of "all" or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)

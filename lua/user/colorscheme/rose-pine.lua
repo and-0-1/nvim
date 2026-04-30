@@ -1,9 +1,4 @@
-local status_ok, rp = pcall(require, "rose-pine")
-if not status_ok then
-  return
-end
-
-rp.setup {
+require("rose-pine").setup {
   variant = "moon",
   -- dim_nc_background = false,
   disable_background = true,
@@ -39,10 +34,4 @@ rp.setup {
   },
 }
 
-local colorscheme = "rose-pine"
-
-local colorscheme_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not colorscheme_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-  return
-end
+vim.cmd "colorscheme rose-pine"

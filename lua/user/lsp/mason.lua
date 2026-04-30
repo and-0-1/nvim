@@ -1,14 +1,5 @@
-local mason_status_ok, mason = pcall(require, "mason")
-local mason_lsp_status_ok, mason_lsp = pcall(require, "mason-lspconfig")
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-  vim.notify("lspconfig missing", vim.log.levels.ERROR)
-  return
-end
-if not (mason_status_ok or mason_lsp_status_ok) then
-  vim.notify("mason or mason_lsp missing", vim.log.levels.ERROR)
-  return
-end
+local mason = require "mason"
+local mason_lsp = require "mason-lspconfig"
 
 local servers = {
   "cssls",
