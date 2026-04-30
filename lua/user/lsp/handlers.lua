@@ -34,12 +34,14 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  -- vim.lsp.completion.enable(true, client.id, bufnr, {
-  --   -- autotrigger = true,
-  --   -- convert = function(item)
-  --   --   return { abbr = item.label:gsub("%b()", "") }
-  --   -- end,
-  -- })
+  if vim.b[bufnr].large_buf then
+    vim.diagnostic.enable(false, { bufnr = bufnr })
+    vim.schedule(function()
+      pcall(vim.lsp.buf_detach_client, bufnr, client.id)
+      vim.diagnostic.reset(nil, bufnr)
+    end)
+    return
+  end
   lsp_keymaps(bufnr)
 end
 

@@ -56,15 +56,3 @@ vim.api.nvim_create_autocmd("BufReadPre", {
   end,
 })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = group,
-  callback = function(args)
-    if not vim.b[args.buf].large_buf then
-      return
-    end
-    vim.schedule(function()
-      pcall(vim.lsp.buf_detach_client, args.buf, args.data.client_id)
-      vim.diagnostic.reset(nil, args.buf)
-    end)
-  end,
-})
