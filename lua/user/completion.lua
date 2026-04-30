@@ -9,15 +9,48 @@ require("blink.cmp").setup {
     ["<C-l>"] = { "snippet_forward", "fallback" },
     ["<C-h>"] = { "snippet_backward", "fallback" },
   },
+  appearance = {
+    kind_icons = {
+      Text = "t",
+      Method = "m",
+      Function = "f",
+      Constructor = "c",
+      Field = ".",
+      Variable = "v",
+      Property = "p",
+      Class = "C",
+      Interface = "I",
+      Struct = "S",
+      Module = "M",
+      Unit = "u",
+      Value = "V",
+      Enum = "E",
+      EnumMember = "e",
+      Keyword = "k",
+      Snippet = "s",
+      Color = "#",
+      File = "F",
+      Reference = "&",
+      Folder = "/",
+      Constant = "K",
+      Event = "!",
+      Operator = "+",
+      TypeParameter = "T",
+    },
+  },
   completion = {
     menu = {
       auto_show = false,
       border = "rounded",
+      winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
     },
     documentation = {
       auto_show = true,
       auto_show_delay_ms = 200,
-      window = { border = "rounded" },
+      window = {
+        border = "rounded",
+        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,Search:None",
+      },
     },
     list = {
       selection = { preselect = false, auto_insert = false },
@@ -27,5 +60,11 @@ require("blink.cmp").setup {
   sources = {
     default = { "lsp", "buffer", "path" },
   },
-  signature = { enabled = true, window = { border = "rounded" } },
+  signature = {
+    enabled = true,
+    window = {
+      border = "rounded",
+      winhighlight = "Normal:Normal,FloatBorder:FloatBorder,Search:None",
+    },
+  },
 }
