@@ -41,6 +41,8 @@ vim.api.nvim_create_autocmd("BufReadPre", {
 
     vim.b[ev.buf].large_buf = true
     vim.b[ev.buf].matchparen_disabled = 1
+    vim.b[ev.buf].match_disable = 1
+    vim.b[ev.buf].match_words = ""
 
     vim.bo[ev.buf].swapfile = false
     vim.bo[ev.buf].undofile = false
