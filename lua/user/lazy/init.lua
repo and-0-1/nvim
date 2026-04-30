@@ -49,7 +49,6 @@ return lazy.setup {
     { "numToStr/Comment.nvim", dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
     } },
-    "folke/todo-comments.nvim",
 
     -- UI
     -- "nvim-tree/nvim-web-devicons",
@@ -104,7 +103,6 @@ return lazy.setup {
     "b0o/SchemaStore.nvim",
     -- "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     -- "mfussenegger/nvim-jdtls",
-    { url = "https://gitlab.com/schrieveslaach/sonarlint.nvim" },
 
     -- Lua
     {
