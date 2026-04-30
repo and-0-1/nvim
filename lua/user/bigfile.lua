@@ -1,4 +1,5 @@
-local THRESHOLD = 512 * 1024 -- 512 KB
+local THRESHOLD = 256 * 1024 -- 256 KB
+local MIN_SIZE_FOR_MINIFIED_CHECK = 32 * 1024
 
 local group = vim.api.nvim_create_augroup("BigFile", { clear = true })
 
@@ -10,16 +11,33 @@ local function file_size(path)
   return ok and stats and stats.size or nil
 end
 
+local function is_minified(path)
+  local fd = vim.uv.fs_open(path, "r", 438)
+  if not fd then
+    return false
+  end
+  local data = vim.uv.fs_read(fd, 8192, 0)
+  vim.uv.fs_close(fd)
+  return data and not data:find "\n" or false
+end
+
 vim.api.nvim_create_autocmd("BufReadPre", {
   group = group,
   callback = function(ev)
     local path = vim.api.nvim_buf_get_name(ev.buf)
     local size = file_size(path)
-    if not size or size <= THRESHOLD then
+    if not size then
       return
     end
 
-    vim.notify(string.format("[bigfile] %s (%d KB) — features disabled", vim.fn.fnamemodify(path, ":t"), math.floor(size / 1024)))
+    local big = size > THRESHOLD
+    local minified = not big and size > MIN_SIZE_FOR_MINIFIED_CHECK and is_minified(path)
+    if not (big or minified) then
+      return
+    end
+
+    local label = minified and "minified" or "big"
+    vim.notify(string.format("[bigfile] %s %s (%d KB) — features disabled", label, vim.fn.fnamemodify(path, ":t"), math.floor(size / 1024)))
 
     vim.b[ev.buf].large_buf = true
     vim.b[ev.buf].matchparen_disabled = 1
@@ -41,8 +59,12 @@ vim.api.nvim_create_autocmd("BufReadPre", {
 vim.api.nvim_create_autocmd("LspAttach", {
   group = group,
   callback = function(args)
-    if vim.b[args.buf].large_buf then
-      vim.lsp.buf_detach_client(args.buf, args.data.client_id)
+    if not vim.b[args.buf].large_buf then
+      return
     end
+    vim.schedule(function()
+      pcall(vim.lsp.buf_detach_client, args.buf, args.data.client_id)
+      vim.diagnostic.reset(nil, args.buf)
+    end)
   end,
 })
