@@ -55,43 +55,6 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
 end
 
-function M.enable_format_on_save()
-  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
-    pattern = { "*" },
-    callback = function()
-      vim.lsp.buf.format {
-        filter = function(client)
-          return client.name ~= "ts_ls" and client.name ~= "tsgo"
-        end,
-      }
-    end,
-  })
-  vim.notify "Enabled format on save"
-end
-
-function M.disable_format_on_save()
-  vim.api.nvim_del_augroup_by_name "format_on_save"
-  vim.notify "Disabled format on save"
-end
-
-function M.toggle_format_on_save()
-  if vim.fn.exists "#format_on_save#BufWritePre" == 0 then
-    M.enable_format_on_save()
-  else
-    M.disable_format_on_save()
-  end
-end
-
-function M.null_ls_format()
-  vim.lsp.buf.format {
-    -- async = true,
-    filter = function(client)
-      return client.name == "null-ls"
-    end,
-  }
-end
-
 local diagnostics_active = true
 function M.toggle_diagnostics()
   diagnostics_active = not diagnostics_active
@@ -102,12 +65,8 @@ function M.toggle_diagnostics()
   end
 end
 
-vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
-vim.cmd [[ command! NullLsFormat execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
 vim.cmd [[ command! Ft execute 'lua vim.lsp.buf.format()' ]]
 vim.cmd [[ command! Diag execute 'lua vim.diagnostic.setloclist()' ]]
 vim.cmd [[ command! GDiag execute 'lua vim.diagnostic.setqflist()' ]]
-
-M.enable_format_on_save()
 
 return M

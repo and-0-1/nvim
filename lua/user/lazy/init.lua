@@ -74,17 +74,7 @@ return lazy.setup {
     { "neovim/nvim-lspconfig" }, -- enable LSP
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    {
-      "nvimtools/none-ls.nvim", -- for formatters and linters
-    },
-    {
-      "jay-babu/mason-null-ls.nvim",
-      event = { "BufReadPre", "BufNewFile" },
-      dependencies = {
-        "williamboman/mason.nvim",
-        "nvimtools/none-ls.nvim",
-      },
-    },
+    "stevearc/conform.nvim", -- formatters
     "b0o/SchemaStore.nvim",
     -- "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     -- "mfussenegger/nvim-jdtls",
