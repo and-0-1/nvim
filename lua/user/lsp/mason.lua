@@ -62,10 +62,8 @@ for index, server_name in pairs(servers) do
       filetypes = {
         "javascript",
         "javascriptreact",
-        "javascript.jsx",
         "typescript",
         "typescriptreact",
-        "typescript.tsx",
         "vue",
         "svelte",
         "astro",
