@@ -1,6 +1,8 @@
 require("blink.cmp").setup {
   keymap = {
     preset = "default",
+    ["<C-n>"] = { "show", "select_next", "fallback" },
+    ["<C-p>"] = { "show", "select_prev", "fallback" },
     ["<C-c>"] = { "hide", "fallback" },
     ["<C-u>"] = { "scroll_documentation_up", "fallback" },
     ["<C-d>"] = { "scroll_documentation_down", "fallback" },
