@@ -12,32 +12,15 @@ end
 
 local servers = {
   "cssls",
-  "cssmodules_ls",
   "html",
   "jsonls",
   "lua_ls",
-  "tflint",
-  -- "ts_ls",
   "tsgo",
   "yamlls",
   "bashls",
-  "prosemd_lsp",
-  -- "rust_analyzer",
-  -- "vimls",
   "tailwindcss",
-  -- "graphql",
-  -- "csharp_ls",
   "eslint",
-  "typos_lsp",
-  -- "angularls",
-  -- "gopls",
-  -- "vuels",
   "clangd",
-  -- "denols",
-  -- "pylsp",
-  -- "pyright",
-  -- "ruff",
-  -- "omnisharp",
 }
 
 local shared_capabilities = {
