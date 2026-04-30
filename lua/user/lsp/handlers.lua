@@ -62,7 +62,7 @@ function M.enable_format_on_save()
     callback = function()
       vim.lsp.buf.format {
         filter = function(client)
-          return client.name ~= "ts_ls"
+          return client.name ~= "ts_ls" and client.name ~= "tsgo"
         end,
       }
     end,
@@ -105,7 +105,8 @@ end
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("user.lsp.handlers").toggle_format_on_save()' ]]
 vim.cmd [[ command! NullLsFormat execute 'lua require("user.lsp.handlers").null_ls_format()' ]]
 vim.cmd [[ command! Ft execute 'lua vim.lsp.buf.format()' ]]
-vim.cmd [[ command! Diag execute 'lua vim.diagnostic.setqflist()' ]]
+vim.cmd [[ command! Diag execute 'lua vim.diagnostic.setloclist()' ]]
+vim.cmd [[ command! GDiag execute 'lua vim.diagnostic.setqflist()' ]]
 
 M.enable_format_on_save()
 
