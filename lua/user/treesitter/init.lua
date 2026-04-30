@@ -11,11 +11,10 @@ require("nvim-treesitter.configs").setup {
     -- include_match_words = false
   },
   highlight = {
-    -- use_languagetree = true,
-    enable = true, -- false will disable the whole extension
-    -- additional_vim_regex_highlighting = true,
-    disable = function(_lang, bufnr) -- Disable in large C++ buffers
-      return vim.api.nvim_buf_line_count(bufnr) > 50000
+    enable = true,
+    disable = function(_lang, bufnr)
+      return vim.b[bufnr].large_buf == true
+        or vim.api.nvim_buf_line_count(bufnr) > 50000
     end,
   },
   autopairs = {

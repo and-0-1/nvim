@@ -1,6 +1,7 @@
 require "user.keymaps"
 require "user.options"
 require "user.lazy"
+require "user.bigfile"
 require "user.autocommands"
 require "user.colorscheme"
 require "user.completion"
