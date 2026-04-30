@@ -3,7 +3,8 @@ local options = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 1, -- more space in the neovim command line for displaying messages
-  completeopt = { "menuone", "noselect", "fuzzy" }, -- mostly just for cmp
+  completeopt = { "menuone", "noselect", "fuzzy", "popup" }, -- mostly just for cmp
+  complete = ".,w,b,u,t,o",
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
   hlsearch = true, -- highlight all matches on previous search pattern
@@ -41,7 +42,8 @@ local options = {
   list = false,
   foldmethod = "marker",
   wildchar = vim.fn.char2nr "", -- change autocomplete menu trigger from Tab -> Ctrl - n; wildchar only accepts number in lua, so we transform char to number
-  -- winborder = "rounded",
+  winborder = "rounded",
+  -- syntax = "off"
 }
 
 -- vim.opt.fillchars = vim.opt.fillchars + "vertleft: "
