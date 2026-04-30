@@ -55,6 +55,11 @@ vim.api.nvim_create_autocmd("BufReadPre", {
     vim.opt_local.spell = false
     vim.opt_local.cursorline = false
     vim.opt_local.relativenumber = false
+
+    -- override % directly; matchit does not always honor b:match_disable
+    for _, key in ipairs { "%", "g%" } do
+      vim.keymap.set({ "n", "x", "o" }, key, "<Nop>", { buffer = ev.buf, silent = true })
+    end
   end,
 })
 
