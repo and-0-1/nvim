@@ -67,4 +67,5 @@ require("blink.cmp").setup {
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder,Search:None",
     },
   },
+  cmdline = { enabled = false },
 }
