@@ -42,6 +42,10 @@ M.on_attach = function(client, bufnr)
     end)
     return
   end
+  if client.name == "tsgo" or client.name == "ts_ls" then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
   lsp_keymaps(bufnr)
 end
 
