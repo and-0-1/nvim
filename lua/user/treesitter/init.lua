@@ -12,9 +12,9 @@ require("nvim-treesitter.configs").setup {
   },
   highlight = {
     enable = true,
+    ---@diagnostic disable-next-line: unused-local
     disable = function(_lang, bufnr)
-      return vim.b[bufnr].large_buf == true
-        or vim.api.nvim_buf_line_count(bufnr) > 50000
+      return vim.b[bufnr].large_buf == true or vim.api.nvim_buf_line_count(bufnr) > 50000
     end,
   },
   autopairs = {
