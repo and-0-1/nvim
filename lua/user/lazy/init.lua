@@ -58,10 +58,6 @@ return lazy.setup {
     "tpope/vim-repeat",
     "tpope/vim-abolish",
 
-    -- Colorschemes
-    -- "folke/tokyonight.nvim",
-    { "rose-pine/neovim", name = "rose-pine" },
-
     -- completion
     { "saghen/blink.cmp", version = "1.*" },
 
