@@ -88,10 +88,6 @@ return lazy.setup {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope-ui-select.nvim",
 
-    -- Treesitter
-    "nvim-treesitter/nvim-treesitter",
-    -- "windwp/nvim-ts-autotag",
-
     -- Git
     -- "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
