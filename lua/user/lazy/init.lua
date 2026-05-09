@@ -40,15 +40,6 @@ return lazy.setup {
   spec = {
     -- General
     "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
-    -- "NvChad/nvim-colorizer.lua",
-
-    -- UI
-    -- "nvim-tree/nvim-web-devicons",
-    -- "tjdevries/express_line.nvim",
-    -- "kevinhwang91/nvim-bqf",
-
-    -- Bookmarks
-    -- "cbochs/grapple.nvim",
 
     -- Word manipulation enhancements
     {
@@ -92,57 +83,11 @@ return lazy.setup {
     -- "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",
 
-    -- TMUX
+    -- Colorscheme
     -- {
-    --   "christoomey/vim-tmux-navigator",
-    --   init = function()
-    --     vim.g.tmux_navigator_disable_when_zoomed = 1
-    --   end,
+    --   "stevedylandev/ansi-nvim",
+    --   lazy = false,
+    --   priority = 1000,
     -- },
-
-    -- File types
-    -- "jxnblk/vim-mdx-js",
-
-    -- JSON utils
-    -- { "gennaro-tedesco/nvim-jqx", lazy = true },
-
-    -- Debugging
-    -- {
-    --   "mfussenegger/nvim-dap",
-    --   dependencies = {
-    --     "theHamsta/nvim-dap-virtual-text",
-    --     "rcarriga/nvim-dap-ui",
-    --     "nvim-telescope/telescope-dap.nvim",
-    --     "jbyuki/one-small-step-for-vimkind",
-    --   },
-    -- },
-    -- { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
-
-    -- Testing
-
-    -- {
-    --   "klen/nvim-test",
-    --   init = function()
-    --     require("nvim-test").setup {
-    --       term = "terminal", -- a terminal to run ("terminal"|"toggleterm")
-    --     }
-    --     require("nvim-test.runners.jest"):setup {
-    --       command = "yarn", -- a command to run the test runner
-    --       args = { "test" }, -- default arguments
-    --     }
-    --   end,
-    -- },
-
-    -- auto close buffer if not used
-    -- {
-    --   "chrisgrieser/nvim-early-retirement",
-    --   config = true,
-    --   event = "VeryLazy",
-    -- },
-
-    -- db access
-    -- "tpope/vim-dadbod",
-    -- "kristijanhusak/vim-dadbod-completion",
-    -- "kristijanhusak/vim-dadbod-ui",
   },
 }
