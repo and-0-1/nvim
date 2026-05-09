@@ -1,5 +1,13 @@
-vim.opt.background = "light"
 vim.cmd.colorscheme "ansi"
+
+-- Re-apply colorscheme when &background flips (e.g. async OSC 11 response
+-- from the terminal lands after startup, or :set background=... at runtime).
+vim.api.nvim_create_autocmd("OptionSet", {
+  pattern = "background",
+  callback = function()
+    vim.cmd.colorscheme "ansi"
+  end,
+})
 
 -- local blueHighlight = {
 --   bg = "#0000af", --[[ fg = "#ffffff" ]]
