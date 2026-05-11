@@ -8,6 +8,7 @@ require("blink.cmp").setup {
     ["<C-d>"] = { "scroll_documentation_down", "fallback" },
     ["<C-l>"] = { "snippet_forward", "fallback" },
     ["<C-h>"] = { "snippet_backward", "fallback" },
+    ["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
   },
   appearance = {
     kind_icons = {
@@ -62,6 +63,10 @@ require("blink.cmp").setup {
   },
   signature = {
     enabled = true,
+    trigger = {
+      show_on_trigger_character = false,
+      show_on_insert_on_trigger_character = false,
+    },
     window = {
       border = "rounded",
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder,Search:None",
