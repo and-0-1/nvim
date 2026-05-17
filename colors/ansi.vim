@@ -57,7 +57,7 @@ call s:hi('VertSplit ctermfg=<dim>')
 "call s:hi('TabLineFill ctermfg=<near> ctermbg=NONE')
 "hi TabLineSel ctermfg=0 ctermbg=11
 hi Title ctermfg=4 cterm=bold
-call s:hi('CursorLine ctermbg=NONE ctermfg=NONE cterm=underline')
+call s:hi('CursorLine ctermbg=NONE ctermfg=NONE')
 call s:hi('Cursor ctermbg=<far> ctermfg=<near>')
 call s:hi('CursorColumn ctermbg=<near>')
 call s:hi('LineNr ctermfg=<dim>')
@@ -113,24 +113,24 @@ hi healthSuccess ctermfg=2
 hi healthWarning ctermfg=3
 
 " Syntax
-call s:hi('Comment ctermfg=<bright> cterm=italic')
-hi Constant ctermfg=3
-hi Identifier ctermfg=9
-hi Function ctermfg=7
+hi Comment ctermfg=2 cterm=italic
+hi Constant ctermfg=4
+hi Identifier ctermfg=4
+hi Function ctermfg=15
 hi Special ctermfg=7
-hi Statement ctermfg=5
-hi String ctermfg=2
-hi Operator ctermfg=6
-hi Boolean ctermfg=3
+hi Statement ctermfg=15
+hi String ctermfg=6
+hi Operator ctermfg=7
+hi Boolean ctermfg=4
 hi Label ctermfg=14
 hi Keyword ctermfg=15
-hi Exception ctermfg=5
-hi Conditional ctermfg=5
-hi PreProc ctermfg=13
-hi Include ctermfg=5
-hi Macro ctermfg=5
-hi StorageClass ctermfg=11
-hi Structure ctermfg=11
+hi Exception ctermfg=15
+hi Conditional ctermfg=15
+hi PreProc ctermfg=10
+hi Include ctermfg=15
+hi Macro ctermfg=15
+hi StorageClass ctermfg=15
+hi Structure ctermfg=15
 hi Todo ctermfg=0 ctermbg=9 cterm=bold
 hi Type ctermfg=7
 
