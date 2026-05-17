@@ -30,8 +30,8 @@ if &background ==# 'light'
 else
   let s:near   = 0
   let s:far    = 15
-  let s:dim    = 8
-  let s:bright = 7
+  let s:dim    = 7
+  let s:bright = 8
 endif
 
 function! s:hi(spec) abort
@@ -50,26 +50,26 @@ hi Underlined cterm=underline
 hi Bold cterm=bold
 hi Italic cterm=italic
 call s:hi('NonText ctermfg=<near>')
-call s:hi('StatusLine ctermfg=<far> ctermbg=<dim> cterm=NONE')
-call s:hi('StatusLineNC ctermfg=<far> ctermbg=<near> cterm=NONE')
+"call s:hi('StatusLine ctermfg=<far> ctermbg=<near> cterm=NONE')
+"call s:hi('StatusLineNC ctermfg=<far> ctermbg=<dim> cterm=NONE')
 call s:hi('VertSplit ctermfg=<dim>')
-call s:hi('TabLine ctermfg=<bright> ctermbg=<near>')
-call s:hi('TabLineFill ctermfg=<near> ctermbg=NONE')
-hi TabLineSel ctermfg=0 ctermbg=11
+"call s:hi('TabLine ctermfg=<bright> ctermbg=<near>')
+"call s:hi('TabLineFill ctermfg=<near> ctermbg=NONE')
+"hi TabLineSel ctermfg=0 ctermbg=11
 hi Title ctermfg=4 cterm=bold
-call s:hi('CursorLine ctermbg=<near> ctermfg=NONE')
+call s:hi('CursorLine ctermbg=NONE ctermfg=NONE cterm=underline')
 call s:hi('Cursor ctermbg=<far> ctermfg=<near>')
 call s:hi('CursorColumn ctermbg=<near>')
 call s:hi('LineNr ctermfg=<dim>')
 hi CursorLineNr ctermfg=6
 hi helpLeadBlank ctermbg=NONE ctermfg=NONE
 hi helpNormal ctermbg=NONE ctermfg=NONE
-call s:hi('Visual ctermbg=<dim> ctermfg=<far> cterm=bold')
-call s:hi('VisualNOS ctermbg=<dim> ctermfg=<far> cterm=bold')
-call s:hi('Pmenu ctermbg=<near> ctermfg=<far>')
-call s:hi('PmenuSbar ctermbg=<dim> ctermfg=<bright>')
-call s:hi('PmenuSel ctermbg=<dim> ctermfg=<far> cterm=bold')
-call s:hi('PmenuThumb ctermbg=<bright> ctermfg=NONE')
+call s:hi('Visual ctermbg=<bright> ctermfg=<far> cterm=bold')
+call s:hi('VisualNOS ctermbg=<bright> ctermfg=<far> cterm=bold')
+"call s:hi('Pmenu ctermbg=<near> ctermfg=<far>')
+"call s:hi('PmenuSbar ctermbg=<dim> ctermfg=<bright>')
+"call s:hi('PmenuSel ctermbg=<dim> ctermfg=<far> cterm=bold')
+"call s:hi('PmenuThumb ctermbg=<bright> ctermfg=NONE')
 call s:hi('FoldColumn ctermfg=<bright>')
 hi Folded ctermfg=12
 call s:hi('WildMenu ctermbg=<near> ctermfg=<far> cterm=NONE')
@@ -113,18 +113,17 @@ hi healthSuccess ctermfg=2
 hi healthWarning ctermfg=3
 
 " Syntax
-call s:hi('Comment ctermfg=<dim> cterm=italic')
+call s:hi('Comment ctermfg=<bright> cterm=italic')
 hi Constant ctermfg=3
-hi Error ctermfg=1
 hi Identifier ctermfg=9
-hi Function ctermfg=4
-hi Special ctermfg=13
+hi Function ctermfg=7
+hi Special ctermfg=7
 hi Statement ctermfg=5
 hi String ctermfg=2
 hi Operator ctermfg=6
 hi Boolean ctermfg=3
 hi Label ctermfg=14
-hi Keyword ctermfg=5
+hi Keyword ctermfg=15
 hi Exception ctermfg=5
 hi Conditional ctermfg=5
 hi PreProc ctermfg=13
@@ -133,9 +132,99 @@ hi Macro ctermfg=5
 hi StorageClass ctermfg=11
 hi Structure ctermfg=11
 hi Todo ctermfg=0 ctermbg=9 cterm=bold
-hi Type ctermfg=11
+hi Type ctermfg=7
 
 " neovim-specific (remove if you're using vim)
-call s:hi('NormalFloat ctermbg=<near> ctermfg=<far>')
-call s:hi('FloatBorder ctermbg=<near> ctermfg=<bright>')
-call s:hi('FloatShadow ctermbg=<near> ctermfg=<far>')
+"call s:hi('NormalFloat ctermbg=<near> ctermfg=<far>')
+"call s:hi('FloatBorder ctermbg=<near> ctermfg=<bright>')
+"call s:hi('FloatShadow ctermbg=<near> ctermfg=<far>')
+
+
+"" Treesitter highlighting
+"" - allows for more precise syntax highlighting
+"" - only available for nvim >0.5
+"" - see also :help treesitter-highlight-groups
+"
+"call s:hi('@variable ctermfg=<far>')
+"hi @variable.builtin ctermfg=1
+"hi @variable.parameter ctermfg=1
+"hi @variable.member ctermfg=1
+"hi @constant.builtin ctermfg=5
+"hi @string.regexp ctermfg=1
+"hi @string.escape ctermfg=6
+"hi @string.special.url ctermfg=4 cterm=underline
+"hi @string.special.symbol ctermfg=13
+"hi @type.builtin ctermfg=3
+"hi @property ctermfg=1
+"hi @function.builtin ctermfg=5
+"hi @constructor ctermfg=11
+"hi @keyword.coroutine ctermfg=1
+"hi @keyword.function ctermfg=5
+"hi @keyword.return ctermfg=5
+"hi @keyword.export ctermfg=14
+"call s:hi('@punctuation.bracket ctermfg=<far>')
+"hi @comment.error ctermbg=9 ctermfg=0
+"hi @comment.warning ctermbg=11 ctermfg=0
+"hi @comment.todo ctermbg=12 ctermfg=0
+"hi @comment.note ctermbg=14 ctermfg=0
+"call s:hi('@markup ctermfg=<far>')
+"call s:hi('@markup.strong ctermfg=<far> cterm=bold')
+"call s:hi('@markup.italic ctermfg=<far> cterm=italic')
+"call s:hi('@markup.strikethrough ctermfg=<far> cterm=strikethrough')
+"hi @markup.heading ctermfg=4 cterm=bold
+"hi @markup.quote ctermfg=6
+"hi @markup.math ctermfg=4
+"hi @markup.link.url ctermfg=5 cterm=underline
+"hi @markup.raw ctermfg=14
+"hi @markup.list.checked ctermfg=2
+"call s:hi('@markup.list.unchecked ctermfg=<dim>')
+"hi @tag ctermfg=5
+"hi @tag.builtin ctermfg=6
+"hi @tag.attribute ctermfg=4
+"hi @tag.delimiter ctermfg=5
+"
+"hi link @variable.parameter.builtin @variable.parameter
+"hi link @constant Constant
+"hi link @constant.macro Macro
+"hi link @module Structure
+"hi link @module.builtin Special
+"hi link @label Label
+"hi link @string String
+"hi link @string.special Special
+"hi link @character Character
+"hi link @character.special SpecialChar
+"hi link @boolean Boolean
+"hi link @number Number
+"hi link @number.float Float
+"hi link @type Type
+"hi link @type.definition Type
+"hi link @attribute Constant
+"hi link @attribute.builtin Constant
+"hi link @function Function
+"hi link @function.call Function
+"hi link @function.method Function
+"hi link @function.method.call Function
+"hi link @operator Operator
+"hi link @keyword Keyword
+"hi link @keyword.operator Operator
+"hi link @keyword.import Include
+"hi link @keyword.type Keyword
+"hi link @keyword.modifier Keyword
+"hi link @keyword.repeat Repeat
+"hi link @keyword.debug Exception
+"hi link @keyword.exception Exception
+"hi link @keyword.conditional Conditional
+"hi link @keyword.conditional.ternary Operator
+"hi link @keyword.directive PreProc
+"hi link @keyword.directive.define Define
+"hi link @punctuation.delimiter Delimiter
+"hi link @punctuation.special Special
+"hi link @comment Comment
+"hi link @comment.documentation Comment
+"hi link @markup.underline underline
+"hi link @markup.link Tag
+"hi link @markup.link.label Label
+"hi link @markup.list Special
+"hi link @diff.plus diffAdded
+"hi link @diff.minus diffRemoved
+"hi link @diff.delta diffChanged
