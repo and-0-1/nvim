@@ -114,25 +114,25 @@ hi healthWarning ctermfg=3
 
 " Syntax
 hi Comment ctermfg=2 cterm=italic
-hi Constant ctermfg=4
+hi Constant ctermfg=5
 hi Identifier ctermfg=4
-hi Function ctermfg=15
+hi Function ctermfg=7
 hi Special ctermfg=7
 hi Statement ctermfg=15
 hi String ctermfg=6
 hi Operator ctermfg=7
-hi Boolean ctermfg=4
+hi Boolean ctermfg=14
 hi Label ctermfg=14
 hi Keyword ctermfg=15
 hi Exception ctermfg=15
 hi Conditional ctermfg=15
-hi PreProc ctermfg=10
-hi Include ctermfg=15
-hi Macro ctermfg=15
-hi StorageClass ctermfg=15
+hi PreProc ctermfg=1
+hi Include ctermfg=1
+hi Macro ctermfg=7
+hi StorageClass ctermfg=1
 hi Structure ctermfg=15
 hi Todo ctermfg=0 ctermbg=9 cterm=bold
-hi Type ctermfg=7
+hi Type ctermfg=10
 
 " neovim-specific (remove if you're using vim)
 "call s:hi('NormalFloat ctermbg=<near> ctermfg=<far>')
