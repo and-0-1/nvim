@@ -115,14 +115,15 @@ hi healthWarning ctermfg=3
 " Syntax
 hi Comment ctermfg=2 cterm=italic
 hi Constant ctermfg=5
-hi Identifier ctermfg=4
+hi Identifier ctermfg=7
 hi Function ctermfg=7
 hi Special ctermfg=7
+hi SpecialChar ctermfg=5
 hi Statement ctermfg=15
 hi String ctermfg=6
 hi Operator ctermfg=7
 hi Boolean ctermfg=14
-hi Label ctermfg=14
+hi link Label Keyword
 hi Keyword ctermfg=15
 hi Exception ctermfg=15
 hi Conditional ctermfg=15
@@ -133,6 +134,16 @@ hi StorageClass ctermfg=1
 hi Structure ctermfg=15
 hi Todo ctermfg=0 ctermbg=9 cterm=bold
 hi Type ctermfg=10
+
+hi link typescriptInterfaceName Type
+hi link typescriptTypeReference Type
+hi typescriptCall ctermfg=7
+hi typescriptIdentifier ctermfg=7
+hi typescriptObjectLabel ctermfg=7
+hi typescriptFuncCallArg ctermfg=7
+hi link typescriptClassStatic Keyword
+hi link typescriptDestructureVariable NONE
+hi link javascriptLabel Keyword
 
 " neovim-specific (remove if you're using vim)
 "call s:hi('NormalFloat ctermbg=<near> ctermfg=<far>')
