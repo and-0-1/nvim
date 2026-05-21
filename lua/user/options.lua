@@ -1,4 +1,4 @@
-local statusline = require "user.statusline"
+-- local statusline = require "user.statusline"
 local options = {
   backup = false,
   clipboard = "unnamedplus",
@@ -27,7 +27,7 @@ local options = {
   number = true,
   relativenumber = true,
   -- statusline = statusline.full,
-  laststatus = 3,
+  laststatus = 1,
   signcolumn = "yes",
   wrap = false,
   scrolloff = 8,
@@ -38,6 +38,7 @@ local options = {
   -- <C-n> as autocomplete menu trigger instead of <Tab>; wildchar wants a number
   wildchar = 14,
   winborder = "rounded",
+  guicursor = "a:blinkon0",
 }
 
 for k, v in pairs(options) do
