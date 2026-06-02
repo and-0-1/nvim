@@ -78,7 +78,7 @@ hi IncSearch ctermbg=1 ctermfg=0
 hi CurSearch ctermbg=3 ctermfg=0
 hi Search ctermbg=11 ctermfg=0
 hi Directory ctermfg=4
-call s:hi('MatchParen ctermbg=<near> ctermfg=3 cterm=underline')
+hi MatchParen ctermfg=0 ctermbg=2
 hi SpellBad cterm=undercurl
 hi SpellCap cterm=undercurl
 hi SpellLocal cterm=undercurl
@@ -144,6 +144,7 @@ hi typescriptFuncCallArg ctermfg=7
 hi link typescriptClassStatic Keyword
 hi link typescriptDestructureVariable NONE
 hi link javascriptLabel Keyword
+hi link typescriptArrowFunc Function
 
 " neovim-specific (remove if you're using vim)
 "call s:hi('NormalFloat ctermbg=<near> ctermfg=<far>')
