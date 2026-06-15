@@ -8,7 +8,7 @@ M.setup = function()
     virtual_text = false,
     virtual_lines = false,
     -- show signs
-    signs = {},
+    signs = false,
     update_in_insert = false,
     underline = true,
     severity_sort = true,
