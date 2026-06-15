@@ -119,7 +119,7 @@ hi Identifier ctermfg=7
 hi Function ctermfg=7
 hi Special ctermfg=7
 hi SpecialChar ctermfg=5
-hi Statement ctermfg=15
+hi Statement ctermfg=7 cterm=NONE
 hi String ctermfg=6
 hi Operator ctermfg=7
 hi Boolean ctermfg=14
@@ -145,6 +145,15 @@ hi link typescriptClassStatic Keyword
 hi link typescriptDestructureVariable NONE
 hi link javascriptLabel Keyword
 hi link typescriptArrowFunc Function
+hi link tsxAttrib NONE
+hi link typescriptPaymentShippingOptionProp NONE
+hi link typescriptDOMFormProp NONE
+hi link typescriptBOMWindowMethod NONE
+hi link typescriptPaymentAddressProp NONE
+hi link typescriptNull Keyword
+"hi link typescriptStatementKeyword Keyword
+hi link typescriptBOMHistoryProp NONE
+
 
 " neovim-specific (remove if you're using vim)
 "call s:hi('NormalFloat ctermbg=<near> ctermfg=<far>')
