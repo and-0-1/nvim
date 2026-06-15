@@ -24,11 +24,11 @@ local options = {
   shiftwidth = 2,
   tabstop = 2,
   cursorline = true,
-  number = true,
+  number = false,
   relativenumber = true,
   -- statusline = statusline.full,
   laststatus = 1,
-  signcolumn = "yes",
+  signcolumn = "yes:3",
   wrap = false,
   scrolloff = 8,
   sidescrolloff = 8,
@@ -38,9 +38,28 @@ local options = {
   -- <C-n> as autocomplete menu trigger instead of <Tab>; wildchar wants a number
   wildchar = 14,
   winborder = "rounded",
-  guicursor = "a:blinkon0",
+  guicursor = "a:block-blinkon0,i-ci:ver25-blinkon0",
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+local sidebar_visible = true
+local function toggle_sidebar()
+  if sidebar_visible then
+    -- vim.opt.number = false
+    vim.opt.relativenumber = false
+    vim.opt.signcolumn = "yes:5"
+  else
+    -- vim.opt.number = true
+    vim.opt.relativenumber = true
+    vim.opt.signcolumn = "yes:3"
+  end
+
+  sidebar_visible = not sidebar_visible
+end
+
+vim.api.nvim_create_user_command("ST", function()
+  toggle_sidebar()
+end, {})
