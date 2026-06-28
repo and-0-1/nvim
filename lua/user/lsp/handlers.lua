@@ -1,6 +1,6 @@
 local M = {}
 
-M.capabilities = require("blink.cmp").get_lsp_capabilities()
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
 M.setup = function()
   local config = {
@@ -48,6 +48,22 @@ M.on_attach = function(client, bufnr)
   end
   client.server_capabilities.semanticTokensProvider = nil
   lsp_keymaps(bufnr)
+
+  if client:supports_method "textDocument/completion" then
+    vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+  end
+
+  vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, { buffer = bufnr })
+  vim.keymap.set({ "i", "s" }, "<C-l>", function()
+    if vim.snippet.active { direction = 1 } then
+      vim.snippet.jump(1)
+    end
+  end, { buffer = bufnr })
+  vim.keymap.set({ "i", "s" }, "<C-h>", function()
+    if vim.snippet.active { direction = -1 } then
+      vim.snippet.jump(-1)
+    end
+  end, { buffer = bufnr })
 end
 
 local diagnostics_active = true

@@ -49,9 +49,6 @@ return lazy.setup {
     "tpope/vim-repeat",
     "tpope/vim-abolish",
 
-    -- completion
-    { "saghen/blink.cmp", version = "1.*" },
-
     -- LSP
     { "neovim/nvim-lspconfig" }, -- enable LSP
     "williamboman/mason.nvim",

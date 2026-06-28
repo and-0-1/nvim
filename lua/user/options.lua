@@ -37,6 +37,10 @@ local options = {
   foldmethod = "marker",
   -- <C-n> as autocomplete menu trigger instead of <Tab>; wildchar wants a number
   wildchar = 14,
+  wildmenu = true,
+  wildoptions = "fuzzy,pum",
+  grepprg = "rg --vimgrep --smart-case",
+  grepformat = "%f:%l:%c:%m",
   winborder = "rounded",
   guicursor = "a:block-blinkon0,i-ci:ver25-blinkon0",
 }
@@ -44,6 +48,9 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.opt.path:append "**"
+vim.opt.wildignore:append { "*/.git/*", "*/node_modules/*", "*/yarn-offline-cache/*" }
 
 local sidebar_visible = true
 local function toggle_sidebar()
