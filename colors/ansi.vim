@@ -76,9 +76,9 @@ call s:hi('WildMenu ctermbg=<near> ctermfg=<far> cterm=NONE')
 call s:hi('SpecialKey ctermfg=<near>')
 hi IncSearch ctermbg=1 ctermfg=0
 hi CurSearch ctermbg=3 ctermfg=0
-hi Search ctermbg=11 ctermfg=0
+hi Search ctermbg=7 ctermfg=0
 hi Directory ctermfg=4
-hi MatchParen ctermfg=0 ctermbg=2
+hi MatchParen ctermfg=10 ctermbg=0
 hi SpellBad cterm=undercurl
 hi SpellCap cterm=undercurl
 hi SpellLocal cterm=undercurl
