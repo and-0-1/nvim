@@ -74,11 +74,6 @@ return lazy.setup {
       },
     },
 
-    -- Telescope
-    "nvim-telescope/telescope.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "nvim-telescope/telescope-ui-select.nvim",
-
     -- Git
     -- "tpope/vim-fugitive",
     "lewis6991/gitsigns.nvim",

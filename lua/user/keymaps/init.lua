@@ -34,6 +34,13 @@ xnoremap("K", ":move '<-2<CR>gv-gv")
 nnoremap("gO", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
 nnoremap("go", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
 
+-- Finding (builtin)
+nnoremap("<C-p>", ":find ")
+nnoremap("<leader>fw", function()
+  vim.cmd("silent grep! " .. vim.fn.expand "<cword>")
+  vim.cmd "copen"
+end)
+
 -- Normal <leader> + key
 -- general
 nnoremap("<leader>c", "<cmd>bnext | bd#<CR>")
