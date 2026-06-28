@@ -38,9 +38,6 @@ return lazy.setup {
     },
   },
   spec = {
-    -- General
-    "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
-
     -- Word manipulation enhancements
     {
       "kylechui/nvim-surround",
