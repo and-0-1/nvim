@@ -52,6 +52,24 @@ end
 vim.opt.path:append "**"
 vim.opt.wildignore:append { "*/.git/*", "*/node_modules/*", "*/yarn-offline-cache/*" }
 
+-- Fast :find via ripgrep; findfunc overrides path-based globbing (cached, fuzzy)
+if vim.fn.executable "rg" == 1 then
+  local cache
+  function _G.__rg_find(cmdarg, _)
+    cache = cache or vim.fn.systemlist { "rg", "--files", "--color", "never" }
+    if cmdarg == "" then
+      return cache
+    end
+    return vim.fn.matchfuzzy(cache, cmdarg)
+  end
+  vim.o.findfunc = "v:lua.__rg_find"
+  vim.api.nvim_create_autocmd({ "DirChanged", "BufWritePost" }, {
+    callback = function()
+      cache = nil
+    end,
+  })
+end
+
 local sidebar_visible = true
 local function toggle_sidebar()
   if sidebar_visible then
